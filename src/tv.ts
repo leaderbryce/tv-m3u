@@ -430,7 +430,7 @@ async function main(): Promise<"full" | "update" | "skip"> {
         console.log(`🚀 Run démarré le ${new Date().toLocaleString()}`);
         const result = await main();
         if (result === "skip") {
-            console.log('⏭️ Skip: aucune action requise.');
+            console.log('⏭️ Skip: aucune action requise');
         } else {
             console.log(`✅ Terminé (${result}) le ${new Date().toLocaleString()}`);
         }
