@@ -77,6 +77,8 @@ http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/2612
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3724
 #EXTINF:-1 tvg-id="8426" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mgm-plus-drive-in-us.png?raw=true" group-title="LIVETV;TVUSA",MGM+ Drive-In
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/4431
+#EXTINF:-1 tvg-id="8400" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/movie-plex-us.png?raw=true" group-title="LIVETV;TVUSA",MoviePlex
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/93060
 #EXTINF:-1 tvg-id="403665" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/sony-movie-channel-us.png?raw=true" group-title="LIVETV;TVUSA",Sony Movie Channel
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/2412
 #EXTINF:-1 tvg-id="405735" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/paramount-network-hd-us.png?raw=true" group-title="LIVETV;TVUSA",Paramount Movie Channel
@@ -113,6 +115,8 @@ http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/57970
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3077
 #EXTINF:-1 tvg-id="403470" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/msnbc-alt-us.png?raw=true" group-title="LIVETV;TVUSA",MSNBC
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/93125
+#EXTINF:-1 tvg-id="403527" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cnbc-us.png?raw=true" group-title="LIVETV;TVUSA",CNBC
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/2609
 #EXTINF:-1 tvg-id="403819" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cnn-us.png?raw=true" group-title="LIVETV;TVUSA",CNN
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3257
 #EXTINF:-1 tvg-id="403903" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fox-news-us.png?raw=true" group-title="LIVETV;TVUSA",Fox News
