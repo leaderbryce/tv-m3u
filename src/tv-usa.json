@@ -24,6 +24,14 @@
     "url": ""
   },
   {
+    "nom": "HBO Movies",
+    "identifiant":  ["HBO Movies (East)", "HBO Movies (West)", "HBO Movies"],
+    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-states/hbo-movies-us.png",
+    "group": "TVUSA",
+    "tvgId": "480609",
+    "url": ""
+  },
+  {
     "nom": "HBO Signature",
     "identifiant":  ["HBO Signature (East)", "HBO Signature (West)", "HBO Signature"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/hbo-signature-hd-us.png?raw=true",
@@ -53,6 +61,14 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/hbo-zone-hd-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403823",
+    "url": ""
+  },
+  {
+    "nom":  "HBO Hits",
+    "identifiant": ["HBO Hits (East)", "HBO Hits (West)", "HBO Hits"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hbo-hits-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "465255",
     "url": ""
   },
   {

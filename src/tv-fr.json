@@ -42,7 +42,7 @@
   {
     "nom": "Canal+ Family",
     "identifiant": ["Canal+ Family (720p)"],
-    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/canal-plus-family-fr.png?raw=true",
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/canal-plus-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "CanalPlus.fr",
     "url": ""
