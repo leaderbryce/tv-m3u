@@ -25,8 +25,24 @@
   },
   {
     "nom": "Canal+",
-    "identifiant": "CANAL+ EN CLAIR",
+    "identifiant": ["Canal+ (1080p)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/canal-plus-fr.png?raw=true",
+    "group": "TVFRANCE",
+    "tvgId": "CanalPlus.fr",
+    "url": ""
+  },
+  {
+    "nom": "Canal+ Cinemas",
+    "identifiant": ["Canal+ Cinemas (720p)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/canal-plus-cinemas-fr.png?raw=true",
+    "group": "TVFRANCE",
+    "tvgId": "CanalPlus.fr",
+    "url": ""
+  },
+  {
+    "nom": "Canal+ Family",
+    "identifiant": ["Canal+ Family (720p)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/canal-plus-family-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "CanalPlus.fr",
     "url": ""
@@ -57,7 +73,7 @@
   },
   {
     "nom": "Arte",
-    "identifiant": "ARTE",
+    "identifiant": ["Arte (720p) [Geo-blocked]"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/hd/arte-hd-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "Arte.fr",
@@ -122,7 +138,7 @@
   },
   {
     "nom": "Gulli",
-    "identifiant": "GULLI",
+    "identifiant": ["GULLI", "Gulli"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/gulli-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "Gulli.fr",
@@ -130,7 +146,7 @@
   },
   {
     "nom": "T18",
-    "identifiant": "T18",
+    "identifiant": ["T18", "T18 (1080p)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/t18-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "T18.fr",
@@ -138,7 +154,7 @@
   },
   {
     "nom": "NOVO19",
-    "identifiant": "NOVO 19",
+    "identifiant": ["NOVO19"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/novo19-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "NOVO19.fr",
@@ -155,7 +171,7 @@
   },
   {
     "nom": "RMC Story",
-    "identifiant": "RMC STORY",
+    "identifiant": ["RMC Story (1080p)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/rmc-story-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "Numero23.fr",

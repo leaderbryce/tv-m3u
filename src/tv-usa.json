@@ -1,7 +1,7 @@
 [
   {
     "nom": "Fuse",
-    "identifiant": "Fuse East (720p)",
+    "identifiant": ["Fuse (1080p)", "Fuse East (720p)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fuse-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403455",
@@ -9,7 +9,7 @@
   },
   {
     "nom": "HBO",
-    "identifiant": ["HBO (East)", "HBO (West)"],
+    "identifiant": ["HBO (East)", "HBO (West)", "HBO", "HBO (Canada)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/hbo-hd-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403926",
@@ -17,7 +17,7 @@
   },
   {
     "nom": "HBO 2",
-    "identifiant": ["HBO 2 (East)", "HBO 2 (West)"],
+    "identifiant": ["HBO 2 (East)", "HBO 2 (West)", "HBO 2", "HBO 2 (Canada)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/hbo-2-hd-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403522",
@@ -25,7 +25,7 @@
   },
   {
     "nom": "HBO Signature",
-    "identifiant":  ["HBO Signature (East)", "HBO Signature (West)"],
+    "identifiant":  ["HBO Signature (East)", "HBO Signature (West)", "HBO Signature"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/hbo-signature-hd-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403477",
@@ -33,7 +33,7 @@
   },
   {
     "nom": "HBO Comedy",
-    "identifiant": ["HBO Comedy (East)", "HBO Comedy (West)"],
+    "identifiant": ["HBO Comedy (East)", "HBO Comedy (West)", "HBO Comedy"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hbo-comedy-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403650",
@@ -41,7 +41,7 @@
   },
   {
     "nom": "HBO Family",
-    "identifiant": ["HBO Family (East)", "HBO Family (West)"],
+    "identifiant": ["HBO Family (East)", "HBO Family (West)", "HBO Family"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hbo-family-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403783",
@@ -49,7 +49,7 @@
   },
   {
     "nom":  "HBO Zone",
-    "identifiant": ["HBO Zone (East)", "HBO Zone (West)"],
+    "identifiant": ["HBO Zone (East)", "HBO Zone (West)", "HBO Zone"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/hbo-zone-hd-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403823",
@@ -57,7 +57,7 @@
   },
   {
     "nom": "Showtime",
-    "identifiant": "Showtime East",
+    "identifiant": ["Showtime (1080p)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/showtime-hd-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403537",
@@ -97,7 +97,7 @@
   },
   {
     "nom": "AMC",
-    "identifiant": ["AMC (1080p)", "AMC East (1080p)", "AMC (Canada)"],
+    "identifiant": ["AMC (1080p)", "AMC (720p)", "AMC East (1080p)", "AMC (Canada)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/amc-hd-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403838",
@@ -137,7 +137,7 @@
   },
   {
     "nom": "ABC",
-    "identifiant": "ABC",
+    "identifiant": ["ABC", "ABC (720p)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/abc-logo-2013-default-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "399930",
@@ -145,7 +145,7 @@
   },
   {
     "nom": "Ion TV",
-    "identifiant": "ION TV East",
+    "identifiant": ["ION TV East"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/ion-television-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403718",
@@ -153,7 +153,7 @@
   },
   {
     "nom": "Ion Plus",
-    "identifiant": ["ION Plus East (720p)"],
+    "identifiant": ["ION Plus", "ION Plus (10800p)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/ion-plus-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "399929",
@@ -161,7 +161,7 @@
   },
   {
     "nom": "BBC America",
-    "identifiant": "BBC America",
+    "identifiant": ["BBC America", "BBC America (720p)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/bbc-america-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403895",
@@ -177,7 +177,7 @@
   },
   {
     "nom": "Comedy Central",
-    "identifiant": "Comedy Central East (720p)",
+    "identifiant": ["Comedy Central (1080p)", "Comedy Central (East)", "Comedy Central (West)", "Comedy Central (UK)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/comedy-central-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403666",
@@ -232,8 +232,24 @@
     "url": ""
   },
   {
+    "nom": "Fox",
+    "identifiant": ["Fox (540p)"],
+    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-states/fox-us.png",
+    "group": "TVUSA",
+    "tvgId": "",
+    "url": ""
+  },
+  {
+    "nom": "FS1",
+    "identifiant": ["FS1 (Fox Sports 1)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fox-sports-1-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "",
+    "url": ""
+  },
+  {
     "nom": "E!",
-    "identifiant": "E! East",
+    "identifiant": ["E! (1080p)", "E! (Canada)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/e-entertainment-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403733",
@@ -241,7 +257,7 @@
   },
   {
     "nom": "VH1",
-    "identifiant": "VH1 East",
+    "identifiant": ["VH1 (720p)", "VH1 (East)", "VH1 (West)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/vh1-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403653",
@@ -361,7 +377,7 @@
   },
   {
     "nom": "Disney Channel",
-    "identifiant": "Disney Channel East",
+    "identifiant": ["Disney Channel (720p)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/disney-channel-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403788",
@@ -369,7 +385,7 @@
   },
   {
     "nom": "Disney Junior",
-    "identifiant": "Disney Junior East",
+    "identifiant": ["Disney Junior (1080i)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/disney-jr-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403674",
@@ -385,7 +401,7 @@
   },
   {
     "nom": "Nickelodeon",
-    "identifiant": "Nickelodeon",
+    "identifiant": ["Nickelodeon (1080p)", "Nickelodeon (East)", "Nickelodeon (UK)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nickelodeon-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403620",
@@ -393,7 +409,7 @@
   },
   {
     "nom": "Nick Jr",
-    "identifiant": "Nick Jr East",
+    "identifiant": ["Nick Jr. (East)", "Nick Jr. (West)", "Nick Jr. (UK)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nick-jr-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403655",
@@ -449,7 +465,7 @@
   },
   {
     "nom": "Syfy",
-    "identifiant": "Syfy East",
+    "identifiant": ["SYFY (West)", "SYFY (720p)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/syfy-hd-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403631",
@@ -457,7 +473,7 @@
   },
   {
     "nom": "MTV",
-    "identifiant": "MTV East",
+    "identifiant": ["MTV (720p)", "MTV (East)", "MTV (East)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mtv-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403921",
@@ -465,7 +481,7 @@
   },
   {
     "nom": "MTV 2",
-    "identifiant": "MTV 2",
+    "identifiant": ["MTV 2 (720p)", "MTV 2 (East)", "MTV 2 (East)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mtv-2-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403593",
@@ -501,14 +517,6 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cnbc-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403527",
-    "url": ""
-  },
-  {
-    "nom": "NBC",
-    "identifiant": "NBC",
-    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nbc-logo-2013-us.png?raw=true",
-    "group": "TVUSA",
-    "tvgId": "403619",
     "url": ""
   },
   {
