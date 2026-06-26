@@ -4,11 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tv": "tsx src/tv.ts"
+    "tv": "tsx src/tv.ts",
+    "typecheck": "tsc --noEmit",
+    "validate": "tsx src/validate.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": ">=20"
+  },
   "type": "commonjs",
   "devDependencies": {
     "@types/node": "^26.0.1",

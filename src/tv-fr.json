@@ -77,7 +77,6 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/hd/arte-hd-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "Arte.fr",
-    "scrapUrl": "https://www.livehdtv.com/embed/arte-french/",
     "url": ""
   },
   {
@@ -166,7 +165,6 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/6ter-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "6ter.fr",
-    "scrapUrl": "https://www.livehdtv.com/embed/6ter/",
     "url": ""
   },
   {

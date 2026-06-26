@@ -8,6 +8,8 @@ const STATE_FILE = "./.state.json"; // lastRun, lastFull, lock
 // Intervalles
 const UPDATE_INTERVAL_MS = 2 * 60 * 60 * 1000;  // 2h
 const FULL_INTERVAL_MS   = 24 * 60 * 60 * 1000; // 24h
+const STREAM_TEST_CONCURRENCY = 4;
+const LOCK_TIMEOUT_MS = 30 * 60 * 1000; // 30 min
 
 // ========= Types =========
 type Country = 'FR' | 'USA';
@@ -19,7 +21,6 @@ type Channel = {
     group: string;
     url: string;
     tvgId: string;
-    scrapUrl: string | null;
     country?: Country;
 };
 
@@ -148,23 +149,61 @@ function getPriority(group: string, isUSA: boolean): number {
     return 99;
 }
 
+function createConcurrencyLimiter(concurrency: number) {
+    let active = 0;
+    const queue: Array<() => void> = [];
+
+    return async function limit<T>(task: () => Promise<T>): Promise<T> {
+        if (active >= concurrency) {
+            await new Promise<void>((resolve) => queue.push(resolve));
+        }
+
+        active++;
+        try {
+            return await task();
+        } finally {
+            active--;
+            queue.shift()?.();
+        }
+    };
+}
+
+async function findFirstValidStream(
+    candidates: RemoteChannel[],
+    testStream: (url: string) => Promise<boolean>,
+    concurrency = STREAM_TEST_CONCURRENCY
+): Promise<RemoteChannel | null> {
+    for (let start = 0; start < candidates.length; start += concurrency) {
+        const batch = candidates.slice(start, start + concurrency);
+        const results = await Promise.all(
+            batch.map(async (candidate) => ({
+                candidate,
+                valid: await testStream(candidate.url),
+            }))
+        );
+        const firstValid = results.find((result) => result.valid);
+        if (firstValid) return firstValid.candidate;
+    }
+
+    return null;
+}
+
 async function enrichLocalChannelsWithValidStream(
     localPath: string,
     remoteChannels: RemoteChannel[],
     isUSA: boolean = false,
-    country: Country = 'FR'
+    country: Country = 'FR',
+    testStream: (url: string) => Promise<boolean> = createLimitedStreamTester()
 ): Promise<Channel[]> {
     const localChannels: Channel[] = JSON.parse(fs.readFileSync(localPath, 'utf-8'));
-    const enriched: Channel[] = [];
 
-    for (let i = 0; i < localChannels.length; i++) {
-        const local = localChannels[i];
+    console.log(`🔎 ${localPath}: ${localChannels.length} chaînes, ${STREAM_TEST_CONCURRENCY} tests de flux max en parallèle`);
 
+    const enriched = await Promise.all(localChannels.map(async (local, i): Promise<Channel> => {
         // 1) URL déjà renseignée
         if (local.url && local.url.trim() !== '') {
             console.log(`✅ ${local.nom} → ${local.url}`);
-            enriched.push({ ...local, url: local.url, country });
-            continue;
+            return { ...local, url: local.url, country };
         }
 
         // 3) Matching distant
@@ -173,22 +212,25 @@ async function enrichLocalChannelsWithValidStream(
             : [String(local.identifiant).toLowerCase()];
 
         const allMatches: RemoteChannel[] = [];
+        const seenUrls = new Set<string>();
         identifiants.forEach((id) => {
             const matchesForId = remoteChannels
                 .filter((rc) => rc.name.toLowerCase() === id)
                 .sort((a, b) => getPriority(a.group, isUSA) - getPriority(b.group, isUSA));
-            allMatches.push(...matchesForId);
+            matchesForId.forEach((match) => {
+                if (!seenUrls.has(match.url)) {
+                    seenUrls.add(match.url);
+                    allMatches.push(match);
+                }
+            });
         });
 
         let selectedUrl = '';
         let selectedGroup = '';
-        for (const candidate of allMatches) {
-            const valid = await testUrl(candidate.url, 3000, 2);
-            if (valid) {
-                selectedUrl = candidate.url;
-                selectedGroup = candidate.group;
-                break;
-            }
+        const selected = await findFirstValidStream(allMatches, testStream);
+        if (selected) {
+            selectedUrl = selected.url;
+            selectedGroup = selected.group;
         }
 
         if (selectedUrl) {
@@ -197,15 +239,34 @@ async function enrichLocalChannelsWithValidStream(
             console.log(`❌ [${i + 1}/${localChannels.length}] - ${local.nom} → aucun flux valide`);
         }
 
-        enriched.push({ ...local, url: selectedUrl, country });
-    }
+        return { ...local, url: selectedUrl, country };
+    }));
 
     return enriched;
 }
 
+function createLimitedStreamTester(): (url: string) => Promise<boolean> {
+    const limitStreamTest = createConcurrencyLimiter(STREAM_TEST_CONCURRENCY);
+    return (url: string) => limitStreamTest(() => testUrl(url, 3000, 2));
+}
+
 function generateM3UEntry(channel: Channel): string {
-    return `#EXTINF:-1 tvg-id="${channel.tvgId}" tvg-logo="${channel.logo}" group-title="LIVETV;${channel.group}",${channel.nom}
-${channel.url}`;
+    const tvgId = escapeM3UAttribute(channel.tvgId);
+    const logo = escapeM3UAttribute(channel.logo);
+    const group = escapeM3UAttribute(`LIVETV;${channel.group}`);
+    const name = escapeM3UText(channel.nom);
+    const url = escapeM3UText(channel.url);
+
+    return `#EXTINF:-1 tvg-id="${tvgId}" tvg-logo="${logo}" group-title="${group}",${name}
+${url}`;
+}
+
+function escapeM3UAttribute(value: string): string {
+    return escapeM3UText(value).replace(/"/g, '\\"');
+}
+
+function escapeM3UText(value: string): string {
+    return String(value).replace(/[\r\n]+/g, ' ').trim();
 }
 
 // ========= Construction / MAJ de l'intermédiaire =========
@@ -214,9 +275,12 @@ async function buildIntermediateFromScratch(): Promise<Channel[]> {
         fetchAllRemoteChannels(SOURCES.fr.remoteUrl),
         fetchAllRemoteChannels(SOURCES.usa.remoteUrl),
     ]);
+    const testStream = createLimitedStreamTester();
 
-    const frChannels = await enrichLocalChannelsWithValidStream(SOURCES.fr.localFile, remoteFR, false, 'FR');
-    const usaChannels = await enrichLocalChannelsWithValidStream(SOURCES.usa.localFile, remoteUSA, true, 'USA');
+    const [frChannels, usaChannels] = await Promise.all([
+        enrichLocalChannelsWithValidStream(SOURCES.fr.localFile, remoteFR, false, 'FR', testStream),
+        enrichLocalChannelsWithValidStream(SOURCES.usa.localFile, remoteUSA, true, 'USA', testStream),
+    ]);
 
     const merged = [...frChannels, ...usaChannels];
     fs.writeFileSync(INTERMEDIATE_JSON, JSON.stringify(merged, null, 2), 'utf-8');
@@ -237,6 +301,7 @@ type State = {
     lastRun?: string;
     lastFull?: string;
     lock?: boolean;
+    lockStartedAt?: string;
 };
 
 async function loadState(): Promise<State> {
@@ -273,12 +338,26 @@ async function markFull(): Promise<void> {
 
 async function acquireLock(): Promise<() => Promise<void>> {
     const state = await loadState();
-    if (state.lock) throw new Error('Lock présent: un run est déjà en cours.');
+    const lockAgeMs = state.lockStartedAt ? Date.now() - new Date(state.lockStartedAt).getTime() : 0;
+    const lockExpired = state.lock && (!state.lockStartedAt || lockAgeMs >= LOCK_TIMEOUT_MS);
+
+    if (state.lock && !lockExpired) {
+        const ageMin = Math.max(0, Math.ceil(lockAgeMs / 60000));
+        throw new Error(`Lock présent depuis ~${ageMin} min: un run est déjà en cours.`);
+    }
+
+    if (lockExpired) {
+        const ageMin = state.lockStartedAt ? Math.max(0, Math.ceil(lockAgeMs / 60000)) : 'inconnu';
+        console.warn(`⚠️ Lock expiré détecté (${ageMin} min), reprise du run.`);
+    }
+
     state.lock = true;
+    state.lockStartedAt = new Date().toISOString();
     await saveState(state);
     return async () => {
         const s = await loadState();
         s.lock = false;
+        delete s.lockStartedAt;
         await saveState(s);
     };
 }
