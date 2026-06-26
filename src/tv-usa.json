@@ -1,0 +1,530 @@
+[
+  {
+    "nom": "Fuse",
+    "identifiant": "Fuse East (720p)",
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fuse-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403455",
+    "url": ""
+  },
+  {
+    "nom": "HBO",
+    "identifiant": ["HBO (East)", "HBO (West)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/hbo-hd-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403926",
+    "url": ""
+  },
+  {
+    "nom": "HBO 2",
+    "identifiant": ["HBO 2 (East)", "HBO 2 (West)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/hbo-2-hd-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403522",
+    "url": ""
+  },
+  {
+    "nom": "HBO Signature",
+    "identifiant":  ["HBO Signature (East)", "HBO Signature (West)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/hbo-signature-hd-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403477",
+    "url": ""
+  },
+  {
+    "nom": "HBO Comedy",
+    "identifiant": ["HBO Comedy (East)", "HBO Comedy (West)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hbo-comedy-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403650",
+    "url": ""
+  },
+  {
+    "nom": "HBO Family",
+    "identifiant": ["HBO Family (East)", "HBO Family (West)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hbo-family-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403783",
+    "url": ""
+  },
+  {
+    "nom":  "HBO Zone",
+    "identifiant": ["HBO Zone (East)", "HBO Zone (West)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/hbo-zone-hd-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403823",
+    "url": ""
+  },
+  {
+    "nom": "Showtime",
+    "identifiant": "Showtime East",
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/showtime-hd-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403537",
+    "url": ""
+  },
+  {
+    "nom": "Showtime 2",
+    "identifiant": ["Showtime 2", "Showtime 2 (East)", "Showtime 2 (West)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/showtime-2-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403651",
+    "url": ""
+  },
+  {
+    "nom": "Showtime Next",
+    "identifiant": ["Showtime Next", "Showtime Next (East)", "Showtime Next (West)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/showtime-next-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403520",
+    "url": ""
+  },
+  {
+    "nom": "Showtime Extreme",
+    "identifiant": ["Showtime Extreme", "Showtime Extreme (East)", "Showtime Extreme (West)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/showtime-extreme-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403681",
+    "url": ""
+  },
+  {
+    "nom": "Showtime Family Zone",
+    "identifiant": ["Showtime Family Zone", "Showtime Family Zone (East)", "Showtime Family Zone (West)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/showtime-family-zone-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "8841",
+    "url": ""
+  },
+  {
+    "nom": "AMC",
+    "identifiant": ["AMC (1080p)", "AMC East (1080p)", "AMC (Canada)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/amc-hd-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403838",
+    "url": ""
+  },
+  {
+    "nom": "AMC+",
+    "identifiant": "AMC+",
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/amc-hd-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "8396",
+    "url": ""
+  },
+  {
+    "nom": "AMC Thriller",
+    "identifiant": "AMC Thriller",
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/amc-hd-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "",
+    "url": ""
+  },
+  {
+    "nom": "The Cooking Channel",
+    "identifiant": ["Cooking Channel" ,"The Cooking Channel (Canada)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cooking-channel-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403832",
+    "url": ""
+  },
+  {
+    "nom": "Food Network",
+    "identifiant": ["Food Network (East)", "Food Network (West)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/food-network-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403509",
+    "url": ""
+  },
+  {
+    "nom": "ABC",
+    "identifiant": "ABC",
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/abc-logo-2013-default-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "399930",
+    "url": ""
+  },
+  {
+    "nom": "Ion TV",
+    "identifiant": "ION TV East",
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/ion-television-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403718",
+    "url": ""
+  },
+  {
+    "nom": "Ion Plus",
+    "identifiant": ["ION Plus East (720p)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/ion-plus-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "399929",
+    "url": ""
+  },
+  {
+    "nom": "BBC America",
+    "identifiant": "BBC America",
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/bbc-america-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403895",
+    "url": ""
+  },
+  {
+    "nom": "CBS",
+    "identifiant": "CBS East (720p)",
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cbs-logo-white-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403849",
+    "url": ""
+  },
+  {
+    "nom": "Comedy Central",
+    "identifiant": "Comedy Central East (720p)",
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/comedy-central-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403666",
+    "url": ""
+  },
+  {
+    "nom": "NBC Comedy Vault",
+    "identifiant": "NBC Comedy Vault",
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cnbc-prime-neon-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "",
+    "url": ""
+  },
+  {
+    "nom": "TLC",
+    "identifiant": ["TLC (Canada)", "TLC (The Learning Channel)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/tlc-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403827",
+    "url": ""
+  },
+  {
+    "nom": "A&E",
+    "identifiant": ["A&E (Canada)", "A&E (Arts & Entertainment)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/a-and-e-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "405243",
+    "url": ""
+  },
+  {
+    "nom": "FX",
+    "identifiant": ["FX (Canada)", "FX East", "FX"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fx-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403815",
+    "url": ""
+  },
+  {
+    "nom": "FXX",
+    "identifiant": ["FXX (Canada)", "FXX East"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fxx-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403518",
+    "url": ""
+  },
+  {
+    "nom": "FXM",
+    "identifiant": ["FXM East", "FXM (FOX Movie Channel)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fxm-movie-channel-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403717",
+    "url": ""
+  },
+  {
+    "nom": "E!",
+    "identifiant": "E! East",
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/e-entertainment-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403733",
+    "url": ""
+  },
+  {
+    "nom": "VH1",
+    "identifiant": "VH1 East",
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/vh1-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403653",
+    "url": ""
+  },
+  {
+    "nom": "Cinemax",
+    "identifiant": ["Cinemax", "Cinemax (East)", "Cinemax (West)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cinemax-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403854",
+    "url": ""
+  },
+  {
+    "nom": "More Max",
+    "identifiant": ["More Max", "More Max (East)", "More Max (West)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cinemax-moremax-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403766",
+    "url": ""
+  },
+  {
+    "nom": "5 Star Max",
+    "identifiant": "5 Star Max",
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cinemax-5-starmax-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403941",
+    "url": ""
+  },
+  {
+    "nom": "Movie Max",
+    "identifiant": "Movie Max",
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cinemax-moviemax-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403938",
+    "url": ""
+  },
+  {
+    "nom": "Outer Max",
+    "identifiant": "Outer Max",
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cinemax-outermax-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "8420",
+    "url": ""
+  },
+  {
+    "nom": "Action Max",
+    "identifiant":  ["Action Max", "Action Max (East)", "Action Max (West)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cinemax-actionmax-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403751",
+    "url": ""
+  },
+  {
+    "nom": "Thriller Max",
+    "identifiant": ["Thriller Max", "Thriller Max (East)", "Thriller Max (West)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cinemax-thrillermax-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403545",
+    "url": ""
+  },
+  {
+    "nom": "MGM+",
+    "identifiant": "MGM+",
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mgm-plus-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "8935",
+    "url": ""
+  },
+  {
+    "nom": "MGM+ Hits",
+    "identifiant": "MGM+ Hits",
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mgm-plus-hits-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "8730",
+    "url": ""
+  },
+  {
+    "nom": "MGM+ Drive-In",
+    "identifiant": "MGM+ Drive-In",
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mgm-plus-drive-in-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "8426",
+    "url": ""
+  },
+  {
+    "nom": "MoviePlex",
+    "identifiant": ["MoviePlex", "MoviePlex (East)", "MoviePlex (West)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/movie-plex-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "8400",
+    "url": ""
+  },
+  {
+    "nom": "Sony Movie Channel",
+    "identifiant": "Sony Movie Channel",
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/sony-movie-channel-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403665",
+    "url": ""
+  },
+  {
+    "nom": "Paramount Movie Channel",
+    "identifiant": "Paramount Movie Channel",
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/paramount-network-hd-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "405735",
+    "url": ""
+  },
+  {
+    "nom": "Paramount+ with Showtime",
+    "identifiant": ["Paramount+ with Showtime", "Paramount+ with Showtime (East)", "Paramount+ with Showtime (West)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/paramount-plus-with-showtime-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403537",
+    "url": ""
+  },
+  {
+    "nom": "Disney Channel",
+    "identifiant": "Disney Channel East",
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/disney-channel-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403788",
+    "url": ""
+  },
+  {
+    "nom": "Disney Junior",
+    "identifiant": "Disney Junior East",
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/disney-jr-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403674",
+    "url": ""
+  },
+  {
+    "nom": "Disney XD",
+    "identifiant": ["Disney XD (Canada)", "Disney XD (East)", "Disney XD (West)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/disney-xd-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403837",
+    "url": ""
+  },
+  {
+    "nom": "Nickelodeon",
+    "identifiant": "Nickelodeon",
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nickelodeon-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403620",
+    "url": ""
+  },
+  {
+    "nom": "Nick Jr",
+    "identifiant": "Nick Jr East",
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nick-jr-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403655",
+    "url": ""
+  },
+  {
+    "nom": "Cartoon Network",
+    "identifiant": ["Cartoon Network (Canada)", "CN (Cartoon Network) (East)", "CN (Cartoon Network) (West)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cartoon-network-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403461",
+    "url": ""
+  },
+  {
+    "nom": "PBS Kids",
+    "identifiant": "PBS Kids Eastern/Central (720p)",
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/pbs-kids-dash-icon-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403469",
+    "url": ""
+  },
+  {
+    "nom": "Boomerang",
+    "identifiant": ["Boomerang (Canada)", "Boomerang by Cartoon Network"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/boomerang-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403576",
+    "url": ""
+  },
+  {
+    "nom": "USA Network",
+    "identifiant": ["USA Network", "USA Network (East)", "USA Network (West)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/usa-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403626",
+    "url": ""
+  },
+  {
+    "nom": "Discovery Science",
+    "identifiant": ["Discovery Science", "Discovery Science (Canada)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/discovery-science-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403564",
+    "url": ""
+  },
+  {
+    "nom": "National Geographic",
+    "identifiant": ["National Geographic", "National Geographic (Canada)", "National Geographic HD East (720p)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/national-geographic-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403578",
+    "url": ""
+  },
+  {
+    "nom": "Syfy",
+    "identifiant": "Syfy East",
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/syfy-hd-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403631",
+    "url": ""
+  },
+  {
+    "nom": "MTV",
+    "identifiant": "MTV East",
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mtv-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403921",
+    "url": ""
+  },
+  {
+    "nom": "MTV 2",
+    "identifiant": "MTV 2",
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mtv-2-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403593",
+    "url": ""
+  },
+  {
+    "nom": "MTV Live",
+    "identifiant": "MTV Live",
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mtv-live-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403621",
+    "url": ""
+  },
+  {
+    "nom": "Adult Swim",
+    "identifiant": ["Adult Swim (Canada)", "Adult Swim+ (East)", "Adult Swim+ (West)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/adult-swim-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "409470",
+    "url": ""
+  },
+  {
+    "nom": "MSNBC",
+    "identifiant": ["MSNBC", "MSNBC (720p)", "MSNBC (Canada)", "MSNBC USA"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/msnbc-alt-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403470",
+    "url": ""
+  },
+  {
+    "nom": "CNBC",
+    "identifiant": "CNBC World",
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cnbc-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403527",
+    "url": ""
+  },
+  {
+    "nom": "NBC",
+    "identifiant": "NBC",
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nbc-logo-2013-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403619",
+    "url": ""
+  },
+  {
+    "nom": "CNN",
+    "identifiant": "CNN (Canada)",
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cnn-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403819",
+    "url": ""
+  },
+  {
+    "nom": "Fox News",
+    "identifiant": "FOX News Network (Canada)",
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fox-news-us.png?raw=true",
+    "group": "TVUSA",
+    "tvgId": "403903",
+    "url": ""
+  }
+]
