@@ -9,13 +9,6 @@ const STATE_FILE = "./.state.json"; // lastRun, lastFull, lock
 const UPDATE_INTERVAL_MS = 2 * 60 * 60 * 1000;  // 2h
 const FULL_INTERVAL_MS   = 24 * 60 * 60 * 1000; // 24h
 
-// ========= Config FTP =========
-const FTP_HOST = "ftp.htql0754.odns.fr";
-const FTP_PORT = 21;
-const FTP_USER = "media@stream.darkangel.fr";
-const FTP_PASSWORD = "q#r.9_dOc^gn";
-const FTP_REMOTE_DIR = "";
-
 // ========= Types =========
 type Country = 'FR' | 'USA';
 
