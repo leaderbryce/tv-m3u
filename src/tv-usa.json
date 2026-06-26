@@ -145,7 +145,7 @@
   },
   {
     "nom": "Ion TV",
-    "identifiant": ["ION TV East"],
+    "identifiant": ["ION TV East", "ION (1080p) [Geo-blocked]"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/ion-television-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403718",
@@ -153,7 +153,7 @@
   },
   {
     "nom": "Ion Plus",
-    "identifiant": ["ION Plus", "ION Plus (10800p)"],
+    "identifiant": ["ION Plus", "ION Plus (1080p)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/ion-plus-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "399929",
@@ -169,7 +169,7 @@
   },
   {
     "nom": "CBS",
-    "identifiant": "CBS East (720p)",
+    "identifiant": ["CBS East (720p)", "CBS (576p)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cbs-logo-white-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403849",
@@ -193,18 +193,10 @@
   },
   {
     "nom": "TLC",
-    "identifiant": ["TLC (Canada)", "TLC (The Learning Channel)"],
+    "identifiant": ["TLC (Canada)", "TLC (The Learning Channel) (East)", "TLC (The Learning Channel) (West)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/tlc-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403827",
-    "url": ""
-  },
-  {
-    "nom": "A&E",
-    "identifiant": ["A&E (Canada)", "A&E (Arts & Entertainment)"],
-    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/a-and-e-us.png?raw=true",
-    "group": "TVUSA",
-    "tvgId": "405243",
     "url": ""
   },
   {
@@ -233,7 +225,7 @@
   },
   {
     "nom": "Fox",
-    "identifiant": ["Fox (540p)"],
+    "identifiant": ["TLC (The Learning Channel) (East)"],
     "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-states/fox-us.png",
     "group": "TVUSA",
     "tvgId": "",

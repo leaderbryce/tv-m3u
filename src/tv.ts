@@ -58,18 +58,86 @@ async function fetchAllRemoteChannels(remoteUrl: string): Promise<RemoteChannel[
     return all;
 }
 
-async function testUrl(url: string, timeoutMs = 3000): Promise<boolean> {
+const STREAM_HEADERS: HeadersInit = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122 Safari/537.36',
+    'Accept': '*/*',
+};
+
+function sleep(ms: number): Promise<void> {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function fetchWithTimeout(
+    url: string,
+    init: RequestInit = {},
+    timeoutMs = 12000
+): Promise<Response> {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), timeoutMs);
 
     try {
-        const response = await fetch(url, { method: 'GET', signal: controller.signal as any });
-        return response.status === 200;
-    } catch {
-        return false;
+        return await fetch(url, {
+            ...init,
+            signal: controller.signal,
+            redirect: 'follow',
+        });
     } finally {
         clearTimeout(timeout);
     }
+}
+
+async function testUrl(url: string, timeoutMs = 3000, retries = 2): Promise<boolean> {
+    for (let attempt = 1; attempt <= retries + 1; attempt++) {
+        try {
+            const isM3u8 = url.toLowerCase().includes('.m3u8');
+
+            if (isM3u8) {
+                const response = await fetchWithTimeout(url, {
+                    method: 'GET',
+                    headers: STREAM_HEADERS,
+                }, timeoutMs);
+
+                if (!response.ok) {
+                    console.warn(`⚠️ Test échoué ${url} → HTTP ${response.status}`);
+                    throw new Error(`HTTP ${response.status}`);
+                }
+
+                const text = await response.text();
+
+                if (text.includes('#EXTM3U')) {
+                    return true;
+                }
+
+                console.warn(`⚠️ Test échoué ${url} → réponse non M3U8`);
+                throw new Error('Not an M3U8 playlist');
+            }
+
+            // Pour les flux non-m3u8 : on ne télécharge qu’un petit morceau
+            const response = await fetchWithTimeout(url, {
+                method: 'GET',
+                headers: {
+                    ...STREAM_HEADERS,
+                    'Range': 'bytes=0-1024',
+                },
+            }, timeoutMs);
+
+            if (response.status >= 200 && response.status < 400) {
+                return true;
+            }
+
+            console.warn(`⚠️ Test échoué ${url} → HTTP ${response.status}`);
+            throw new Error(`HTTP ${response.status}`);
+
+        } catch (e) {
+            if (attempt <= retries) {
+                await sleep(1000 * attempt);
+                continue;
+            }
+            return false;
+        }
+    }
+
+    return false;
 }
 
 
@@ -115,7 +183,7 @@ async function enrichLocalChannelsWithValidStream(
         let selectedUrl = '';
         let selectedGroup = '';
         for (const candidate of allMatches) {
-            const valid = await testUrl(candidate.url);
+            const valid = await testUrl(candidate.url, 3000, 2);
             if (valid) {
                 selectedUrl = candidate.url;
                 selectedGroup = candidate.group;

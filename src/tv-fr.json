@@ -17,7 +17,7 @@
   },
   {
     "nom": "France 3",
-    "identifiant": ["France 3 HD (720p)", "France 3 (1080p)", "France 3"],
+    "identifiant": ["France 3 HD (720p)", "France 3 (1080p)", "France 3", "like Gecko) Chrome/149.0.0.0 Safari/537.3\" group-title=\"General\",France 3"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/france-3-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "France3.fr",
@@ -138,7 +138,7 @@
   },
   {
     "nom": "Gulli",
-    "identifiant": ["GULLI", "Gulli"],
+    "identifiant": ["GULLI", "Gulli", "like Gecko) Chrome/149.0.0.0 Safari/537.3\" group-title=\"Kids\",Gulli"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/gulli-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "Gulli.fr",
