@@ -18,7 +18,7 @@ http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3965
 #EXTINF:-1 tvg-id="403520" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/showtime-next-us.png?raw=true" group-title="LIVETV;TVUSA",Showtime Next
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/648985
 #EXTINF:-1 tvg-id="403681" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/showtime-extreme-us.png?raw=true" group-title="LIVETV;TVUSA",Showtime Extreme
-http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/631884
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3967
 #EXTINF:-1 tvg-id="8841" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/showtime-family-zone-us.png?raw=true" group-title="LIVETV;TVUSA",Showtime Family Zone
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3969
 #EXTINF:-1 tvg-id="403838" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/amc-hd-us.png?raw=true" group-title="LIVETV;TVUSA",AMC
@@ -29,6 +29,8 @@ https://18f2fbf906cb473e8adbe37026e7e27f.mediatailor.us-east-1.amazonaws.com/v1/
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/2605
 #EXTINF:-1 tvg-id="403509" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/food-network-us.png?raw=true" group-title="LIVETV;TVUSA",Food Network
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3644
+#EXTINF:-1 tvg-id="403895" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/bbc-america-us.png?raw=true" group-title="LIVETV;TVUSA",BBC America
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3610
 #EXTINF:-1 tvg-id="" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cnbc-prime-neon-us.png?raw=true" group-title="LIVETV;TVUSA",NBC Comedy Vault
 https://dbrb49pjoymg4.cloudfront.net/10001/99951244/hls/master.m3u8?includeAssetTags=true&ads.xumo_channelId=99951244
 #EXTINF:-1 tvg-id="403815" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fx-us.png?raw=true" group-title="LIVETV;TVUSA",FX
