@@ -11,8 +11,6 @@ http://151.80.18.177:86/Canal+_cinema_HD/index.m3u8
 http://151.80.18.177:86/Canal+_Family_HD/index.m3u8
 #EXTINF:-1 tvg-id="France5.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/france-5-fr.png?raw=true" group-title="LIVETV;TVFRANCE",France 5
 http://69.64.57.208/france5/mono.m3u8
-#EXTINF:-1 tvg-id="M6.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/m6-fr.png?raw=true" group-title="LIVETV;TVFRANCE",M6
-http://99.27.51.147:8080/M6/index.m3u8
 #EXTINF:-1 tvg-id="W9.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/w9-fr.png?raw=true" group-title="LIVETV;TVFRANCE",W9
 https://origin-m6web.live.6cloud.fr/out/v1/6play/6play-w9/cmaf_q2hyb21h/hls-short-hd.m3u8
 #EXTINF:-1 tvg-id="CNews.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/c-news-fr.png?raw=true" group-title="LIVETV;TVFRANCE",CNews
@@ -44,7 +42,7 @@ http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3965
 #EXTINF:-1 tvg-id="403520" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/showtime-next-us.png?raw=true" group-title="LIVETV;TVUSA",Showtime Next
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/648985
 #EXTINF:-1 tvg-id="403681" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/showtime-extreme-us.png?raw=true" group-title="LIVETV;TVUSA",Showtime Extreme
-http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/631884
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3967
 #EXTINF:-1 tvg-id="8841" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/showtime-family-zone-us.png?raw=true" group-title="LIVETV;TVUSA",Showtime Family Zone
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3969
 #EXTINF:-1 tvg-id="403838" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/amc-hd-us.png?raw=true" group-title="LIVETV;TVUSA",AMC
@@ -60,7 +58,7 @@ https://pb-xhb3ic8b61whm.akamaized.net/Ion_US.m3u8
 #EXTINF:-1 tvg-id="399929" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/ion-plus-us.png?raw=true" group-title="LIVETV;TVUSA",Ion Plus
 https://wurlewscripps.global.transmit.live/hls/6994c4740198ca4590f9e0c0/v1/ion_ion_plus_1/lg_us/latest/main/hls/playlist.m3u8?wurl_channel=378
 #EXTINF:-1 tvg-id="403895" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/bbc-america-us.png?raw=true" group-title="LIVETV;TVUSA",BBC America
-http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3610
+http://23.239.31.26:8989/bbcamerica/index.m3u8
 #EXTINF:-1 tvg-id="403849" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cbs-logo-white-us.png?raw=true" group-title="LIVETV;TVUSA",CBS
 https://trs1.aynaott.com/cbs/index.m3u8
 #EXTINF:-1 tvg-id="403666" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/comedy-central-us.png?raw=true" group-title="LIVETV;TVUSA",Comedy Central
