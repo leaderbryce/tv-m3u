@@ -3,7 +3,7 @@ name: Generate TV M3U
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 */6 * * *"
+    - cron: "15 * * * *"
 
 permissions:
   contents: write
@@ -26,7 +26,7 @@ jobs:
         run: npm ci
 
       - name: Run TV script
-        run: npm run tv
+        run: npm run auto
         env:
           BROWSERBASE_API_KEY: ${{ secrets.BROWSERBASE_API_KEY }}
 
@@ -34,6 +34,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add tv.m3u || true
+          git add tv.m3u tv-merged.json .state.json
           git commit -m "Update generated TV files" || echo "No changes to commit"
           git push

@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tv": "tsx src/tv.ts",
+    "tv": "tsx src/tv.ts full",
+    "full": "tsx src/tv.ts full",
+    "update": "tsx src/tv.ts update",
+    "auto": "tsx src/tv.ts auto",
     "test": "tsx src/tv.ts test",
     "typecheck": "tsc --noEmit",
     "validate": "tsx src/validate.ts"

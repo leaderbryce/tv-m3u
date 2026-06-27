@@ -332,6 +332,20 @@ function fetchScrapedStreamsViaBrowserbaseCached(pageUrl: string): Promise<Scrap
     return scraping;
 }
 
+async function findFirstValidScrapedStream(scrapUrl: string): Promise<{
+    streams: ScrapedStream[];
+    selected: ScrapedStream | null;
+}> {
+    const streams = await fetchScrapedStreamsViaBrowserbaseCached(scrapUrl);
+    for (const stream of streams) {
+        const valid = await testUrl(stream.url, 5000, 1, {
+            Referer: stream.referer ?? scrapUrl,
+        });
+        if (valid) return { streams, selected: stream };
+    }
+    return { streams, selected: null };
+}
+
 async function findFirstValidStream(
     candidates: RemoteChannel[],
     testStream: (url: string) => Promise<boolean>,
@@ -370,17 +384,12 @@ async function enrichLocalChannelsWithValidStream(
             console.log(`🕸️ [${i + 1}/${localChannels.length}] - ${local.nom} → scraping Browserbase prioritaire de ${scrapUrl}`);
 
             try {
-                const streams = await fetchScrapedStreamsViaBrowserbaseCached(scrapUrl);
+                const { streams, selected } = await findFirstValidScrapedStream(scrapUrl);
                 console.log(`🔎 ${local.nom} → ${streams.length} URL(s) M3U8 extraite(s), recherche classique ignorée`);
 
-                for (const stream of streams) {
-                    const valid = await testUrl(stream.url, 5000, 1, {
-                        Referer: stream.referer ?? scrapUrl,
-                    });
-                    if (valid) {
-                        console.log(`✅ [${i + 1}/${localChannels.length}] - ${local.nom} → ${stream.url} [scraping ${stream.origin}]`);
-                        return { ...local, url: stream.url, country };
-                    }
+                if (selected) {
+                    console.log(`✅ [${i + 1}/${localChannels.length}] - ${local.nom} → ${selected.url} [scraping ${selected.origin}]`);
+                    return { ...local, url: selected.url, country };
                 }
 
                 console.log(`❌ [${i + 1}/${localChannels.length}] - ${local.nom} → scraping réussi, mais aucun flux valide`);
@@ -839,6 +848,51 @@ async function buildIntermediateFromScratch(): Promise<Channel[]> {
     return merged;
 }
 
+async function updateScrapedChannels(): Promise<Channel[]> {
+    const channels = JSON.parse(await fs.promises.readFile(INTERMEDIATE_JSON, 'utf-8')) as Channel[];
+    if (!Array.isArray(channels)) throw new Error(`${INTERMEDIATE_JSON} ne contient pas une liste de chaînes valide`);
+
+    const configuredChannels = ([
+        ...JSON.parse(await fs.promises.readFile(SOURCES.fr.localFile, 'utf-8')).map((channel: Channel) => ({ ...channel, country: 'FR' as Country })),
+        ...JSON.parse(await fs.promises.readFile(SOURCES.usa.localFile, 'utf-8')).map((channel: Channel) => ({ ...channel, country: 'USA' as Country })),
+    ] as Channel[]);
+    const configByChannel = new Map(
+        configuredChannels.map((channel) => [`${channel.country}:${channel.nom}`, channel])
+    );
+    const channelsWithCurrentScrapUrls = channels.map((channel): Channel => {
+        const configured = configByChannel.get(`${channel.country}:${channel.nom}`);
+        const scrapUrl = configured?.scrapUrl?.trim();
+        if (scrapUrl) return { ...channel, scrapUrl };
+        const { scrapUrl: _removed, ...withoutScrapUrl } = channel;
+        return withoutScrapUrl;
+    });
+
+    const scrapedCount = channelsWithCurrentScrapUrls.filter((channel) => channel.scrapUrl).length;
+    console.log(`🔄 Mode UPDATE : ${scrapedCount} chaîne(s) scrapUrl à actualiser sur ${channels.length}`);
+
+    const updated = await Promise.all(channelsWithCurrentScrapUrls.map(async (channel, index): Promise<Channel> => {
+        const scrapUrl = channel.scrapUrl?.trim();
+        if (!scrapUrl) return channel;
+
+        console.log(`🕸️ [${index + 1}/${channels.length}] - ${channel.nom} → mise à jour Browserbase de ${scrapUrl}`);
+        try {
+            const { streams, selected } = await findFirstValidScrapedStream(scrapUrl);
+            if (selected) {
+                console.log(`✅ [${index + 1}/${channels.length}] - ${channel.nom} → ${selected.url} (${streams.length} extrait(s))`);
+                return { ...channel, url: selected.url };
+            }
+            console.warn(`⚠️ [${index + 1}/${channels.length}] - ${channel.nom} → aucun flux valide, ancien lien conservé`);
+        } catch (error) {
+            console.warn(`⚠️ [${index + 1}/${channels.length}] - ${channel.nom} → ${String(error)}, ancien lien conservé`);
+        }
+        return channel;
+    }));
+
+    await fs.promises.writeFile(INTERMEDIATE_JSON, JSON.stringify(updated, null, 2), 'utf-8');
+    console.log(`🧩 Intermédiaire mis à jour → ${INTERMEDIATE_JSON}`);
+    return updated;
+}
+
 // ========= Génération M3U =========
 function writeM3U(channels: Channel[]): void {
     const valid = channels.filter((ch) => ch.url && ch.url.trim() !== '');
@@ -850,7 +904,9 @@ function writeM3U(channels: Channel[]): void {
 // ========= State (fichier unique) =========
 type State = {
     lastRun?: string;
+    lastUpdate?: string;
     lastFull?: string;
+    lastMode?: 'full' | 'update';
     lock?: boolean;
     lockStartedAt?: string;
 };
@@ -869,22 +925,27 @@ async function saveState(state: State): Promise<void> {
     await fs.promises.writeFile(STATE_FILE, JSON.stringify(state, null, 2), "utf-8");
 }
 
-async function elapsedSince(key: "lastRun" | "lastFull"): Promise<number> {
-    const state = await loadState();
-    const ts = state[key] ? new Date(state[key]!).getTime() : 0;
-    return ts ? Date.now() - ts : Number.POSITIVE_INFINITY;
+function elapsedSince(timestamp?: string, now = Date.now()): number {
+    if (!timestamp) return Number.POSITIVE_INFINITY;
+    const parsed = new Date(timestamp).getTime();
+    return Number.isFinite(parsed) ? Math.max(0, now - parsed) : Number.POSITIVE_INFINITY;
 }
 
-async function markRun(): Promise<void> {
+async function markCompleted(mode: 'full' | 'update'): Promise<void> {
     const state = await loadState();
-    state.lastRun = new Date().toISOString();
+    const completedAt = new Date().toISOString();
+    state.lastRun = completedAt;
+    state.lastUpdate = completedAt;
+    state.lastMode = mode;
+    if (mode === 'full') state.lastFull = completedAt;
     await saveState(state);
 }
 
-async function markFull(): Promise<void> {
-    const state = await loadState();
-    state.lastFull = new Date().toISOString();
-    await saveState(state);
+function chooseAutoMode(state: State, hasIntermediate: boolean, now = Date.now()): 'full' | 'update' | 'skip' {
+    if (!hasIntermediate) return 'full';
+    if (elapsedSince(state.lastFull, now) >= FULL_INTERVAL_MS) return 'full';
+    if (elapsedSince(state.lastUpdate ?? state.lastRun, now) >= UPDATE_INTERVAL_MS) return 'update';
+    return 'skip';
 }
 
 async function acquireLock(): Promise<() => Promise<void>> {
@@ -927,48 +988,39 @@ async function main(): Promise<"full" | "update" | "test" | "skip"> {
         return 'test';
     }
 
-    try {
-        let chosen: "full" | "update" | "skip" = "skip";
-
-        if (mode === "auto") {
-            // 1) Si pas d'intermédiaire -> full
-            if (!fs.existsSync(INTERMEDIATE_JSON)) {
-                chosen = "full";
-            } else {
-                const sinceFull = await elapsedSince("lastFull");
-                const sinceRun  = await elapsedSince("lastRun");
-
-                if (sinceFull >= FULL_INTERVAL_MS) {
-                    chosen = "full";
-                } else if (sinceRun >= UPDATE_INTERVAL_MS) {
-                    chosen = "update";
-                } else {
-                    const nextUpdateInMin = Math.max(0, Math.ceil((UPDATE_INTERVAL_MS - sinceRun) / 60000));
-                    const nextFullInMin   = Math.max(0, Math.ceil((FULL_INTERVAL_MS   - sinceFull) / 60000));
-                    console.log(`⏭️ Auto: rien à faire. Prochain update dans ~${nextUpdateInMin} min, prochain full dans ~${nextFullInMin} min.`);
-                    return "skip";
-                }
-            }
-        } else {
-            chosen = mode as "full" | "update";
+    let chosen: 'full' | 'update' | 'skip';
+    if (mode === 'auto') {
+        const state = await loadState();
+        chosen = chooseAutoMode(state, fs.existsSync(INTERMEDIATE_JSON));
+        if (chosen === 'skip') {
+            const sinceUpdate = elapsedSince(state.lastUpdate ?? state.lastRun);
+            const sinceFull = elapsedSince(state.lastFull);
+            const nextUpdateInMin = Math.max(0, Math.ceil((UPDATE_INTERVAL_MS - sinceUpdate) / 60000));
+            const nextFullInMin = Math.max(0, Math.ceil((FULL_INTERVAL_MS - sinceFull) / 60000));
+            console.log(`⏭️ Auto: rien à faire. Prochain update dans ~${nextUpdateInMin} min, prochain full dans ~${nextFullInMin} min.`);
+            return 'skip';
         }
+        console.log(`🤖 Auto sélectionne le mode ${chosen.toUpperCase()}`);
+    } else {
+        chosen = mode as 'full' | 'update';
+    }
 
-        let channels: Channel[];
+    if (chosen === 'update' && !fs.existsSync(INTERMEDIATE_JSON)) {
+        console.warn(`⚠️ ${INTERMEDIATE_JSON} absent : bascule du mode UPDATE vers FULL`);
+        chosen = 'full';
+    }
 
+    let channels: Channel[];
+    if (chosen === 'full') {
         console.log('Mode FULL : reconstruction complète…');
         channels = await buildIntermediateFromScratch();
-
-        writeM3U(channels);
-
-        // Marquages
-        await markRun();
-        if (chosen === 'full') await markFull();
-
-        return chosen;
-    } catch (e) {
-        console.error('Erreur fatale :', e);
-        return "skip";
+    } else {
+        channels = await updateScrapedChannels();
     }
+
+    writeM3U(channels);
+    await markCompleted(chosen);
+    return chosen;
 }
 
 // ========= Launcher (un run puis sortie) =========
