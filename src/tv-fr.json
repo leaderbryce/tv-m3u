@@ -105,7 +105,7 @@
   },
   {
     "nom": "BFMTV",
-    "identifiant": ["BFM TV (1080p)"],
+    "identifiant": ["BFM TV (1080p)", "BFM TV HD"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/bfm-tv-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "BFMTV.fr",
@@ -121,7 +121,7 @@
   },
   {
     "nom": "LCI",
-    "identifiant": "LCI",
+    "identifiant": ["LCI HD"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/lci-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "LCI.fr",
@@ -129,10 +129,18 @@
   },
   {
     "nom": "CStar",
-    "identifiant": "CSTAR",
+    "identifiant": ["CSTAR", "C Star (477p)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/c-star-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "CStar.fr",
+    "url": ""
+  },
+  {
+    "nom": "RTL9",
+    "identifiant": ["RTL9 HD"],
+    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/france/rtl9-fr.png",
+    "group": "TVFRANCE",
+    "tvgId": "RTL9.fr",
     "url": ""
   },
   {
@@ -161,7 +169,7 @@
   },
   {
     "nom": "6ter",
-    "identifiant": "6ter",
+    "identifiant": ["6ter HD"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/6ter-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "6ter.fr",
@@ -177,7 +185,7 @@
   },
   {
     "nom": "RMC Découverte",
-    "identifiant": "RMC DÉCOUVERTE",
+    "identifiant": ["RMC DECOUVERTE HD"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/rmc-decouverte-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "RMCDecouverte.fr",
@@ -185,7 +193,7 @@
   },
   {
     "nom": "France Info",
-    "identifiant": "FRANCE INFO:",
+    "identifiant": ["Franceinfo HD"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/franceinfo-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "FranceInfo.fr",
@@ -201,7 +209,7 @@
   },
   {
     "nom": "France 24",
-    "identifiant": ["France 24 French (1080p)"],
+    "identifiant": ["France 24 French (1080p)", "France24 HD"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/france-24-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "France24.fr",
