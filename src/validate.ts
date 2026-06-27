@@ -28,6 +28,16 @@ function validateIdentifier(value: unknown): boolean {
     return Array.isArray(value) && value.length > 0 && value.every(isNonEmptyString);
 }
 
+function isHttpUrl(value: unknown): boolean {
+    if (!isNonEmptyString(value)) return false;
+    try {
+        const url = new URL(value);
+        return url.protocol === 'http:' || url.protocol === 'https:';
+    } catch {
+        return false;
+    }
+}
+
 for (const file of CHANNEL_FILES) {
     const parsed = JSON.parse(fs.readFileSync(file, 'utf-8')) as Channel[];
 
@@ -45,7 +55,9 @@ for (const file of CHANNEL_FILES) {
         if (!isNonEmptyString(channel.group)) addError(`${label}: group manquant`);
         if (typeof channel.tvgId !== 'string') addError(`${label}: tvgId doit être une chaîne`);
         if (typeof channel.url !== 'string') addError(`${label}: url doit être une chaîne`);
-        if ('scrapUrl' in channel) addError(`${label}: scrapUrl n'est plus utilisé`);
+        if ('scrapUrl' in channel && !isHttpUrl(channel.scrapUrl)) {
+            addError(`${label}: scrapUrl doit être une URL HTTP(S) valide`);
+        }
     });
 
     console.log(`OK ${file}: ${parsed.length} chaînes`);

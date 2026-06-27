@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "tv": "tsx src/tv.ts",
+    "test": "tsx src/tv.ts test",
     "typecheck": "tsc --noEmit",
     "validate": "tsx src/validate.ts"
   },

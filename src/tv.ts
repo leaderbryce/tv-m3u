@@ -4,6 +4,7 @@ import fs from 'fs';
 const M3U_FILEPATH = "./tv.m3u";
 const INTERMEDIATE_JSON = "./tv-merged.json";
 const STATE_FILE = "./.state.json"; // lastRun, lastFull, lock
+const SCRAPE_TEST_URL = 'https://www.stream4free.tv/tf1-live-streaming';
 
 // Intervalles
 const UPDATE_INTERVAL_MS = 2 * 60 * 60 * 1000;  // 2h
@@ -21,6 +22,7 @@ type Channel = {
     group: string;
     url: string;
     tvgId: string;
+    scrapUrl?: string;
     country?: Country;
 };
 
@@ -288,11 +290,11 @@ function createConcurrencyLimiter(concurrency: number) {
     };
 }
 
-async function findFirstValidStream(
-    candidates: RemoteChannel[],
+async function findFirstValidStream<T extends { url: string }>(
+    candidates: T[],
     testStream: (url: string) => Promise<boolean>,
     concurrency = STREAM_TEST_CONCURRENCY
-): Promise<RemoteChannel | null> {
+): Promise<T | null> {
     for (let start = 0; start < candidates.length; start += concurrency) {
         const batch = candidates.slice(start, start + concurrency);
         const results = await Promise.all(
@@ -320,7 +322,30 @@ async function enrichLocalChannelsWithValidStream(
     console.log(`🔎 ${localPath}: ${localChannels.length} chaînes, ${STREAM_TEST_CONCURRENCY} tests de flux max en parallèle`);
 
     const enriched = await Promise.all(localChannels.map(async (local, i): Promise<Channel> => {
-        //URL déjà renseignée
+        // Le scraping est exclusif : aucun fallback vers url ou les sources distantes.
+        if (local.scrapUrl?.trim()) {
+            const scrapUrl = local.scrapUrl.trim();
+            console.log(`🕸️ [${i + 1}/${localChannels.length}] - ${local.nom} → scraping prioritaire de ${scrapUrl}`);
+
+            try {
+                const streams = await fetchScrapedStreams(scrapUrl);
+                console.log(`🔎 ${local.nom} → ${streams.length} URL(s) M3U8 extraite(s), recherche classique ignorée`);
+                const selected = await findFirstValidStream(streams, testStream);
+
+                if (selected) {
+                    console.log(`✅ [${i + 1}/${localChannels.length}] - ${local.nom} → ${selected.url} [scraping ${selected.origin}]`);
+                    return { ...local, url: selected.url, country };
+                }
+
+                console.log(`❌ [${i + 1}/${localChannels.length}] - ${local.nom} → scraping réussi, mais aucun flux valide`);
+            } catch (error) {
+                console.log(`❌ [${i + 1}/${localChannels.length}] - ${local.nom} → échec du scraping : ${String(error)}`);
+            }
+
+            return { ...local, url: '', country };
+        }
+
+        // URL déjà renseignée
         if (local.url && local.url.trim() !== '') {
             console.log(`✅ ${local.nom} → ${local.url}`);
             return { ...local, url: local.url, country };
@@ -432,6 +457,91 @@ function escapeM3UText(value: string): string {
     return String(value).replace(/[\r\n]+/g, ' ').trim();
 }
 
+type ScrapedStream = {
+    url: string;
+    origin: 'source HTML' | 'JSON-LD';
+};
+
+function decodeHtmlAttribute(value: string): string {
+    return value
+        .replace(/&amp;/gi, '&')
+        .replace(/&quot;/gi, '"')
+        .replace(/&#39;|&apos;/gi, "'");
+}
+
+function collectContentUrls(value: unknown, urls: string[]): void {
+    if (Array.isArray(value)) {
+        value.forEach((item) => collectContentUrls(item, urls));
+        return;
+    }
+    if (!value || typeof value !== 'object') return;
+
+    for (const [key, nestedValue] of Object.entries(value)) {
+        if (key === 'contentURL' && typeof nestedValue === 'string') {
+            urls.push(nestedValue);
+        } else {
+            collectContentUrls(nestedValue, urls);
+        }
+    }
+}
+
+function extractM3U8UrlsFromHtml(html: string): ScrapedStream[] {
+    const candidates: ScrapedStream[] = [];
+    const sourcePattern = /<source\b[^>]*\bsrc\s*=\s*(["'])(.*?)\1[^>]*>/gi;
+    const jsonLdPattern = /<script\b[^>]*type\s*=\s*(["'])application\/ld\+json\1[^>]*>([\s\S]*?)<\/script>/gi;
+
+    for (const match of html.matchAll(sourcePattern)) {
+        candidates.push({ url: decodeHtmlAttribute(match[2]), origin: 'source HTML' });
+    }
+
+    for (const match of html.matchAll(jsonLdPattern)) {
+        try {
+            const urls: string[] = [];
+            collectContentUrls(JSON.parse(match[2]), urls);
+            urls.forEach((url) => candidates.push({ url, origin: 'JSON-LD' }));
+        } catch {
+            console.warn('⚠️ Bloc JSON-LD invalide ignoré');
+        }
+    }
+
+    const unique = new Map<string, ScrapedStream>();
+    candidates
+        .filter((candidate) => candidate.url.toLowerCase().includes('.m3u8'))
+        .forEach((candidate) => unique.set(candidate.url, candidate));
+    return [...unique.values()];
+}
+
+async function fetchScrapedStreams(pageUrl: string): Promise<ScrapedStream[]> {
+    const response = await fetchWithTimeout(pageUrl, {
+        headers: {
+            ...STREAM_HEADERS,
+            Accept: 'text/html,application/xhtml+xml',
+        },
+    }, 15000);
+    if (!response.ok) throw new Error(`page inaccessible : HTTP ${response.status}`);
+
+    const streams = extractM3U8UrlsFromHtml(await response.text());
+    if (streams.length === 0) throw new Error('aucune URL M3U8 trouvée dans la page');
+    return streams;
+}
+
+async function runScrapeTest(): Promise<void> {
+    console.log(`🧪 Test du scraping : ${SCRAPE_TEST_URL}`);
+    const streams = await fetchScrapedStreams(SCRAPE_TEST_URL);
+
+    console.log(`🔎 ${streams.length} URL(s) M3U8 unique(s) trouvée(s)`);
+    const testStream = createLimitedStreamTester();
+    const results = await Promise.all(streams.map(async (stream, index) => {
+        const valid = await testStream(stream.url);
+        console.log(`${valid ? '✅' : '❌'} [${index + 1}/${streams.length}] ${stream.origin} → ${stream.url}`);
+        return valid;
+    }));
+
+    const validCount = results.filter(Boolean).length;
+    console.log(`🧪 Résultat : ${validCount}/${streams.length} flux valide(s)`);
+    if (validCount === 0) throw new Error('Le scraping fonctionne, mais aucun flux extrait n’est valide');
+}
+
 // ========= Construction / MAJ de l'intermédiaire =========
 async function buildIntermediateFromScratch(): Promise<Channel[]> {
     const [remoteFR, remoteUSA] = await Promise.all([
@@ -526,12 +636,17 @@ async function acquireLock(): Promise<() => Promise<void>> {
 }
 
 // ========= Main =========
-// Retourne: "full" | "update" | "skip"
-async function main(): Promise<"full" | "update" | "skip"> {
+// Retourne: "full" | "update" | "test" | "skip"
+async function main(): Promise<"full" | "update" | "test" | "skip"> {
     const mode = (process.argv[2] || 'full').toLowerCase();
-    if (!['full', 'update', 'auto'].includes(mode)) {
-        console.error(`Mode inconnu "${mode}". Utilise "full", "update" ou "auto".`);
+    if (!['full', 'update', 'auto', 'test'].includes(mode)) {
+        console.error(`Mode inconnu "${mode}". Utilise "full", "update", "auto" ou "test".`);
         return "skip";
+    }
+
+    if (mode === 'test') {
+        await runScrapeTest();
+        return 'test';
     }
 
     try {
@@ -582,11 +697,14 @@ async function main(): Promise<"full" | "update" | "skip"> {
 (async () => {
     // Anti-chevauchement
     let release = async () => {};
-    try {
-        release = await acquireLock();
-    } catch (e) {
-        console.log(String(e));
-        process.exit(0); // réessaiera au prochain tick launchd
+    const isTestMode = (process.argv[2] || 'full').toLowerCase() === 'test';
+    if (!isTestMode) {
+        try {
+            release = await acquireLock();
+        } catch (e) {
+            console.log(String(e));
+            process.exit(0); // réessaiera au prochain tick launchd
+        }
     }
 
     try {
