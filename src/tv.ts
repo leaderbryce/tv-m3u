@@ -1,5 +1,6 @@
 import fs from 'fs';
 import { chromium } from 'playwright-core';
+import { fetch as undiciFetch } from 'undici';
 
 // ========= Config fichiers =========
 const M3U_FILEPATH = "./tv.m3u";
@@ -213,11 +214,12 @@ async function fetchWithTimeout(
     const timeout = setTimeout(() => controller.abort(), timeoutMs);
 
     try {
-        return await fetch(url, {
+        const response = await undiciFetch(url, {
             ...init,
             signal: controller.signal,
             redirect: 'follow',
-        });
+        } as Parameters<typeof undiciFetch>[1]);
+        return response as unknown as Response;
     } finally {
         clearTimeout(timeout);
     }
@@ -241,6 +243,7 @@ async function testUrl(
 
                 if (!response.ok) {
                     console.warn(`⚠️ Test échoué ${url} → HTTP ${response.status}`);
+                    await response.body?.cancel();
                     throw new Error(`HTTP ${response.status}`);
                 }
 
@@ -265,10 +268,12 @@ async function testUrl(
             }, timeoutMs);
 
             if (response.status >= 200 && response.status < 400) {
+                await response.body?.cancel();
                 return true;
             }
 
             console.warn(`⚠️ Test échoué ${url} → HTTP ${response.status}`);
+            await response.body?.cancel();
             throw new Error(`HTTP ${response.status}`);
 
         } catch (e) {
