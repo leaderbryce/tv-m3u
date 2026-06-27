@@ -26,7 +26,7 @@ jobs:
         run: npm ci
 
       - name: Run TV script
-        run: npm run tv
+        run: npm run test
 
       - name: Commit generated files
         run: |

@@ -4,7 +4,7 @@ import fs from 'fs';
 const M3U_FILEPATH = "./tv.m3u";
 const INTERMEDIATE_JSON = "./tv-merged.json";
 const STATE_FILE = "./.state.json"; // lastRun, lastFull, lock
-const SCRAPE_TEST_URL = 'https://www.stream4free.tv/tf1-live-streaming';
+const SCRAPE_TEST_URL = 'https://www.livehdtv.com/ch123/';
 
 // Intervalles
 const UPDATE_INTERVAL_MS = 2 * 60 * 60 * 1000;  // 2h
@@ -471,7 +471,7 @@ function escapeM3UText(value: string): string {
 
 type ScrapedStream = {
     url: string;
-    origin: 'source HTML' | 'JSON-LD';
+    origin: 'source HTML' | 'JSON-LD' | 'script HTML';
 };
 
 function decodeHtmlAttribute(value: string): string {
@@ -501,6 +501,7 @@ function extractM3U8UrlsFromHtml(html: string): ScrapedStream[] {
     const candidates: ScrapedStream[] = [];
     const sourcePattern = /<source\b[^>]*\bsrc\s*=\s*(["'])(.*?)\1[^>]*>/gi;
     const jsonLdPattern = /<script\b[^>]*type\s*=\s*(["'])application\/ld\+json\1[^>]*>([\s\S]*?)<\/script>/gi;
+    const directUrlPattern = /https?:\\?\/\\?\/[^"'\s<>]+?\.m3u8(?:\?[^"'\s<>]*)?/gi;
 
     for (const match of html.matchAll(sourcePattern)) {
         candidates.push({ url: decodeHtmlAttribute(match[2]), origin: 'source HTML' });
@@ -516,6 +517,13 @@ function extractM3U8UrlsFromHtml(html: string): ScrapedStream[] {
         }
     }
 
+    for (const match of html.matchAll(directUrlPattern)) {
+        candidates.push({
+            url: decodeHtmlAttribute(match[0].replace(/\\\//g, '/').replace(/\\u0026/gi, '&')),
+            origin: 'script HTML',
+        });
+    }
+
     const unique = new Map<string, ScrapedStream>();
     candidates
         .filter((candidate) => candidate.url.toLowerCase().includes('.m3u8'))
@@ -523,19 +531,71 @@ function extractM3U8UrlsFromHtml(html: string): ScrapedStream[] {
     return [...unique.values()];
 }
 
-async function fetchScrapedStreams(pageUrl: string): Promise<ScrapedStream[]> {
+function extractEmbeddedPageUrls(html: string, pageUrl: string): string[] {
+    const iframePattern = /<iframe\b[^>]*\bsrc\s*=\s*(["'])(.*?)\1[^>]*>/gi;
+    const tokenPattern = /(?:https?:\\?\/\\?\/[^"'\s<>]+)?\/?token\.php\?[^"'\s<>]+/gi;
+    const pageOrigin = new URL(pageUrl).origin;
+    const urls = new Set<string>();
+
+    const addUrl = (rawUrl: string): void => {
+        try {
+            const normalized = decodeHtmlAttribute(rawUrl.replace(/\\\//g, '/').replace(/\\u0026/gi, '&'));
+            const url = new URL(normalized, pageUrl);
+            if (url.origin === pageOrigin) urls.add(url.href);
+        } catch {
+            // Une URL dynamique incomplète n'est pas une source exploitable.
+        }
+    };
+
+    for (const match of html.matchAll(iframePattern)) {
+        addUrl(match[2]);
+    }
+    for (const match of html.matchAll(tokenPattern)) {
+        addUrl(match[0]);
+    }
+
+    return [...urls];
+}
+
+function updateCookieJar(response: Response, cookies: Map<string, string>): void {
+    const headers = response.headers as Headers & { getSetCookie?: () => string[] };
+    const setCookies = headers.getSetCookie?.() ?? (headers.get('set-cookie') ? [headers.get('set-cookie')!] : []);
+
+    setCookies.forEach((setCookie) => {
+        const pair = setCookie.split(';', 1)[0];
+        const separator = pair.indexOf('=');
+        if (separator > 0) cookies.set(pair.slice(0, separator).trim(), pair.slice(separator + 1).trim());
+    });
+}
+
+async function fetchScrapedStreams(
+    pageUrl: string,
+    depth = 0,
+    visited = new Set<string>(),
+    referer?: string,
+    cookies = new Map<string, string>()
+): Promise<ScrapedStream[]> {
+    if (visited.has(pageUrl)) return [];
+    visited.add(pageUrl);
+
     const response = await fetchWithTimeout(pageUrl, {
-        headers: SCRAPE_HEADERS,
+        headers: {
+            ...SCRAPE_HEADERS,
+            ...(referer ? { Referer: referer } : {}),
+            ...(cookies.size > 0 ? { Cookie: [...cookies].map(([name, value]) => `${name}=${value}`).join('; ') } : {}),
+        },
     }, 15000);
-    if (!response.ok) {
-        const body = await response.text();
-        const title = body.match(/<title[^>]*>([^<]+)<\/title>/i)?.[1]?.trim();
+    updateCookieJar(response, cookies);
+    const body = await response.text();
+    const title = body.match(/<title[^>]*>([^<]+)<\/title>/i)?.[1]?.trim();
+    const isChallengePage = /cf-chl-|just a moment|attention required/i.test(body);
+    if (!response.ok || isChallengePage) {
         const server = response.headers.get('server');
         const cfRay = response.headers.get('cf-ray');
         const isCloudflareChallenge = Boolean(
             cfRay ||
             server?.toLowerCase().includes('cloudflare') ||
-            /cf-chl-|just a moment|attention required|cloudflare/i.test(body)
+            isChallengePage
         );
         const details = [
             isCloudflareChallenge ? 'challenge/blocage Cloudflare probable' : null,
@@ -547,9 +607,26 @@ async function fetchScrapedStreams(pageUrl: string): Promise<ScrapedStream[]> {
         throw new Error(`page inaccessible : HTTP ${response.status}${details ? ` (${details})` : ''}`);
     }
 
-    const streams = extractM3U8UrlsFromHtml(await response.text());
-    if (streams.length === 0) throw new Error('aucune URL M3U8 trouvée dans la page');
-    return streams;
+    const streams = extractM3U8UrlsFromHtml(body);
+    if (depth < 3) {
+        const embeddedUrls = extractEmbeddedPageUrls(body, pageUrl);
+        if (embeddedUrls.length > 0) {
+            console.log(`🧭 ${embeddedUrls.length} iframe(s)/lecteur(s) détecté(s) au niveau ${depth + 1}`);
+        }
+
+        for (const embeddedUrl of embeddedUrls) {
+            try {
+                streams.push(...await fetchScrapedStreams(embeddedUrl, depth + 1, visited, pageUrl, cookies));
+            } catch (error) {
+                console.warn(`⚠️ Lecteur inaccessible ${embeddedUrl} : ${String(error)}`);
+            }
+        }
+    }
+
+    const unique = new Map<string, ScrapedStream>();
+    streams.forEach((stream) => unique.set(stream.url, stream));
+    if (unique.size === 0) throw new Error('aucune URL M3U8 trouvée dans la page ou ses iframes');
+    return [...unique.values()];
 }
 
 async function runScrapeTest(): Promise<void> {
