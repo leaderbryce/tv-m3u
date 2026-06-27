@@ -27,6 +27,8 @@ jobs:
 
       - name: Run TV script
         run: npm run test
+        env:
+          BROWSERBASE_API_KEY: ${{ secrets.BROWSERBASE_API_KEY }}
 
       - name: Commit generated files
         run: |
