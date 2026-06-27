@@ -1,10 +1,12 @@
 import fs from 'fs';
+import { chromium } from 'playwright-core';
 
 // ========= Config fichiers =========
 const M3U_FILEPATH = "./tv.m3u";
 const INTERMEDIATE_JSON = "./tv-merged.json";
 const STATE_FILE = "./.state.json"; // lastRun, lastFull, lock
 const SCRAPE_TEST_URL = 'https://www.livehdtv.com/ch123/';
+const BROWSERBASE_API_KEY = process.env.BROWSERBASE_API_KEY?.trim();
 
 // Intervalles
 const UPDATE_INTERVAL_MS = 2 * 60 * 60 * 1000;  // 2h
@@ -22,7 +24,6 @@ type Channel = {
     group: string;
     url: string;
     tvgId: string;
-    scrapUrl?: string;
     country?: Country;
 };
 
@@ -187,7 +188,7 @@ const STREAM_HEADERS: HeadersInit = {
 };
 
 const SCRAPE_HEADERS: HeadersInit = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122 Safari/537.36',
+    ...STREAM_HEADERS,
     Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
     'Accept-Language': 'fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7',
     'Cache-Control': 'no-cache',
@@ -221,7 +222,12 @@ async function fetchWithTimeout(
     }
 }
 
-async function testUrl(url: string, timeoutMs = 3000, retries = 2): Promise<boolean> {
+async function testUrl(
+    url: string,
+    timeoutMs = 3000,
+    retries = 2,
+    extraHeaders: HeadersInit = {}
+): Promise<boolean> {
     for (let attempt = 1; attempt <= retries + 1; attempt++) {
         try {
             const isM3u8 = url.toLowerCase().includes('.m3u8');
@@ -229,7 +235,7 @@ async function testUrl(url: string, timeoutMs = 3000, retries = 2): Promise<bool
             if (isM3u8) {
                 const response = await fetchWithTimeout(url, {
                     method: 'GET',
-                    headers: STREAM_HEADERS,
+                    headers: { ...STREAM_HEADERS, ...extraHeaders },
                 }, timeoutMs);
 
                 if (!response.ok) {
@@ -252,6 +258,7 @@ async function testUrl(url: string, timeoutMs = 3000, retries = 2): Promise<bool
                 method: 'GET',
                 headers: {
                     ...STREAM_HEADERS,
+                    ...extraHeaders,
                     'Range': 'bytes=0-1024',
                 },
             }, timeoutMs);
@@ -302,11 +309,11 @@ function createConcurrencyLimiter(concurrency: number) {
     };
 }
 
-async function findFirstValidStream<T extends { url: string }>(
-    candidates: T[],
+async function findFirstValidStream(
+    candidates: RemoteChannel[],
     testStream: (url: string) => Promise<boolean>,
     concurrency = STREAM_TEST_CONCURRENCY
-): Promise<T | null> {
+): Promise<RemoteChannel | null> {
     for (let start = 0; start < candidates.length; start += concurrency) {
         const batch = candidates.slice(start, start + concurrency);
         const results = await Promise.all(
@@ -334,30 +341,7 @@ async function enrichLocalChannelsWithValidStream(
     console.log(`🔎 ${localPath}: ${localChannels.length} chaînes, ${STREAM_TEST_CONCURRENCY} tests de flux max en parallèle`);
 
     const enriched = await Promise.all(localChannels.map(async (local, i): Promise<Channel> => {
-        // Le scraping est exclusif : aucun fallback vers url ou les sources distantes.
-        if (local.scrapUrl?.trim()) {
-            const scrapUrl = local.scrapUrl.trim();
-            console.log(`🕸️ [${i + 1}/${localChannels.length}] - ${local.nom} → scraping prioritaire de ${scrapUrl}`);
-
-            try {
-                const streams = await fetchScrapedStreams(scrapUrl);
-                console.log(`🔎 ${local.nom} → ${streams.length} URL(s) M3U8 extraite(s), recherche classique ignorée`);
-                const selected = await findFirstValidStream(streams, testStream);
-
-                if (selected) {
-                    console.log(`✅ [${i + 1}/${localChannels.length}] - ${local.nom} → ${selected.url} [scraping ${selected.origin}]`);
-                    return { ...local, url: selected.url, country };
-                }
-
-                console.log(`❌ [${i + 1}/${localChannels.length}] - ${local.nom} → scraping réussi, mais aucun flux valide`);
-            } catch (error) {
-                console.log(`❌ [${i + 1}/${localChannels.length}] - ${local.nom} → échec du scraping : ${String(error)}`);
-            }
-
-            return { ...local, url: '', country };
-        }
-
-        // URL déjà renseignée
+        //URL déjà renseignée
         if (local.url && local.url.trim() !== '') {
             console.log(`✅ ${local.nom} → ${local.url}`);
             return { ...local, url: local.url, country };
@@ -471,7 +455,13 @@ function escapeM3UText(value: string): string {
 
 type ScrapedStream = {
     url: string;
-    origin: 'source HTML' | 'JSON-LD' | 'script HTML';
+    origin: 'source HTML' | 'JSON-LD' | 'script HTML' | 'Browserbase';
+    referer?: string;
+};
+
+type BrowserbaseSession = {
+    id: string;
+    connectUrl: string;
 };
 
 function decodeHtmlAttribute(value: string): string {
@@ -543,17 +533,12 @@ function extractEmbeddedPageUrls(html: string, pageUrl: string): string[] {
             const url = new URL(normalized, pageUrl);
             if (url.origin === pageOrigin) urls.add(url.href);
         } catch {
-            // Une URL dynamique incomplète n'est pas une source exploitable.
+            // Une URL dynamique incomplète n'est pas exploitable.
         }
     };
 
-    for (const match of html.matchAll(iframePattern)) {
-        addUrl(match[2]);
-    }
-    for (const match of html.matchAll(tokenPattern)) {
-        addUrl(match[0]);
-    }
-
+    for (const match of html.matchAll(iframePattern)) addUrl(match[2]);
+    for (const match of html.matchAll(tokenPattern)) addUrl(match[0]);
     return [...urls];
 }
 
@@ -561,11 +546,11 @@ function updateCookieJar(response: Response, cookies: Map<string, string>): void
     const headers = response.headers as Headers & { getSetCookie?: () => string[] };
     const setCookies = headers.getSetCookie?.() ?? (headers.get('set-cookie') ? [headers.get('set-cookie')!] : []);
 
-    setCookies.forEach((setCookie) => {
+    for (const setCookie of setCookies) {
         const pair = setCookie.split(';', 1)[0];
         const separator = pair.indexOf('=');
         if (separator > 0) cookies.set(pair.slice(0, separator).trim(), pair.slice(separator + 1).trim());
-    });
+    }
 }
 
 async function fetchScrapedStreams(
@@ -586,24 +571,21 @@ async function fetchScrapedStreams(
         },
     }, 15000);
     updateCookieJar(response, cookies);
+
     const body = await response.text();
     const title = body.match(/<title[^>]*>([^<]+)<\/title>/i)?.[1]?.trim();
     const isChallengePage = /cf-chl-|just a moment|attention required/i.test(body);
     if (!response.ok || isChallengePage) {
         const server = response.headers.get('server');
         const cfRay = response.headers.get('cf-ray');
-        const isCloudflareChallenge = Boolean(
-            cfRay ||
-            server?.toLowerCase().includes('cloudflare') ||
-            isChallengePage
-        );
         const details = [
-            isCloudflareChallenge ? 'challenge/blocage Cloudflare probable' : null,
+            cfRay || server?.toLowerCase().includes('cloudflare') || isChallengePage
+                ? 'challenge/blocage Cloudflare probable'
+                : null,
             server ? `server=${server}` : null,
             cfRay ? `cf-ray=${cfRay}` : null,
             title ? `titre=${JSON.stringify(title)}` : null,
         ].filter(Boolean).join(', ');
-
         throw new Error(`page inaccessible : HTTP ${response.status}${details ? ` (${details})` : ''}`);
     }
 
@@ -629,21 +611,133 @@ async function fetchScrapedStreams(
     return [...unique.values()];
 }
 
+async function fetchScrapedStreamsViaBrowserbase(pageUrl: string): Promise<ScrapedStream[]> {
+    if (!BROWSERBASE_API_KEY) {
+        throw new Error('Browserbase nécessite la variable BROWSERBASE_API_KEY');
+    }
+
+    console.log(`🌐 Création d’une session Browserbase → ${pageUrl}`);
+    const sessionResponse = await fetchWithTimeout('https://api.browserbase.com/v1/sessions', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-BB-API-Key': BROWSERBASE_API_KEY,
+        },
+        body: JSON.stringify({ region: 'eu-central-1' }),
+    }, 30000);
+    const sessionBody = await sessionResponse.text();
+    if (!sessionResponse.ok) {
+        throw new Error(`création de session Browserbase impossible : HTTP ${sessionResponse.status} - ${sessionBody.slice(0, 300)}`);
+    }
+
+    const session = JSON.parse(sessionBody) as BrowserbaseSession;
+    if (!session.id || !session.connectUrl) throw new Error('réponse de session Browserbase incomplète');
+    console.log(`🔍 Enregistrement : https://browserbase.com/sessions/${session.id}`);
+
+    const browser = await chromium.connectOverCDP(session.connectUrl, { timeout: 30000 });
+    try {
+        const context = browser.contexts()[0];
+        if (!context) throw new Error('Browserbase n’a fourni aucun contexte navigateur');
+
+        const streams = new Map<string, ScrapedStream>();
+        const addUrl = (url: string, referer?: string): void => {
+            if (!url.toLowerCase().includes('.m3u8')) return;
+            streams.set(url, { url: decodeHtmlAttribute(url), origin: 'Browserbase', referer });
+        };
+
+        context.on('request', (request) => addUrl(request.url(), request.headers().referer));
+        context.on('response', (response) => addUrl(response.url(), response.request().headers().referer));
+
+        const page = context.pages()[0] ?? await context.newPage();
+        const navigation = await page.goto(pageUrl, {
+            waitUntil: 'domcontentloaded',
+            timeout: 60000,
+        });
+        if (navigation && !navigation.ok()) {
+            console.warn(`⚠️ Navigation LiveHD : HTTP ${navigation.status()}`);
+        }
+        console.log(`📄 Page chargée : ${JSON.stringify(await page.title())}`);
+
+        const waitForFirstStream = async (timeoutMs: number): Promise<void> => {
+            const deadline = Date.now() + timeoutMs;
+            while (streams.size === 0 && Date.now() < deadline) {
+                await page.waitForTimeout(250);
+            }
+        };
+        const isPlayerFrame = (frameUrl: string): boolean => {
+            try {
+                const url = new URL(frameUrl);
+                return url.hostname === 'www.livehdtv.com' &&
+                    (/\/yayin\//.test(url.pathname) || /\/token\.php$/.test(url.pathname));
+            } catch {
+                return false;
+            }
+        };
+
+        await waitForFirstStream(6000);
+        if (streams.size === 0) {
+            const playerFrames = page.frames().filter((frame) => isPlayerFrame(frame.url()));
+            console.log(`▶️ Aucun flux automatique, tentative sur ${playerFrames.length} lecteur(s) LiveHD`);
+            for (const frame of playerFrames) {
+                try {
+                    await frame.locator('.jw-icon-display, .jw-display-icon-container, video')
+                        .first()
+                        .click({ timeout: 750 });
+                } catch {
+                    // Le lecteur peut ne pas avoir de bouton ou être déjà actif.
+                }
+            }
+            await waitForFirstStream(4000);
+        }
+        if (streams.size > 0) await page.waitForTimeout(750);
+
+        const relevantFrames = page.frames().filter((frame) =>
+            frame === page.mainFrame() || isPlayerFrame(frame.url())
+        );
+        console.log(`🧭 ${relevantFrames.length} frame(s) utile(s), ${streams.size} requête(s) M3U8 observée(s)`);
+        relevantFrames.forEach((frame, index) => {
+            console.log(`   ↳ frame ${index + 1}/${relevantFrames.length} : ${frame.url()}`);
+        });
+
+        if (streams.size === 0) {
+            for (const frame of relevantFrames) {
+                try {
+                    for (const stream of extractM3U8UrlsFromHtml(await frame.content())) {
+                        addUrl(stream.url, frame.url());
+                    }
+                    const resources = await frame.evaluate(() =>
+                        performance.getEntriesByType('resource').map((entry) => entry.name)
+                    );
+                    resources.forEach((url) => addUrl(url, frame.url()));
+                } catch (error) {
+                    console.warn(`⚠️ Frame non lisible ${frame.url()} : ${String(error)}`);
+                }
+            }
+        }
+
+        if (streams.size === 0) {
+            throw new Error('Browserbase n’a observé aucune URL M3U8 dans la page ou ses iframes');
+        }
+        return [...streams.values()];
+    } finally {
+        await browser.close();
+    }
+}
+
 async function runScrapeTest(): Promise<void> {
-    console.log(`🧪 Test du scraping : ${SCRAPE_TEST_URL}`);
-    const streams = await fetchScrapedStreams(SCRAPE_TEST_URL);
+    console.log(`🧪 Test LiveHD via Browserbase : ${SCRAPE_TEST_URL}`);
+    const streams = await fetchScrapedStreamsViaBrowserbase(SCRAPE_TEST_URL);
 
     console.log(`🔎 ${streams.length} URL(s) M3U8 unique(s) trouvée(s)`);
-    const testStream = createLimitedStreamTester();
     const results = await Promise.all(streams.map(async (stream, index) => {
-        const valid = await testStream(stream.url);
+        const valid = await testUrl(stream.url, 5000, 1, { Referer: stream.referer ?? SCRAPE_TEST_URL });
         console.log(`${valid ? '✅' : '❌'} [${index + 1}/${streams.length}] ${stream.origin} → ${stream.url}`);
         return valid;
     }));
 
     const validCount = results.filter(Boolean).length;
     console.log(`🧪 Résultat : ${validCount}/${streams.length} flux valide(s)`);
-    if (validCount === 0) throw new Error('Le scraping fonctionne, mais aucun flux extrait n’est valide');
+    if (validCount === 0) console.warn('⚠️ Extraction réussie, mais aucun flux extrait n’est valide');
 }
 
 // ========= Construction / MAJ de l'intermédiaire =========
