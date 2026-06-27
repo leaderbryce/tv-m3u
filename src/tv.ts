@@ -28,35 +28,155 @@ type RemoteChannel = {
     name: string;
     url: string;
     group: string;
+    tvgId?: string;
+    sourceNumber: number;
+    sourceFormat: 'JSON' | 'M3U';
 };
+
+type ParsedRemoteChannel = Omit<RemoteChannel, 'sourceNumber' | 'sourceFormat'>;
 
 // ========= Sources =========
 const SOURCES = {
     fr: {
         localFile: './src/tv-fr.json',
-        remoteUrl: 'https://raw.githubusercontent.com/bugsfreeweb/LiveTVCollector/refs/heads/main/LiveTV/France/LiveTV.json',
+        remoteUrls: [
+            'https://raw.githubusercontent.com/bugsfreeweb/LiveTVCollector/refs/heads/main/LiveTV/France/LiveTV.json',
+            'https://raw.githubusercontent.com/iptv-ch/iptv-ch.github.io/refs/heads/master/webtv.m3u',
+        ],
     },
     usa: {
         localFile: './src/tv-usa.json',
-        remoteUrl: 'https://raw.githubusercontent.com/bugsfreeweb/LiveTVCollector/refs/heads/main/LiveTV/USA/LiveTV.json',
+        remoteUrls: [
+            'https://raw.githubusercontent.com/bugsfreeweb/LiveTVCollector/refs/heads/main/LiveTV/USA/LiveTV.json',
+        ],
     },
 };
 
 // ========= Utilitaires =========
-async function fetchAllRemoteChannels(remoteUrl: string): Promise<RemoteChannel[]> {
-    const data = await fetch(remoteUrl).then((res) => res.json() as Promise<any>);
-    const all: RemoteChannel[] = [];
+function parseJsonRemoteChannels(content: string): ParsedRemoteChannel[] {
+    const data = JSON.parse(content) as any;
+    if (!data.channels || typeof data.channels !== 'object') {
+        throw new Error('format JSON invalide : propriété channels manquante');
+    }
+
+    const all: ParsedRemoteChannel[] = [];
     for (const group in data.channels) {
         const groupChannels = data.channels[group];
         if (Array.isArray(groupChannels)) {
             groupChannels.forEach((ch: any) => {
                 if (ch.name && ch.url) {
-                    all.push({ name: String(ch.name).trim(), url: String(ch.url), group });
+                    all.push({
+                        name: String(ch.name).trim(),
+                        url: String(ch.url).trim(),
+                        group,
+                        tvgId: ch.tvgId ? String(ch.tvgId).trim() : undefined,
+                    });
                 }
             });
         }
     }
     return all;
+}
+
+function findM3UInfoSeparator(line: string): number {
+    let quoted = false;
+    for (let i = 0; i < line.length; i++) {
+        if (line[i] === '"' && line[i - 1] !== '\\') quoted = !quoted;
+        if (line[i] === ',' && !quoted) return i;
+    }
+    return -1;
+}
+
+function readM3UAttribute(info: string, attribute: string): string {
+    const match = info.match(new RegExp(`${attribute}="([^"]*)"`, 'i'));
+    return match?.[1]?.trim() ?? '';
+}
+
+function parseM3URemoteChannels(content: string): ParsedRemoteChannel[] {
+    const channels: ParsedRemoteChannel[] = [];
+    let pending: Omit<ParsedRemoteChannel, 'url'> | null = null;
+
+    for (const rawLine of content.replace(/^\uFEFF/, '').split(/\r?\n/)) {
+        const line = rawLine.trim();
+        if (!line) continue;
+
+        if (line.startsWith('#EXTINF:')) {
+            const separator = findM3UInfoSeparator(line);
+            const info = separator >= 0 ? line.slice(0, separator) : line;
+            const displayName = separator >= 0 ? line.slice(separator + 1).trim() : '';
+            const tvgName = readM3UAttribute(info, 'tvg-name');
+
+            pending = {
+                name: displayName || tvgName,
+                group: readM3UAttribute(info, 'group-title') || 'M3U',
+                tvgId: readM3UAttribute(info, 'tvg-id') || undefined,
+            };
+            continue;
+        }
+
+        if (line.startsWith('#')) continue;
+        if (pending?.name) {
+            channels.push({ ...pending, url: line });
+        }
+        pending = null;
+    }
+
+    return channels;
+}
+
+async function fetchRemoteSource(remoteUrl: string): Promise<{
+    channels: ParsedRemoteChannel[];
+    format: RemoteChannel['sourceFormat'];
+}> {
+    const response = await fetch(remoteUrl);
+    if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+    }
+
+    const content = await response.text();
+    if (content.replace(/^\uFEFF/, '').trimStart().startsWith('#EXTM3U')) {
+        return { channels: parseM3URemoteChannels(content), format: 'M3U' };
+    }
+
+    return { channels: parseJsonRemoteChannels(content), format: 'JSON' };
+}
+
+async function fetchRemoteSources(remoteUrls: string[], country: Country): Promise<RemoteChannel[]> {
+    if (remoteUrls.length === 0) {
+        throw new Error(`Aucune source distante configurée pour ${country}`);
+    }
+
+    const results = await Promise.allSettled(
+        remoteUrls.map((url) => fetchRemoteSource(url))
+    );
+    const merged: RemoteChannel[] = [];
+    const seenUrls = new Set<string>();
+    let successfulSources = 0;
+
+    results.forEach((result, index) => {
+        const sourceNumber = index + 1;
+        if (result.status === 'rejected') {
+            console.warn(`⚠️ Source ${country} #${sourceNumber} indisponible (${remoteUrls[index]}) : ${String(result.reason)}`);
+            return;
+        }
+
+        successfulSources++;
+        const { channels, format } = result.value;
+        console.log(`📥 Source ${country} #${sourceNumber} (${format}) : ${channels.length} flux chargés`);
+        channels.forEach((channel) => {
+            if (!seenUrls.has(channel.url)) {
+                seenUrls.add(channel.url);
+                merged.push({ ...channel, sourceNumber, sourceFormat: format });
+            }
+        });
+    });
+
+    if (successfulSources === 0) {
+        throw new Error(`Toutes les sources distantes ${country} sont indisponibles`);
+    }
+
+    console.log(`🔗 ${country} : ${merged.length} flux uniques issus de ${successfulSources}/${remoteUrls.length} source(s)`);
+    return merged;
 }
 
 const STREAM_HEADERS: HeadersInit = {
@@ -200,13 +320,13 @@ async function enrichLocalChannelsWithValidStream(
     console.log(`🔎 ${localPath}: ${localChannels.length} chaînes, ${STREAM_TEST_CONCURRENCY} tests de flux max en parallèle`);
 
     const enriched = await Promise.all(localChannels.map(async (local, i): Promise<Channel> => {
-        // 1) URL déjà renseignée
+        //URL déjà renseignée
         if (local.url && local.url.trim() !== '') {
             console.log(`✅ ${local.nom} → ${local.url}`);
             return { ...local, url: local.url, country };
         }
 
-        // 3) Matching distant
+        //Matching distant
         const identifiants = Array.isArray(local.identifiant)
             ? local.identifiant.map((id) => String(id).toLowerCase())
             : [String(local.identifiant).toLowerCase()];
@@ -225,18 +345,61 @@ async function enrichLocalChannelsWithValidStream(
             });
         });
 
+        // Les playlists M3U utilisent parfois un libellé différent, mais un tvg-id stable.
+        const normalizedTvgId = local.tvgId.trim().toLowerCase();
+        remoteChannels
+            .filter((rc) => rc.tvgId?.toLowerCase() === normalizedTvgId)
+            .sort((a, b) => getPriority(a.group, isUSA) - getPriority(b.group, isUSA))
+            .forEach((match) => {
+                if (!seenUrls.has(match.url)) {
+                    seenUrls.add(match.url);
+                    allMatches.push(match);
+                }
+            });
+
+        // Une source précédente est toujours entièrement testée avant ses sources de secours.
+        allMatches.sort((a, b) => a.sourceNumber - b.sourceNumber);
+
         let selectedUrl = '';
         let selectedGroup = '';
         const selected = await findFirstValidStream(allMatches, testStream);
         if (selected) {
             selectedUrl = selected.url;
             selectedGroup = selected.group;
+
+            if (selected.sourceNumber > 1) {
+                const earlierMatches = allMatches.filter(
+                    (candidate) => candidate.sourceNumber < selected.sourceNumber
+                );
+                const previousSources = selected.sourceNumber === 2
+                    ? `source ${country} #1`
+                    : `sources ${country} #1 à #${selected.sourceNumber - 1}`;
+                const fallbackReason = earlierMatches.length === 0
+                    ? `chaîne absente de ${previousSources}`
+                    : `${previousSources} : ${earlierMatches.length} candidat(s), aucun flux valide`;
+                console.log(
+                    `🔄 ${local.nom} : ${fallbackReason} → trouvée dans source ${country} #${selected.sourceNumber} (${selected.sourceFormat})`
+                );
+            }
         }
 
         if (selectedUrl) {
-            console.log(`✅ [${i + 1}/${localChannels.length}] - ${local.nom} → ${selectedUrl} [${selectedGroup}]`);
+            console.log(
+                `✅ [${i + 1}/${localChannels.length}] - ${local.nom} → ${selectedUrl} ` +
+                `[source ${country} #${selected!.sourceNumber} ${selected!.sourceFormat}; ${selectedGroup}]`
+            );
+        } else if (allMatches.length > 0) {
+            const candidateCounts = new Map<string, number>();
+            allMatches.forEach((candidate) => {
+                const source = `source ${country} #${candidate.sourceNumber} ${candidate.sourceFormat}`;
+                candidateCounts.set(source, (candidateCounts.get(source) ?? 0) + 1);
+            });
+            const details = [...candidateCounts]
+                .map(([source, count]) => `${count} candidat(s) dans ${source}`)
+                .join(', ');
+            console.log(`❌ [${i + 1}/${localChannels.length}] - ${local.nom} → ${details}, mais aucun flux valide`);
         } else {
-            console.log(`❌ [${i + 1}/${localChannels.length}] - ${local.nom} → aucun flux valide`);
+            console.log(`❌ [${i + 1}/${localChannels.length}] - ${local.nom} → aucun candidat trouvé dans les sources`);
         }
 
         return { ...local, url: selectedUrl, country };
@@ -272,8 +435,8 @@ function escapeM3UText(value: string): string {
 // ========= Construction / MAJ de l'intermédiaire =========
 async function buildIntermediateFromScratch(): Promise<Channel[]> {
     const [remoteFR, remoteUSA] = await Promise.all([
-        fetchAllRemoteChannels(SOURCES.fr.remoteUrl),
-        fetchAllRemoteChannels(SOURCES.usa.remoteUrl),
+        fetchRemoteSources(SOURCES.fr.remoteUrls, 'FR'),
+        fetchRemoteSources(SOURCES.usa.remoteUrls, 'USA'),
     ]);
     const testStream = createLimitedStreamTester();
 
