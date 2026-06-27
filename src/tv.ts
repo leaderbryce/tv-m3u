@@ -312,6 +312,8 @@ function createConcurrencyLimiter(concurrency: number) {
 
 const limitBrowserbaseScrape = createConcurrencyLimiter(1);
 const browserbaseScrapeCache = new Map<string, Promise<ScrapedStream[]>>();
+const BROWSERBASE_SESSION_MIN_INTERVAL_MS = 13000;
+let lastBrowserbaseSessionStartedAt = 0;
 
 function fetchScrapedStreamsViaBrowserbaseCached(pageUrl: string): Promise<ScrapedStream[]> {
     const cached = browserbaseScrapeCache.get(pageUrl);
@@ -659,21 +661,51 @@ async function fetchScrapedStreamsViaBrowserbase(pageUrl: string): Promise<Scrap
         throw new Error('Browserbase nécessite la variable BROWSERBASE_API_KEY');
     }
 
-    console.log(`🌐 Création d’une session Browserbase → ${pageUrl}`);
-    const sessionResponse = await fetchWithTimeout('https://api.browserbase.com/v1/sessions', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-BB-API-Key': BROWSERBASE_API_KEY,
-        },
-        body: JSON.stringify({ region: 'eu-central-1' }),
-    }, 30000);
-    const sessionBody = await sessionResponse.text();
-    if (!sessionResponse.ok) {
+    let session: BrowserbaseSession | undefined;
+    for (let attempt = 1; attempt <= 3; attempt++) {
+        const waitBeforeCreation = Math.max(
+            0,
+            BROWSERBASE_SESSION_MIN_INTERVAL_MS - (Date.now() - lastBrowserbaseSessionStartedAt)
+        );
+        if (waitBeforeCreation > 0) {
+            console.log(`⏳ Limite Browserbase : attente de ${Math.ceil(waitBeforeCreation / 1000)} s`);
+            await sleep(waitBeforeCreation);
+        }
+
+        console.log(`🌐 Création d’une session Browserbase → ${pageUrl}`);
+        lastBrowserbaseSessionStartedAt = Date.now();
+        const sessionResponse = await fetchWithTimeout('https://api.browserbase.com/v1/sessions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-BB-API-Key': BROWSERBASE_API_KEY,
+            },
+            body: JSON.stringify({ region: 'eu-central-1' }),
+        }, 30000);
+        const sessionBody = await sessionResponse.text();
+
+        if (sessionResponse.ok) {
+            session = JSON.parse(sessionBody) as BrowserbaseSession;
+            break;
+        }
+
+        if (sessionResponse.status === 429 && attempt < 3) {
+            const retryAfterHeader = Number(sessionResponse.headers.get('retry-after'));
+            const retryAfterMessage = Number(sessionBody.match(/try again in (\d+) seconds?/i)?.[1]);
+            const retryAfterSeconds = Math.max(
+                Number.isFinite(retryAfterHeader) ? retryAfterHeader : 0,
+                Number.isFinite(retryAfterMessage) ? retryAfterMessage : 0,
+                12
+            );
+            console.warn(`⚠️ Limite Browserbase atteinte, nouvel essai dans ${retryAfterSeconds + 1} s`);
+            await sleep((retryAfterSeconds + 1) * 1000);
+            continue;
+        }
+
         throw new Error(`création de session Browserbase impossible : HTTP ${sessionResponse.status} - ${sessionBody.slice(0, 300)}`);
     }
 
-    const session = JSON.parse(sessionBody) as BrowserbaseSession;
+    if (!session) throw new Error('création de session Browserbase impossible après 3 tentatives');
     if (!session.id || !session.connectUrl) throw new Error('réponse de session Browserbase incomplète');
     console.log(`🔍 Enregistrement : https://browserbase.com/sessions/${session.id}`);
 
