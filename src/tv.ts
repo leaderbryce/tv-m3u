@@ -186,6 +186,18 @@ const STREAM_HEADERS: HeadersInit = {
     'Accept': '*/*',
 };
 
+const SCRAPE_HEADERS: HeadersInit = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122 Safari/537.36',
+    Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+    'Accept-Language': 'fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7',
+    'Cache-Control': 'no-cache',
+    Pragma: 'no-cache',
+    'Sec-Fetch-Dest': 'document',
+    'Sec-Fetch-Mode': 'navigate',
+    'Sec-Fetch-Site': 'none',
+    'Upgrade-Insecure-Requests': '1',
+};
+
 function sleep(ms: number): Promise<void> {
     return new Promise((resolve) => setTimeout(resolve, ms));
 }
@@ -513,12 +525,27 @@ function extractM3U8UrlsFromHtml(html: string): ScrapedStream[] {
 
 async function fetchScrapedStreams(pageUrl: string): Promise<ScrapedStream[]> {
     const response = await fetchWithTimeout(pageUrl, {
-        headers: {
-            ...STREAM_HEADERS,
-            Accept: 'text/html,application/xhtml+xml',
-        },
+        headers: SCRAPE_HEADERS,
     }, 15000);
-    if (!response.ok) throw new Error(`page inaccessible : HTTP ${response.status}`);
+    if (!response.ok) {
+        const body = await response.text();
+        const title = body.match(/<title[^>]*>([^<]+)<\/title>/i)?.[1]?.trim();
+        const server = response.headers.get('server');
+        const cfRay = response.headers.get('cf-ray');
+        const isCloudflareChallenge = Boolean(
+            cfRay ||
+            server?.toLowerCase().includes('cloudflare') ||
+            /cf-chl-|just a moment|attention required|cloudflare/i.test(body)
+        );
+        const details = [
+            isCloudflareChallenge ? 'challenge/blocage Cloudflare probable' : null,
+            server ? `server=${server}` : null,
+            cfRay ? `cf-ray=${cfRay}` : null,
+            title ? `titre=${JSON.stringify(title)}` : null,
+        ].filter(Boolean).join(', ');
+
+        throw new Error(`page inaccessible : HTTP ${response.status}${details ? ` (${details})` : ''}`);
+    }
 
     const streams = extractM3U8UrlsFromHtml(await response.text());
     if (streams.length === 0) throw new Error('aucune URL M3U8 trouvée dans la page');
