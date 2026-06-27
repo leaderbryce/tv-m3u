@@ -24,6 +24,7 @@ type Channel = {
     group: string;
     url: string;
     tvgId: string;
+    scrapUrl?: string;
     country?: Country;
 };
 
@@ -309,6 +310,21 @@ function createConcurrencyLimiter(concurrency: number) {
     };
 }
 
+const limitBrowserbaseScrape = createConcurrencyLimiter(1);
+const browserbaseScrapeCache = new Map<string, Promise<ScrapedStream[]>>();
+
+function fetchScrapedStreamsViaBrowserbaseCached(pageUrl: string): Promise<ScrapedStream[]> {
+    const cached = browserbaseScrapeCache.get(pageUrl);
+    if (cached) {
+        console.log(`♻️ Réutilisation du scraping Browserbase → ${pageUrl}`);
+        return cached;
+    }
+
+    const scraping = limitBrowserbaseScrape(() => fetchScrapedStreamsViaBrowserbase(pageUrl));
+    browserbaseScrapeCache.set(pageUrl, scraping);
+    return scraping;
+}
+
 async function findFirstValidStream(
     candidates: RemoteChannel[],
     testStream: (url: string) => Promise<boolean>,
@@ -341,6 +357,33 @@ async function enrichLocalChannelsWithValidStream(
     console.log(`🔎 ${localPath}: ${localChannels.length} chaînes, ${STREAM_TEST_CONCURRENCY} tests de flux max en parallèle`);
 
     const enriched = await Promise.all(localChannels.map(async (local, i): Promise<Channel> => {
+        // Le scraping est exclusif : aucun fallback vers l'URL locale ou les sources distantes.
+        if (local.scrapUrl?.trim()) {
+            const scrapUrl = local.scrapUrl.trim();
+            console.log(`🕸️ [${i + 1}/${localChannels.length}] - ${local.nom} → scraping Browserbase prioritaire de ${scrapUrl}`);
+
+            try {
+                const streams = await fetchScrapedStreamsViaBrowserbaseCached(scrapUrl);
+                console.log(`🔎 ${local.nom} → ${streams.length} URL(s) M3U8 extraite(s), recherche classique ignorée`);
+
+                for (const stream of streams) {
+                    const valid = await testUrl(stream.url, 5000, 1, {
+                        Referer: stream.referer ?? scrapUrl,
+                    });
+                    if (valid) {
+                        console.log(`✅ [${i + 1}/${localChannels.length}] - ${local.nom} → ${stream.url} [scraping ${stream.origin}]`);
+                        return { ...local, url: stream.url, country };
+                    }
+                }
+
+                console.log(`❌ [${i + 1}/${localChannels.length}] - ${local.nom} → scraping réussi, mais aucun flux valide`);
+            } catch (error) {
+                console.log(`❌ [${i + 1}/${localChannels.length}] - ${local.nom} → échec du scraping : ${String(error)}`);
+            }
+
+            return { ...local, url: '', country };
+        }
+
         //URL déjà renseignée
         if (local.url && local.url.trim() !== '') {
             console.log(`✅ ${local.nom} → ${local.url}`);

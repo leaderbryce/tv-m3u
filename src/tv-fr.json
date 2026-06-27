@@ -70,6 +70,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/m6-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "M6.fr",
+    "scrapUrl": "https://www.livehdtv.com/m6/",
     "url": ""
   },
   {
@@ -94,6 +95,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tmc-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TMC.fr",
+    "scrapUrl": "https://www.livehdtv.com/tmc/",
     "url": ""
   },
   {
@@ -101,7 +103,8 @@
     "identifiant": ["TFX HD", "TFX (1080p) [Geo-Blocked]"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tfx-fr.png?raw=true",
     "group": "TVFRANCE",
-    "tvgId": "NT1.fr",
+    "tvgId": "TFX.fr",
+    "scrapUrl": "https://www.livehdtv.com/tfx/",
     "url": ""
   },
   {
@@ -134,6 +137,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/c-star-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "CStar.fr",
+    "scrapUrl": "https://www.livehdtv.com/ch193/",
     "url": ""
   },
   {
@@ -174,6 +178,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/6ter-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "6ter.fr",
+    "scrapUrl": "https://www.livehdtv.com/6ter/",
     "url": ""
   },
   {
