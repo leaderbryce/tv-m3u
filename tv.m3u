@@ -65,8 +65,6 @@ https://pb-xhb3ic8b61whm.akamaized.net/Ion_US.m3u8
 https://wurlewscripps.global.transmit.live/hls/6994c4740198ca4590f9e0c0/v1/ion_ion_plus_1/lg_us/latest/main/hls/playlist.m3u8?wurl_channel=378
 #EXTINF:-1 tvg-id="403895" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/bbc-america-us.png?raw=true" group-title="LIVETV;TVUSA",BBC America
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3610
-#EXTINF:-1 tvg-id="403849" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cbs-logo-white-us.png?raw=true" group-title="LIVETV;TVUSA",CBS
-https://trs1.aynaott.com/cbs/index.m3u8
 #EXTINF:-1 tvg-id="403666" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/comedy-central-us.png?raw=true" group-title="LIVETV;TVUSA",Comedy Central
 http://23.237.104.106:8080/USA_COMEDY_CENTRAL/index.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cnbc-prime-neon-us.png?raw=true" group-title="LIVETV;TVUSA",NBC Comedy Vault
@@ -101,6 +99,8 @@ http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/2412
 https://jmp2.uk/plu-5cb0cae7a461406ffe3f5213.m3u8
 #EXTINF:-1 tvg-id="403537" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/paramount-plus-with-showtime-us.png?raw=true" group-title="LIVETV;TVUSA",Paramount+ with Showtime
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3758
+#EXTINF:-1 tvg-id="403788" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/disney-channel-us.png?raw=true" group-title="LIVETV;TVUSA",Disney Channel
+https://cors-proxy.cooks.fyi/http://212.5.144.156:8080/disney/index.m3u8
 #EXTINF:-1 tvg-id="403674" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/disney-jr-us.png?raw=true" group-title="LIVETV;TVUSA",Disney Junior
 http://23.237.104.106:8080/USA_DISNEY_JUNIOR/index.m3u8
 #EXTINF:-1 tvg-id="403837" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/disney-xd-us.png?raw=true" group-title="LIVETV;TVUSA",Disney XD
@@ -108,7 +108,7 @@ http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3720
 #EXTINF:-1 tvg-id="403620" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nickelodeon-us.png?raw=true" group-title="LIVETV;TVUSA",Nickelodeon
 http://23.237.104.106:8080/USA_NICKELODEON/index.m3u8
 #EXTINF:-1 tvg-id="403655" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nick-jr-us.png?raw=true" group-title="LIVETV;TVUSA",Nick Jr
-http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/631832
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/74691
 #EXTINF:-1 tvg-id="403461" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cartoon-network-us.png?raw=true" group-title="LIVETV;TVUSA",Cartoon Network
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3248
 #EXTINF:-1 tvg-id="403469" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/pbs-kids-dash-icon-us.png?raw=true" group-title="LIVETV;TVUSA",PBS Kids
