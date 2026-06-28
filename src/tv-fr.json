@@ -79,6 +79,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/hd/arte-hd-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "Arte.fr",
+    "scrapUrl": "https://www.livehdtv.com/arte-french/",
     "url": ""
   },
   {
@@ -105,6 +106,15 @@
     "group": "TVFRANCE",
     "tvgId": "TFX.fr",
     "scrapUrl": "https://www.livehdtv.com/tfx/",
+    "url": ""
+  },
+  {
+    "nom": "Chérie 25",
+    "identifiant": ["Chérie 25"],
+    "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/1/1f/Ch%C3%A9rie_25_logo.svg/330px-Ch%C3%A9rie_25_logo.svg.png",
+    "group": "TVFRANCE",
+    "tvgId": "Cherie25.fr",
+    "scrapUrl": "https://www.livehdtv.com/cherie-25/",
     "url": ""
   },
   {
@@ -142,7 +152,7 @@
   },
   {
     "nom": "RTL9",
-    "identifiant": ["RTL9 HD"],
+    "identifiant": ["RTL9 (720p)","RTL9 HD"],
     "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/france/rtl9-fr.png",
     "group": "TVFRANCE",
     "tvgId": "RTL9.fr",
@@ -186,12 +196,12 @@
     "identifiant": ["RMC Story (1080p)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/rmc-story-fr.png?raw=true",
     "group": "TVFRANCE",
-    "tvgId": "Numero23.fr",
+    "tvgId": "RMCStory.fr",
     "url": ""
   },
   {
     "nom": "RMC Découverte",
-    "identifiant": ["RMC DECOUVERTE HD"],
+    "identifiant": ["RMC Decouverte (576p)","RMC DECOUVERTE HD"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/rmc-decouverte-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "RMCDecouverte.fr",
@@ -206,11 +216,12 @@
     "url": ""
   },
   {
-    "nom": "TV5MONDE INFO",
+    "nom": "TV5MONDE",
     "identifiant": ["TV5MONDE INFO", "TiVi5 Monde [Geo-blocked]"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tv5-monde-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "",
+    "scrapUrl": "https://www.livehdtv.com/tv5-monde/",
     "url": ""
   },
   {
