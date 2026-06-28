@@ -29,6 +29,7 @@ jobs:
         run: npm run auto
         env:
           BROWSERBASE_API_KEY: ${{ secrets.BROWSERBASE_API_KEY }}
+          BROWSERLESS_API_KEY: ${{ secrets.BROWSERLESS_API_KEY }}
 
       - name: Commit generated files
         run: |

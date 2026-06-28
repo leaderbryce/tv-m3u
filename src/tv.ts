@@ -319,8 +319,8 @@ function createConcurrencyLimiter(concurrency: number) {
     };
 }
 
-const limitBrowserbaseScrape = createConcurrencyLimiter(1);
-const browserbaseScrapeCache = new Map<string, Promise<ScrapedStream[]>>();
+const limitBrowserScrape = createConcurrencyLimiter(1);
+const browserScrapeCache = new Map<string, Promise<ScrapedStream[]>>();
 
 type BrowserbaseRuntime = {
     browser: Browser;
@@ -328,16 +328,18 @@ type BrowserbaseRuntime = {
 };
 
 let browserbaseRuntimePromise: Promise<BrowserbaseRuntime> | undefined;
+let browserlessRuntimePromise: Promise<BrowserbaseRuntime> | undefined;
+let browserbaseDisabledReason: string | undefined;
 
-function fetchScrapedStreamsViaBrowserbaseCached(pageUrl: string): Promise<ScrapedStream[]> {
-    const cached = browserbaseScrapeCache.get(pageUrl);
+function fetchScrapedStreamsCached(pageUrl: string): Promise<ScrapedStream[]> {
+    const cached = browserScrapeCache.get(pageUrl);
     if (cached) {
-        console.log(`♻️ Réutilisation du scraping Browserbase → ${pageUrl}`);
+        console.log(`♻️ Réutilisation du scraping navigateur → ${pageUrl}`);
         return cached;
     }
 
-    const scraping = limitBrowserbaseScrape(() => fetchScrapedStreamsViaBrowserbase(pageUrl));
-    browserbaseScrapeCache.set(pageUrl, scraping);
+    const scraping = limitBrowserScrape(() => fetchScrapedStreamsWithFallback(pageUrl));
+    browserScrapeCache.set(pageUrl, scraping);
     return scraping;
 }
 
@@ -345,7 +347,7 @@ async function findFirstValidScrapedStream(scrapUrl: string): Promise<{
     streams: ScrapedStream[];
     selected: ScrapedStream | null;
 }> {
-    const streams = await fetchScrapedStreamsViaBrowserbaseCached(scrapUrl);
+    const streams = await fetchScrapedStreamsCached(scrapUrl);
     for (const stream of streams) {
         const valid = await testUrl(stream.url, 5000, 1, {
             Referer: stream.referer ?? scrapUrl,
@@ -390,7 +392,7 @@ async function enrichLocalChannelsWithValidStream(
         // Le scraping est exclusif : aucun fallback vers l'URL locale ou les sources distantes.
         if (local.scrapUrl?.trim()) {
             const scrapUrl = local.scrapUrl.trim();
-            console.log(`🕸️ [${i + 1}/${localChannels.length}] - ${local.nom} → scraping Browserbase prioritaire de ${scrapUrl}`);
+            console.log(`🕸️ [${i + 1}/${localChannels.length}] - ${local.nom} → scraping Browserbase (Browserless en backup) de ${scrapUrl}`);
 
             try {
                 const { streams, selected } = await findFirstValidScrapedStream(scrapUrl);
@@ -747,7 +749,6 @@ function getBrowserbaseRuntime(): Promise<BrowserbaseRuntime> {
 async function closeBrowserbaseRuntime(): Promise<void> {
     const runtimePromise = browserbaseRuntimePromise;
     browserbaseRuntimePromise = undefined;
-    browserbaseScrapeCache.clear();
     if (!runtimePromise) return;
 
     try {
@@ -757,6 +758,53 @@ async function closeBrowserbaseRuntime(): Promise<void> {
     } catch (error) {
         console.warn(`⚠️ Fermeture Browserbase impossible : ${String(error)}`);
     }
+}
+
+async function createBrowserlessRuntime(): Promise<BrowserbaseRuntime> {
+    if (!BROWSERLESS_API_KEY) {
+        throw new Error('Browserless nécessite la variable BROWSERLESS_API_KEY');
+    }
+
+    const endpoint = `wss://production-ams.browserless.io/stealth?token=${encodeURIComponent(BROWSERLESS_API_KEY)}`;
+    console.log('🌐 Connexion à la session Browserless de backup (Amsterdam)');
+    const browser = await chromium.connectOverCDP(endpoint, { timeout: 30000 });
+    const context = browser.contexts()[0];
+    if (!context) {
+        await browser.close();
+        throw new Error('Browserless n’a fourni aucun contexte navigateur');
+    }
+    const page = context.pages()[0] ?? await context.newPage();
+    return { browser, page };
+}
+
+function getBrowserlessRuntime(): Promise<BrowserbaseRuntime> {
+    if (!browserlessRuntimePromise) {
+        browserlessRuntimePromise = createBrowserlessRuntime().catch((error) => {
+            browserlessRuntimePromise = undefined;
+            throw error;
+        });
+    }
+    return browserlessRuntimePromise;
+}
+
+async function closeBrowserlessRuntime(): Promise<void> {
+    const runtimePromise = browserlessRuntimePromise;
+    browserlessRuntimePromise = undefined;
+    if (!runtimePromise) return;
+
+    try {
+        const { browser } = await runtimePromise;
+        await browser.close();
+        console.log('🛑 Session Browserless partagée fermée');
+    } catch (error) {
+        console.warn(`⚠️ Fermeture Browserless impossible : ${String(error)}`);
+    }
+}
+
+async function closeBrowserRuntimes(): Promise<void> {
+    browserScrapeCache.clear();
+    await closeBrowserbaseRuntime();
+    await closeBrowserlessRuntime();
 }
 
 async function scrapeStreamsFromBrowserPage(
@@ -862,22 +910,55 @@ async function fetchScrapedStreamsViaBrowserbase(pageUrl: string): Promise<Scrap
 }
 
 async function fetchScrapedStreamsViaBrowserless(pageUrl: string): Promise<ScrapedStream[]> {
-    if (!BROWSERLESS_API_KEY) {
-        throw new Error('Browserless nécessite la variable BROWSERLESS_API_KEY');
+    const { page } = await getBrowserlessRuntime();
+    return scrapeStreamsFromBrowserPage(page, pageUrl, 'Browserless');
+}
+
+function isBrowserbaseProviderFailure(error: unknown): boolean {
+    const message = String(error).toLowerCase();
+    return [
+        'browserbase nécessite',
+        'création de session browserbase',
+        'browserbase n’a fourni aucun contexte',
+        'http 402',
+        'http 403',
+        'http 429',
+        'insufficient credit',
+        'credit limit',
+        'usage limit',
+        'quota',
+        'plan limit',
+        'browser has been closed',
+        'target page, context or browser has been closed',
+        'websocket',
+        'econnreset',
+        'econnrefused',
+    ].some((pattern) => message.includes(pattern));
+}
+
+async function fetchScrapedStreamsWithFallback(pageUrl: string): Promise<ScrapedStream[]> {
+    if (!browserbaseDisabledReason) {
+        try {
+            return await fetchScrapedStreamsViaBrowserbase(pageUrl);
+        } catch (error) {
+            if (!BROWSERLESS_API_KEY) throw error;
+
+            const reason = String(error);
+            if (isBrowserbaseProviderFailure(error)) {
+                browserbaseDisabledReason = reason;
+                console.warn(`⚠️ Browserbase indisponible pour ce run (${reason})`);
+                console.warn('🔁 Basculement automatique sur Browserless pour les chaînes restantes');
+                await closeBrowserbaseRuntime();
+            } else {
+                console.warn(`⚠️ Browserbase a échoué pour ${pageUrl} (${reason})`);
+                console.warn('🔁 Tentative Browserless pour cette chaîne');
+            }
+        }
+    } else {
+        console.log(`🔁 Browserless backup actif → ${pageUrl}`);
     }
 
-    const endpoint =
-        `wss://production-ams.browserless.io/stealth?token=${encodeURIComponent(BROWSERLESS_API_KEY)}`;
-    console.log('🌐 Connexion à Browserless (Amsterdam)');
-    const browser = await chromium.connectOverCDP(endpoint, { timeout: 30000 });
-    try {
-        const context = browser.contexts()[0];
-        if (!context) throw new Error('Browserless n’a fourni aucun contexte navigateur');
-        const page = context.pages()[0] ?? await context.newPage();
-        return await scrapeStreamsFromBrowserPage(page, pageUrl, 'Browserless');
-    } finally {
-        await browser.close();
-    }
+    return fetchScrapedStreamsViaBrowserless(pageUrl);
 }
 
 async function runScrapeTest(): Promise<void> {
@@ -941,7 +1022,7 @@ async function updateScrapedChannels(): Promise<Channel[]> {
         const scrapUrl = channel.scrapUrl?.trim();
         if (!scrapUrl) return channel;
 
-        console.log(`🕸️ [${index + 1}/${channels.length}] - ${channel.nom} → mise à jour Browserbase de ${scrapUrl}`);
+        console.log(`🕸️ [${index + 1}/${channels.length}] - ${channel.nom} → mise à jour Browserbase (Browserless en backup) de ${scrapUrl}`);
         try {
             const { streams, selected } = await findFirstValidScrapedStream(scrapUrl);
             if (selected) {
@@ -1150,7 +1231,7 @@ async function main(): Promise<"full" | "update" | "test" | "skip"> {
         console.error('❌ Run échoué:', err);
         exitCode = 1;
     } finally {
-        await closeBrowserbaseRuntime();
+        await closeBrowserRuntimes();
         await release();
     }
     process.exit(exitCode);
