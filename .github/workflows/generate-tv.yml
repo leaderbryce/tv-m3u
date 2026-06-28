@@ -26,10 +26,7 @@ jobs:
         run: npm ci
 
       - name: Run TV script
-        run: npm run test
-        env:
-          BROWSERBASE_API_KEY: ${{ secrets.BROWSERBASE_API_KEY }}
-          BROWSERLESS_API_KEY: ${{ secrets.BROWSERLESS_API_KEY }}
+        run: npm run auto
 
       - name: Commit generated files
         run: |
