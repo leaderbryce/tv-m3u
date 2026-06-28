@@ -10,7 +10,7 @@
     "group": "TVFRANCE",
     "tvgId": "TF1.fr",
     "scrapUrl": "https://www.livehdtv.com/ch123/",
-    "url": "https://helpfullive.info/tf1/index.m3u8?token=9fb3244c0570ae4562a1e24c30541dd2e606e39e-a5ac3d0b2813de3d344fe9010a8ceaec-1782671802-1782661002",
+    "url": "https://helpfullive.info/tf1/index.m3u8?token=3b8f0e17d449dbdaf4511f1cdf0b9907a153fbeb-e2eda95ca2a532fc307f3c4abe26bebf-1782682528-1782671728",
     "country": "FR"
   },
   {
@@ -111,7 +111,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/m6-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "M6.fr",
-    "url": "https://helpfullive.info/m6/index.m3u8?token=56fb15dd697f7271f4b986fc9f76aecb8eb4968a-e7de730fa7650faf6a6cf68429683022-1782671807-1782661007",
+    "url": "https://helpfullive.info/m6/index.m3u8?token=dbfcaab99bc6517ca0473d4a0231820814a876d7-9b94b3e92cbdc3060edb4a01c79d4523-1782682533-1782671733",
     "country": "FR",
     "scrapUrl": "https://www.livehdtv.com/m6/"
   },
@@ -123,8 +123,9 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/hd/arte-hd-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "Arte.fr",
-    "url": "",
-    "country": "FR"
+    "url": "https://helpfullive.info/artefr/index.m3u8?token=e5238d967fd3e9b2cb9253c99203514219456289-fc239e947dfb71e552f6cdab7d79e700-1782682536-1782671736",
+    "country": "FR",
+    "scrapUrl": "https://www.livehdtv.com/arte-french/"
   },
   {
     "nom": "W9",
@@ -148,7 +149,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tmc-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TMC.fr",
-    "url": "https://helpfullive.info/tmc/index.m3u8?token=46cb0162d4c211b883208c7dc3e20dfb16edf777-7f3b974d0bb0a71f9b8a842ffdfc15e2-1782671810-1782661010",
+    "url": "https://helpfullive.info/tmc/index.m3u8?token=4173055ea6c58bb7fcca64c9b3eee771efd07a30-4ee7c673e9f5ec04ffc7853cb33680f8-1782682539-1782671739",
     "country": "FR",
     "scrapUrl": "https://www.livehdtv.com/tmc/"
   },
@@ -161,7 +162,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tfx-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "NT1.fr",
-    "url": "https://helpfullive.info/tfx/index.m3u8?token=9d4f9051f48eb48ebed67c7cb24684bcd91a316f-d3a7b36560ed4e470667728c3e1743c7-1782663192-1782652392",
+    "url": "https://helpfullive.info/tfx/index.m3u8?token=b9a3776e5746490857220316685a05db75f6bee9-f4f36da570be159257b161c2ecb2d0c5-1782682542-1782671742",
     "country": "FR",
     "scrapUrl": "https://www.livehdtv.com/tfx/"
   },
@@ -209,7 +210,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/c-star-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "CStar.fr",
-    "url": "https://helpfullive.info/cstar/index.m3u8?token=6d129402c8c7b8f2b05527f44ea3e4177c910587-244be0523f672bf3576de1fbc7254258-1782671826-1782661026",
+    "url": "https://helpfullive.info/cstar/index.m3u8?token=e19e31fbb3cb53299504ad986023e6e982b85aba-4ea4bdb68d140142077e4165ad8cf034-1782682545-1782671745",
     "country": "FR",
     "scrapUrl": "https://www.livehdtv.com/ch193/"
   },
@@ -269,7 +270,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/6ter-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "6ter.fr",
-    "url": "https://helpfullive.info/6ter/index.m3u8?token=34f7a8b12cf4910d616e436d09b5dbc559b278a6-ae59ded7e64fa7b40974f031f27753d9-1782671828-1782661028",
+    "url": "https://helpfullive.info/6ter/index.m3u8?token=9ce6b30526ccb4dcbfaa26c4fd982842d2d06e3e-d66bc4205ca6e77f0626f9c686ceba9b-1782682549-1782671749",
     "country": "FR",
     "scrapUrl": "https://www.livehdtv.com/6ter/"
   },
