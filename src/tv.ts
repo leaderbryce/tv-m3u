@@ -7,18 +7,13 @@ const M3U_FILEPATH = "./tv.m3u";
 const INTERMEDIATE_JSON = "./tv-merged.json";
 const STATE_FILE = "./.state.json"; // lastRun, lastFull, lock
 const SCRAPE_TEST_URL = 'https://www.livehdtv.com/ch123/';
-const BROWSERBASE_API_KEY = process.env.BROWSERBASE_API_KEY?.trim();
-const BROWSERLESS_API_KEY = process.env.BROWSERLESS_API_KEY?.trim();
-const PLAYWRIGHT_TEST_CHANNEL = process.env.PLAYWRIGHT_TEST_CHANNEL?.trim() || 'chrome';
-const PLAYWRIGHT_TEST_USER_AGENT = process.env.PLAYWRIGHT_TEST_USER_AGENT?.trim() ||
+const PLAYWRIGHT_CHANNEL = process.env.PLAYWRIGHT_CHANNEL?.trim() || 'chrome';
+const PLAYWRIGHT_USER_AGENT = process.env.PLAYWRIGHT_USER_AGENT?.trim() ||
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0 Safari/537.36';
 
 // Intervalles
 const UPDATE_INTERVAL_MS = 2 * 60 * 60 * 1000;  // 2h
 const FULL_INTERVAL_MS   = 24 * 60 * 60 * 1000; // 24h
-const AUTO_TIME_ZONE = 'Europe/Paris';
-const AUTO_QUIET_START_HOUR = 22;
-const AUTO_QUIET_END_HOUR = 6;
 const STREAM_TEST_CONCURRENCY = 4;
 const LOCK_TIMEOUT_MS = 30 * 60 * 1000; // 30 min
 
@@ -325,14 +320,11 @@ function createConcurrencyLimiter(concurrency: number) {
 const limitBrowserScrape = createConcurrencyLimiter(1);
 const browserScrapeCache = new Map<string, Promise<ScrapedStream[]>>();
 
-type BrowserbaseRuntime = {
+type BrowserRuntime = {
     browser: Browser;
-    page: Page;
 };
 
-let browserbaseRuntimePromise: Promise<BrowserbaseRuntime> | undefined;
-let browserlessRuntimePromise: Promise<BrowserbaseRuntime> | undefined;
-let browserbaseDisabledReason: string | undefined;
+let browserRuntimePromise: Promise<BrowserRuntime> | undefined;
 
 function fetchScrapedStreamsCached(pageUrl: string): Promise<ScrapedStream[]> {
     const cached = browserScrapeCache.get(pageUrl);
@@ -341,7 +333,7 @@ function fetchScrapedStreamsCached(pageUrl: string): Promise<ScrapedStream[]> {
         return cached;
     }
 
-    const scraping = limitBrowserScrape(() => fetchScrapedStreamsWithFallback(pageUrl));
+    const scraping = limitBrowserScrape(() => fetchScrapedStreamsViaPlaywright(pageUrl));
     browserScrapeCache.set(pageUrl, scraping);
     return scraping;
 }
@@ -395,7 +387,7 @@ async function enrichLocalChannelsWithValidStream(
         // Le scraping est exclusif : aucun fallback vers l'URL locale ou les sources distantes.
         if (local.scrapUrl?.trim()) {
             const scrapUrl = local.scrapUrl.trim();
-            console.log(`🕸️ [${i + 1}/${localChannels.length}] - ${local.nom} → scraping Browserbase (Browserless en backup) de ${scrapUrl}`);
+            console.log(`🕸️ [${i + 1}/${localChannels.length}] - ${local.nom} → scraping Playwright de ${scrapUrl}`);
 
             try {
                 const { streams, selected } = await findFirstValidScrapedStream(scrapUrl);
@@ -528,16 +520,11 @@ function escapeM3UText(value: string): string {
 
 type ScrapedStream = {
     url: string;
-    origin: 'source HTML' | 'JSON-LD' | 'script HTML' | 'Browserbase' | 'Browserless' | 'Playwright';
+    origin: 'source HTML' | 'JSON-LD' | 'script HTML' | 'Playwright';
     referer?: string;
 };
 
-type BrowserProvider = 'Browserbase' | 'Browserless' | 'Playwright';
-
-type BrowserbaseSession = {
-    id: string;
-    connectUrl: string;
-};
+type BrowserProvider = 'Playwright';
 
 function decodeHtmlAttribute(value: string): string {
     return value
@@ -686,128 +673,38 @@ async function fetchScrapedStreams(
     return [...unique.values()];
 }
 
-async function createBrowserbaseRuntime(): Promise<BrowserbaseRuntime> {
-    if (!BROWSERBASE_API_KEY) {
-        throw new Error('Browserbase nécessite la variable BROWSERBASE_API_KEY');
-    }
-
-    let session: BrowserbaseSession | undefined;
-    for (let attempt = 1; attempt <= 3; attempt++) {
-        console.log('🌐 Création de la session Browserbase partagée');
-        const sessionResponse = await fetchWithTimeout('https://api.browserbase.com/v1/sessions', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-BB-API-Key': BROWSERBASE_API_KEY,
-            },
-            body: JSON.stringify({ region: 'eu-central-1', timeout: 900 }),
-        }, 30000);
-        const sessionBody = await sessionResponse.text();
-
-        if (sessionResponse.ok) {
-            session = JSON.parse(sessionBody) as BrowserbaseSession;
-            break;
-        }
-
-        if (sessionResponse.status === 429 && attempt < 3) {
-            const retryAfterHeader = Number(sessionResponse.headers.get('retry-after'));
-            const retryAfterMessage = Number(sessionBody.match(/try again in (\d+) seconds?/i)?.[1]);
-            const retryAfterSeconds = Math.max(
-                Number.isFinite(retryAfterHeader) ? retryAfterHeader : 0,
-                Number.isFinite(retryAfterMessage) ? retryAfterMessage : 0,
-                12
-            );
-            console.warn(`⚠️ Limite Browserbase atteinte, nouvel essai dans ${retryAfterSeconds + 1} s`);
-            await sleep((retryAfterSeconds + 1) * 1000);
-            continue;
-        }
-
-        throw new Error(`création de session Browserbase impossible : HTTP ${sessionResponse.status} - ${sessionBody.slice(0, 300)}`);
-    }
-
-    if (!session) throw new Error('création de session Browserbase impossible après 3 tentatives');
-    if (!session.id || !session.connectUrl) throw new Error('réponse de session Browserbase incomplète');
-    console.log(`🔍 Enregistrement : https://browserbase.com/sessions/${session.id}`);
-
-    const browser = await chromium.connectOverCDP(session.connectUrl, { timeout: 30000 });
-    const context = browser.contexts()[0];
-    if (!context) {
-        await browser.close();
-        throw new Error('Browserbase n’a fourni aucun contexte navigateur');
-    }
-    const page = context.pages()[0] ?? await context.newPage();
-    return { browser, page };
+async function createBrowserRuntime(): Promise<BrowserRuntime> {
+    console.log(`🌐 Lancement du navigateur Playwright partagé (canal ${PLAYWRIGHT_CHANNEL})`);
+    const browser = await chromium.launch({
+        channel: PLAYWRIGHT_CHANNEL,
+        headless: true,
+    });
+    return { browser };
 }
 
-function getBrowserbaseRuntime(): Promise<BrowserbaseRuntime> {
-    if (!browserbaseRuntimePromise) {
-        browserbaseRuntimePromise = createBrowserbaseRuntime().catch((error) => {
-            browserbaseRuntimePromise = undefined;
+function getBrowserRuntime(): Promise<BrowserRuntime> {
+    if (!browserRuntimePromise) {
+        browserRuntimePromise = createBrowserRuntime().catch((error) => {
+            browserRuntimePromise = undefined;
             throw error;
         });
     }
-    return browserbaseRuntimePromise;
+    return browserRuntimePromise;
 }
 
-async function closeBrowserbaseRuntime(): Promise<void> {
-    const runtimePromise = browserbaseRuntimePromise;
-    browserbaseRuntimePromise = undefined;
-    if (!runtimePromise) return;
-
-    try {
-        const { browser } = await runtimePromise;
-        await browser.close();
-        console.log('🛑 Session Browserbase partagée fermée');
-    } catch (error) {
-        console.warn(`⚠️ Fermeture Browserbase impossible : ${String(error)}`);
-    }
-}
-
-async function createBrowserlessRuntime(): Promise<BrowserbaseRuntime> {
-    if (!BROWSERLESS_API_KEY) {
-        throw new Error('Browserless nécessite la variable BROWSERLESS_API_KEY');
-    }
-
-    const endpoint = `wss://production-ams.browserless.io/stealth?token=${encodeURIComponent(BROWSERLESS_API_KEY)}`;
-    console.log('🌐 Connexion à la session Browserless de backup (Amsterdam)');
-    const browser = await chromium.connectOverCDP(endpoint, { timeout: 30000 });
-    const context = browser.contexts()[0];
-    if (!context) {
-        await browser.close();
-        throw new Error('Browserless n’a fourni aucun contexte navigateur');
-    }
-    const page = context.pages()[0] ?? await context.newPage();
-    return { browser, page };
-}
-
-function getBrowserlessRuntime(): Promise<BrowserbaseRuntime> {
-    if (!browserlessRuntimePromise) {
-        browserlessRuntimePromise = createBrowserlessRuntime().catch((error) => {
-            browserlessRuntimePromise = undefined;
-            throw error;
-        });
-    }
-    return browserlessRuntimePromise;
-}
-
-async function closeBrowserlessRuntime(): Promise<void> {
-    const runtimePromise = browserlessRuntimePromise;
-    browserlessRuntimePromise = undefined;
-    if (!runtimePromise) return;
-
-    try {
-        const { browser } = await runtimePromise;
-        await browser.close();
-        console.log('🛑 Session Browserless partagée fermée');
-    } catch (error) {
-        console.warn(`⚠️ Fermeture Browserless impossible : ${String(error)}`);
-    }
-}
-
-async function closeBrowserRuntimes(): Promise<void> {
+async function closeBrowserRuntime(): Promise<void> {
+    const runtimePromise = browserRuntimePromise;
+    browserRuntimePromise = undefined;
     browserScrapeCache.clear();
-    await closeBrowserbaseRuntime();
-    await closeBrowserlessRuntime();
+    if (!runtimePromise) return;
+
+    try {
+        const { browser } = await runtimePromise;
+        await browser.close();
+        console.log('🛑 Navigateur Playwright partagé fermé');
+    } catch (error) {
+        console.warn(`⚠️ Fermeture Playwright impossible : ${String(error)}`);
+    }
 }
 
 async function scrapeStreamsFromBrowserPage(
@@ -907,84 +804,24 @@ async function scrapeStreamsFromBrowserPage(
     }
 }
 
-async function fetchScrapedStreamsViaBrowserbase(pageUrl: string): Promise<ScrapedStream[]> {
-    const { page } = await getBrowserbaseRuntime();
-    return scrapeStreamsFromBrowserPage(page, pageUrl, 'Browserbase');
-}
-
-async function fetchScrapedStreamsViaBrowserless(pageUrl: string): Promise<ScrapedStream[]> {
-    const { page } = await getBrowserlessRuntime();
-    return scrapeStreamsFromBrowserPage(page, pageUrl, 'Browserless');
-}
-
-async function fetchScrapedStreamsViaLocalPlaywright(pageUrl: string): Promise<ScrapedStream[]> {
-    console.log(`🌐 Lancement de Playwright standard (canal ${PLAYWRIGHT_TEST_CHANNEL})`);
-    const browser = await chromium.launch({
-        channel: PLAYWRIGHT_TEST_CHANNEL,
-        headless: true,
+async function fetchScrapedStreamsViaPlaywright(pageUrl: string): Promise<ScrapedStream[]> {
+    const { browser } = await getBrowserRuntime();
+    console.log(`🆕 Nouvelle session Playwright isolée → ${pageUrl}`);
+    const context = await browser.newContext({
+        userAgent: PLAYWRIGHT_USER_AGENT,
     });
 
     try {
-        const context = await browser.newContext({
-            userAgent: PLAYWRIGHT_TEST_USER_AGENT,
-        });
         const page = await context.newPage();
         return await scrapeStreamsFromBrowserPage(page, pageUrl, 'Playwright');
     } finally {
-        await browser.close();
+        await context.close();
     }
-}
-
-function isBrowserbaseProviderFailure(error: unknown): boolean {
-    const message = String(error).toLowerCase();
-    return [
-        'browserbase nécessite',
-        'création de session browserbase',
-        'browserbase n’a fourni aucun contexte',
-        'http 402',
-        'http 403',
-        'http 429',
-        'insufficient credit',
-        'credit limit',
-        'usage limit',
-        'quota',
-        'plan limit',
-        'browser has been closed',
-        'target page, context or browser has been closed',
-        'websocket',
-        'econnreset',
-        'econnrefused',
-    ].some((pattern) => message.includes(pattern));
-}
-
-async function fetchScrapedStreamsWithFallback(pageUrl: string): Promise<ScrapedStream[]> {
-    if (!browserbaseDisabledReason) {
-        try {
-            return await fetchScrapedStreamsViaBrowserbase(pageUrl);
-        } catch (error) {
-            if (!BROWSERLESS_API_KEY) throw error;
-
-            const reason = String(error);
-            if (isBrowserbaseProviderFailure(error)) {
-                browserbaseDisabledReason = reason;
-                console.warn(`⚠️ Browserbase indisponible pour ce run (${reason})`);
-                console.warn('🔁 Basculement automatique sur Browserless pour les chaînes restantes');
-                await closeBrowserbaseRuntime();
-            } else {
-                console.warn(`⚠️ Browserbase a échoué pour ${pageUrl} (${reason})`);
-                console.warn('🔁 Tentative Browserless pour cette chaîne');
-            }
-        }
-    } else {
-        console.log(`🔁 Browserless backup actif → ${pageUrl}`);
-    }
-
-    return fetchScrapedStreamsViaBrowserless(pageUrl);
 }
 
 async function runScrapeTest(): Promise<void> {
     console.log(`🧪 Test LiveHD via Playwright standard : ${SCRAPE_TEST_URL}`);
-    const streams = await fetchScrapedStreamsViaLocalPlaywright(SCRAPE_TEST_URL);
+    const streams = await fetchScrapedStreamsViaPlaywright(SCRAPE_TEST_URL);
 
     console.log(`🔎 ${streams.length} URL(s) M3U8 unique(s) trouvée(s)`);
     const results = await Promise.all(streams.map(async (stream, index) => {
@@ -1043,7 +880,7 @@ async function updateScrapedChannels(): Promise<Channel[]> {
         const scrapUrl = channel.scrapUrl?.trim();
         if (!scrapUrl) return channel;
 
-        console.log(`🕸️ [${index + 1}/${channels.length}] - ${channel.nom} → mise à jour Browserbase (Browserless en backup) de ${scrapUrl}`);
+        console.log(`🕸️ [${index + 1}/${channels.length}] - ${channel.nom} → mise à jour Playwright de ${scrapUrl}`);
         try {
             const { streams, selected } = await findFirstValidScrapedStream(scrapUrl);
             if (selected) {
@@ -1098,31 +935,6 @@ function elapsedSince(timestamp?: string, now = Date.now()): number {
     if (!timestamp) return Number.POSITIVE_INFINITY;
     const parsed = new Date(timestamp).getTime();
     return Number.isFinite(parsed) ? Math.max(0, now - parsed) : Number.POSITIVE_INFINITY;
-}
-
-function getHourInTimeZone(now: Date, timeZone: string): number {
-    const hour = new Intl.DateTimeFormat('en-GB', {
-        timeZone,
-        hour: '2-digit',
-        hourCycle: 'h23',
-    }).formatToParts(now).find((part) => part.type === 'hour')?.value;
-
-    if (hour === undefined) throw new Error(`Impossible de déterminer l'heure dans le fuseau ${timeZone}`);
-    return Number(hour);
-}
-
-function isAutoQuietHours(now = new Date()): boolean {
-    const hour = getHourInTimeZone(now, AUTO_TIME_ZONE);
-    return hour >= AUTO_QUIET_START_HOUR || hour < AUTO_QUIET_END_HOUR;
-}
-
-function formatAutoLocalTime(now = new Date()): string {
-    return new Intl.DateTimeFormat('fr-FR', {
-        timeZone: AUTO_TIME_ZONE,
-        hour: '2-digit',
-        minute: '2-digit',
-        hourCycle: 'h23',
-    }).format(now);
 }
 
 async function markCompleted(mode: 'full' | 'update'): Promise<void> {
@@ -1184,14 +996,6 @@ async function main(): Promise<"full" | "update" | "test" | "skip"> {
 
     let chosen: 'full' | 'update' | 'skip';
     if (mode === 'auto') {
-        if (isAutoQuietHours()) {
-            console.log(
-                `Auto: pause nocturne à ${formatAutoLocalTime()} (${AUTO_TIME_ZONE}), ` +
-                `aucun scraping entre ${AUTO_QUIET_START_HOUR}h et ${AUTO_QUIET_END_HOUR}h.`,
-            );
-            return 'skip';
-        }
-
         const state = await loadState();
         chosen = chooseAutoMode(state, fs.existsSync(INTERMEDIATE_JSON));
         if (chosen === 'skip') {
@@ -1252,7 +1056,7 @@ async function main(): Promise<"full" | "update" | "test" | "skip"> {
         console.error('❌ Run échoué:', err);
         exitCode = 1;
     } finally {
-        await closeBrowserRuntimes();
+        await closeBrowserRuntime();
         await release();
     }
     process.exit(exitCode);
