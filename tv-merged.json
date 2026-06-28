@@ -10,7 +10,7 @@
     "group": "TVFRANCE",
     "tvgId": "TF1.fr",
     "scrapUrl": "https://www.livehdtv.com/ch123/",
-    "url": "",
+    "url": "https://helpfullive.info/tf1/index.m3u8?token=c52e156cad8023ab60d8bde2fb5a147be91e16e9-487f195cee90667808a77906fdbd36bb-1782663183-1782652383",
     "country": "FR"
   },
   {
@@ -111,8 +111,9 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/m6-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "M6.fr",
-    "url": "http://99.27.51.147:8080/M6/index.m3u8",
-    "country": "FR"
+    "url": "https://helpfullive.info/m6/index.m3u8?token=9989f505ea6242f75b505fffc3a5755dd2f1a38b-8f34e9c745899dc889b4e4d0ab443704-1782663187-1782652387",
+    "country": "FR",
+    "scrapUrl": "https://www.livehdtv.com/m6/"
   },
   {
     "nom": "Arte",
@@ -147,8 +148,9 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tmc-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TMC.fr",
-    "url": "",
-    "country": "FR"
+    "url": "https://helpfullive.info/tmc/index.m3u8?token=cd657ac7ece794473748c3f11648f323f4e95f9f-3a0578116eafdbb7ac416ee9ddd3dc05-1782663190-1782652390",
+    "country": "FR",
+    "scrapUrl": "https://www.livehdtv.com/tmc/"
   },
   {
     "nom": "TFX",
@@ -159,8 +161,9 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tfx-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "NT1.fr",
-    "url": "",
-    "country": "FR"
+    "url": "https://helpfullive.info/tfx/index.m3u8?token=9d4f9051f48eb48ebed67c7cb24684bcd91a316f-d3a7b36560ed4e470667728c3e1743c7-1782663192-1782652392",
+    "country": "FR",
+    "scrapUrl": "https://www.livehdtv.com/tfx/"
   },
   {
     "nom": "BFMTV",
@@ -206,8 +209,9 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/c-star-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "CStar.fr",
-    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/refs/heads/main/streams/canalplus/cstar-dm.m3u8",
-    "country": "FR"
+    "url": "https://helpfullive.info/cstar/index.m3u8?token=7547d6e6be63e89cda680f306678dc8193999c3f-91dc3cc6c8e51939f8abb2f30d2c0896-1782663194-1782652394",
+    "country": "FR",
+    "scrapUrl": "https://www.livehdtv.com/ch193/"
   },
   {
     "nom": "RTL9",
@@ -265,8 +269,9 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/6ter-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "6ter.fr",
-    "url": "",
-    "country": "FR"
+    "url": "https://helpfullive.info/6ter/index.m3u8?token=6a209147aae1aba881a6afd71ba50b3607f79ad4-688e43da6d7088809d9526fa688e3eca-1782663196-1782652396",
+    "country": "FR",
+    "scrapUrl": "https://www.livehdtv.com/6ter/"
   },
   {
     "nom": "RMC Story",
