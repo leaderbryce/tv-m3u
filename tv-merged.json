@@ -10,7 +10,7 @@
     "group": "TVFRANCE",
     "tvgId": "TF1.fr",
     "scrapUrl": "https://www.livehdtv.com/ch123/",
-    "url": "https://helpfullive.info/tf1/index.m3u8?token=c52e156cad8023ab60d8bde2fb5a147be91e16e9-487f195cee90667808a77906fdbd36bb-1782663183-1782652383",
+    "url": "https://helpfullive.info/tf1/index.m3u8?token=9fb3244c0570ae4562a1e24c30541dd2e606e39e-a5ac3d0b2813de3d344fe9010a8ceaec-1782671802-1782661002",
     "country": "FR"
   },
   {
@@ -111,7 +111,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/m6-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "M6.fr",
-    "url": "https://helpfullive.info/m6/index.m3u8?token=9989f505ea6242f75b505fffc3a5755dd2f1a38b-8f34e9c745899dc889b4e4d0ab443704-1782663187-1782652387",
+    "url": "https://helpfullive.info/m6/index.m3u8?token=56fb15dd697f7271f4b986fc9f76aecb8eb4968a-e7de730fa7650faf6a6cf68429683022-1782671807-1782661007",
     "country": "FR",
     "scrapUrl": "https://www.livehdtv.com/m6/"
   },
@@ -148,7 +148,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tmc-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TMC.fr",
-    "url": "https://helpfullive.info/tmc/index.m3u8?token=cd657ac7ece794473748c3f11648f323f4e95f9f-3a0578116eafdbb7ac416ee9ddd3dc05-1782663190-1782652390",
+    "url": "https://helpfullive.info/tmc/index.m3u8?token=46cb0162d4c211b883208c7dc3e20dfb16edf777-7f3b974d0bb0a71f9b8a842ffdfc15e2-1782671810-1782661010",
     "country": "FR",
     "scrapUrl": "https://www.livehdtv.com/tmc/"
   },
@@ -209,7 +209,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/c-star-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "CStar.fr",
-    "url": "https://helpfullive.info/cstar/index.m3u8?token=7547d6e6be63e89cda680f306678dc8193999c3f-91dc3cc6c8e51939f8abb2f30d2c0896-1782663194-1782652394",
+    "url": "https://helpfullive.info/cstar/index.m3u8?token=6d129402c8c7b8f2b05527f44ea3e4177c910587-244be0523f672bf3576de1fbc7254258-1782671826-1782661026",
     "country": "FR",
     "scrapUrl": "https://www.livehdtv.com/ch193/"
   },
@@ -269,7 +269,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/6ter-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "6ter.fr",
-    "url": "https://helpfullive.info/6ter/index.m3u8?token=6a209147aae1aba881a6afd71ba50b3607f79ad4-688e43da6d7088809d9526fa688e3eca-1782663196-1782652396",
+    "url": "https://helpfullive.info/6ter/index.m3u8?token=34f7a8b12cf4910d616e436d09b5dbc559b278a6-ae59ded7e64fa7b40974f031f27753d9-1782671828-1782661028",
     "country": "FR",
     "scrapUrl": "https://www.livehdtv.com/6ter/"
   },
