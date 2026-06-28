@@ -9,6 +9,9 @@ const STATE_FILE = "./.state.json"; // lastRun, lastFull, lock
 const SCRAPE_TEST_URL = 'https://www.livehdtv.com/ch123/';
 const BROWSERBASE_API_KEY = process.env.BROWSERBASE_API_KEY?.trim();
 const BROWSERLESS_API_KEY = process.env.BROWSERLESS_API_KEY?.trim();
+const PLAYWRIGHT_TEST_CHANNEL = process.env.PLAYWRIGHT_TEST_CHANNEL?.trim() || 'chrome';
+const PLAYWRIGHT_TEST_USER_AGENT = process.env.PLAYWRIGHT_TEST_USER_AGENT?.trim() ||
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0 Safari/537.36';
 
 // Intervalles
 const UPDATE_INTERVAL_MS = 2 * 60 * 60 * 1000;  // 2h
@@ -525,11 +528,11 @@ function escapeM3UText(value: string): string {
 
 type ScrapedStream = {
     url: string;
-    origin: 'source HTML' | 'JSON-LD' | 'script HTML' | 'Browserbase' | 'Browserless';
+    origin: 'source HTML' | 'JSON-LD' | 'script HTML' | 'Browserbase' | 'Browserless' | 'Playwright';
     referer?: string;
 };
 
-type BrowserProvider = 'Browserbase' | 'Browserless';
+type BrowserProvider = 'Browserbase' | 'Browserless' | 'Playwright';
 
 type BrowserbaseSession = {
     id: string;
@@ -914,6 +917,24 @@ async function fetchScrapedStreamsViaBrowserless(pageUrl: string): Promise<Scrap
     return scrapeStreamsFromBrowserPage(page, pageUrl, 'Browserless');
 }
 
+async function fetchScrapedStreamsViaLocalPlaywright(pageUrl: string): Promise<ScrapedStream[]> {
+    console.log(`🌐 Lancement de Playwright standard (canal ${PLAYWRIGHT_TEST_CHANNEL})`);
+    const browser = await chromium.launch({
+        channel: PLAYWRIGHT_TEST_CHANNEL,
+        headless: true,
+    });
+
+    try {
+        const context = await browser.newContext({
+            userAgent: PLAYWRIGHT_TEST_USER_AGENT,
+        });
+        const page = await context.newPage();
+        return await scrapeStreamsFromBrowserPage(page, pageUrl, 'Playwright');
+    } finally {
+        await browser.close();
+    }
+}
+
 function isBrowserbaseProviderFailure(error: unknown): boolean {
     const message = String(error).toLowerCase();
     return [
@@ -962,8 +983,8 @@ async function fetchScrapedStreamsWithFallback(pageUrl: string): Promise<Scraped
 }
 
 async function runScrapeTest(): Promise<void> {
-    console.log(`🧪 Test LiveHD via Browserless : ${SCRAPE_TEST_URL}`);
-    const streams = await fetchScrapedStreamsViaBrowserless(SCRAPE_TEST_URL);
+    console.log(`🧪 Test LiveHD via Playwright standard : ${SCRAPE_TEST_URL}`);
+    const streams = await fetchScrapedStreamsViaLocalPlaywright(SCRAPE_TEST_URL);
 
     console.log(`🔎 ${streams.length} URL(s) M3U8 unique(s) trouvée(s)`);
     const results = await Promise.all(streams.map(async (stream, index) => {
