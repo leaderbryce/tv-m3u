@@ -13,7 +13,7 @@ const BROWSERLESS_API_KEY = process.env.BROWSERLESS_API_KEY?.trim();
 // Intervalles
 const UPDATE_INTERVAL_MS = 2 * 60 * 60 * 1000;  // 2h
 const FULL_INTERVAL_MS   = 24 * 60 * 60 * 1000; // 24h
-const AUTO_TIME_ZONE = process.env.AUTO_TIME_ZONE?.trim() || 'Europe/Paris';
+const AUTO_TIME_ZONE = 'Europe/Paris';
 const AUTO_QUIET_START_HOUR = 22;
 const AUTO_QUIET_END_HOUR = 6;
 const STREAM_TEST_CONCURRENCY = 4;
