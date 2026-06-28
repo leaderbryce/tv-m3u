@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { chromium } from 'playwright-core';
+import { chromium, type Browser, type Page, type Request, type Response as PlaywrightResponse } from 'playwright-core';
 import { fetch as undiciFetch } from 'undici';
 
 // ========= Config fichiers =========
@@ -317,8 +317,13 @@ function createConcurrencyLimiter(concurrency: number) {
 
 const limitBrowserbaseScrape = createConcurrencyLimiter(1);
 const browserbaseScrapeCache = new Map<string, Promise<ScrapedStream[]>>();
-const BROWSERBASE_SESSION_MIN_INTERVAL_MS = 13000;
-let lastBrowserbaseSessionStartedAt = 0;
+
+type BrowserbaseRuntime = {
+    browser: Browser;
+    page: Page;
+};
+
+let browserbaseRuntimePromise: Promise<BrowserbaseRuntime> | undefined;
 
 function fetchScrapedStreamsViaBrowserbaseCached(pageUrl: string): Promise<ScrapedStream[]> {
     const cached = browserbaseScrapeCache.get(pageUrl);
@@ -670,31 +675,21 @@ async function fetchScrapedStreams(
     return [...unique.values()];
 }
 
-async function fetchScrapedStreamsViaBrowserbase(pageUrl: string): Promise<ScrapedStream[]> {
+async function createBrowserbaseRuntime(): Promise<BrowserbaseRuntime> {
     if (!BROWSERBASE_API_KEY) {
         throw new Error('Browserbase nécessite la variable BROWSERBASE_API_KEY');
     }
 
     let session: BrowserbaseSession | undefined;
     for (let attempt = 1; attempt <= 3; attempt++) {
-        const waitBeforeCreation = Math.max(
-            0,
-            BROWSERBASE_SESSION_MIN_INTERVAL_MS - (Date.now() - lastBrowserbaseSessionStartedAt)
-        );
-        if (waitBeforeCreation > 0) {
-            console.log(`⏳ Limite Browserbase : attente de ${Math.ceil(waitBeforeCreation / 1000)} s`);
-            await sleep(waitBeforeCreation);
-        }
-
-        console.log(`🌐 Création d’une session Browserbase → ${pageUrl}`);
-        lastBrowserbaseSessionStartedAt = Date.now();
+        console.log('🌐 Création de la session Browserbase partagée');
         const sessionResponse = await fetchWithTimeout('https://api.browserbase.com/v1/sessions', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'X-BB-API-Key': BROWSERBASE_API_KEY,
             },
-            body: JSON.stringify({ region: 'eu-central-1' }),
+            body: JSON.stringify({ region: 'eu-central-1', timeout: 900 }),
         }, 30000);
         const sessionBody = await sessionResponse.text();
 
@@ -724,20 +719,58 @@ async function fetchScrapedStreamsViaBrowserbase(pageUrl: string): Promise<Scrap
     console.log(`🔍 Enregistrement : https://browserbase.com/sessions/${session.id}`);
 
     const browser = await chromium.connectOverCDP(session.connectUrl, { timeout: 30000 });
+    const context = browser.contexts()[0];
+    if (!context) {
+        await browser.close();
+        throw new Error('Browserbase n’a fourni aucun contexte navigateur');
+    }
+    const page = context.pages()[0] ?? await context.newPage();
+    return { browser, page };
+}
+
+function getBrowserbaseRuntime(): Promise<BrowserbaseRuntime> {
+    if (!browserbaseRuntimePromise) {
+        browserbaseRuntimePromise = createBrowserbaseRuntime().catch((error) => {
+            browserbaseRuntimePromise = undefined;
+            throw error;
+        });
+    }
+    return browserbaseRuntimePromise;
+}
+
+async function closeBrowserbaseRuntime(): Promise<void> {
+    const runtimePromise = browserbaseRuntimePromise;
+    browserbaseRuntimePromise = undefined;
+    browserbaseScrapeCache.clear();
+    if (!runtimePromise) return;
+
     try {
-        const context = browser.contexts()[0];
-        if (!context) throw new Error('Browserbase n’a fourni aucun contexte navigateur');
+        const { browser } = await runtimePromise;
+        await browser.close();
+        console.log('🛑 Session Browserbase partagée fermée');
+    } catch (error) {
+        console.warn(`⚠️ Fermeture Browserbase impossible : ${String(error)}`);
+    }
+}
 
-        const streams = new Map<string, ScrapedStream>();
-        const addUrl = (url: string, referer?: string): void => {
-            if (!url.toLowerCase().includes('.m3u8')) return;
-            streams.set(url, { url: decodeHtmlAttribute(url), origin: 'Browserbase', referer });
-        };
+async function fetchScrapedStreamsViaBrowserbase(pageUrl: string): Promise<ScrapedStream[]> {
+    const { page } = await getBrowserbaseRuntime();
+    await page.goto('about:blank', { waitUntil: 'load', timeout: 10000 }).catch(() => undefined);
+    await page.waitForTimeout(100);
 
-        context.on('request', (request) => addUrl(request.url(), request.headers().referer));
-        context.on('response', (response) => addUrl(response.url(), response.request().headers().referer));
+    const streams = new Map<string, ScrapedStream>();
+    const addUrl = (url: string, referer?: string): void => {
+        if (!url.toLowerCase().includes('.m3u8')) return;
+        streams.set(url, { url: decodeHtmlAttribute(url), origin: 'Browserbase', referer });
+    };
+    const onRequest = (request: Request): void => addUrl(request.url(), request.headers().referer);
+    const onResponse = (response: PlaywrightResponse): void =>
+        addUrl(response.url(), response.request().headers().referer);
 
-        const page = context.pages()[0] ?? await context.newPage();
+    page.on('request', onRequest);
+    page.on('response', onResponse);
+    try {
+        console.log(`🌐 Navigation Browserbase → ${pageUrl}`);
         const navigation = await page.goto(pageUrl, {
             waitUntil: 'domcontentloaded',
             timeout: 60000,
@@ -809,7 +842,8 @@ async function fetchScrapedStreamsViaBrowserbase(pageUrl: string): Promise<Scrap
         }
         return [...streams.values()];
     } finally {
-        await browser.close();
+        page.off('request', onRequest);
+        page.off('response', onResponse);
     }
 }
 
@@ -1037,6 +1071,7 @@ async function main(): Promise<"full" | "update" | "test" | "skip"> {
         }
     }
 
+    let exitCode = 0;
     try {
         console.log(`🚀 Run démarré le ${new Date().toLocaleString()}`);
         const result = await main();
@@ -1045,11 +1080,12 @@ async function main(): Promise<"full" | "update" | "test" | "skip"> {
         } else {
             console.log(`✅ Terminé (${result}) le ${new Date().toLocaleString()}`);
         }
-        await release();
-        process.exit(0);
     } catch (err) {
         console.error('❌ Run échoué:', err);
+        exitCode = 1;
+    } finally {
+        await closeBrowserbaseRuntime();
         await release();
-        process.exit(1);
     }
+    process.exit(exitCode);
 })();
