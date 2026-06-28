@@ -10,7 +10,7 @@
     "group": "TVFRANCE",
     "tvgId": "TF1.fr",
     "scrapUrl": "https://www.livehdtv.com/ch123/",
-    "url": "https://helpfullive.info/tf1/index.m3u8?token=3cb5560d2920608199e50274158f6966b8fc6c52-7b730c056b47a96e03b2bcfe1a205d71-1782655854-1782645054",
+    "url": "",
     "country": "FR"
   },
   {
@@ -111,8 +111,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/m6-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "M6.fr",
-    "scrapUrl": "https://www.livehdtv.com/m6/",
-    "url": "https://helpfullive.info/m6/index.m3u8?token=81cd2f714b3ccc6dec8347528d0cb08cdaff5a2d-719d4f548f04224d5a79c20bd6fabd65-1782655857-1782645057",
+    "url": "http://99.27.51.147:8080/M6/index.m3u8",
     "country": "FR"
   },
   {
@@ -148,8 +147,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tmc-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TMC.fr",
-    "scrapUrl": "https://www.livehdtv.com/tmc/",
-    "url": "https://helpfullive.info/tmc/index.m3u8?token=579dab92b1d86443d4689d4cd1ffff3d3ab86a1e-e2c100d6731b6c2b721c94946e07fadf-1782655860-1782645060",
+    "url": "",
     "country": "FR"
   },
   {
@@ -160,9 +158,8 @@
     ],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tfx-fr.png?raw=true",
     "group": "TVFRANCE",
-    "tvgId": "TFX.fr",
-    "scrapUrl": "https://www.livehdtv.com/tfx/",
-    "url": "https://helpfullive.info/tfx/index.m3u8?token=1731858c39eb7452f3a85880ae8877fc9ea96bc2-0230c3cefdd89515ce1460c158c31816-1782655862-1782645062",
+    "tvgId": "NT1.fr",
+    "url": "",
     "country": "FR"
   },
   {
@@ -174,7 +171,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/bfm-tv-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "BFMTV.fr",
-    "url": "",
+    "url": "https://ncdn-live-bfm.pfd.sfr.net/shls/LIVE$BFM2/index.m3u8",
     "country": "FR"
   },
   {
@@ -209,8 +206,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/c-star-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "CStar.fr",
-    "scrapUrl": "https://www.livehdtv.com/ch193/",
-    "url": "https://helpfullive.info/cstar/index.m3u8?token=9ee00f3d07c3156db0a26589ae68022f32af291c-f6a9d5ec5e54199fd4bf6e7bfa55957f-1782655865-1782645065",
+    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/refs/heads/main/streams/canalplus/cstar-dm.m3u8",
     "country": "FR"
   },
   {
@@ -269,8 +265,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/6ter-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "6ter.fr",
-    "scrapUrl": "https://www.livehdtv.com/6ter/",
-    "url": "https://helpfullive.info/6ter/index.m3u8?token=841e7f83c58080e767e6be405c9f27f60d73c927-fa6c7ddf9bab4830289a01f488f7c381-1782655868-1782645068",
+    "url": "",
     "country": "FR"
   },
   {
@@ -863,7 +858,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/movie-plex-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "8400",
-    "url": "",
+    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/93060",
     "country": "USA"
   },
   {
@@ -905,7 +900,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/disney-channel-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403788",
-    "url": "",
+    "url": "https://cors-proxy.cooks.fyi/http://212.5.144.156:8080/disney/index.m3u8",
     "country": "USA"
   },
   {
