@@ -8,10 +8,14 @@ const INTERMEDIATE_JSON = "./tv-merged.json";
 const STATE_FILE = "./.state.json"; // lastRun, lastFull, lock
 const SCRAPE_TEST_URL = 'https://www.livehdtv.com/ch123/';
 const BROWSERBASE_API_KEY = process.env.BROWSERBASE_API_KEY?.trim();
+const BROWSERLESS_API_KEY = process.env.BROWSERLESS_API_KEY?.trim();
 
 // Intervalles
 const UPDATE_INTERVAL_MS = 2 * 60 * 60 * 1000;  // 2h
 const FULL_INTERVAL_MS   = 24 * 60 * 60 * 1000; // 24h
+const AUTO_TIME_ZONE = process.env.AUTO_TIME_ZONE?.trim() || 'Europe/Paris';
+const AUTO_QUIET_START_HOUR = 22;
+const AUTO_QUIET_END_HOUR = 6;
 const STREAM_TEST_CONCURRENCY = 4;
 const LOCK_TIMEOUT_MS = 30 * 60 * 1000; // 30 min
 
@@ -519,9 +523,11 @@ function escapeM3UText(value: string): string {
 
 type ScrapedStream = {
     url: string;
-    origin: 'source HTML' | 'JSON-LD' | 'script HTML' | 'Browserbase';
+    origin: 'source HTML' | 'JSON-LD' | 'script HTML' | 'Browserbase' | 'Browserless';
     referer?: string;
 };
+
+type BrowserProvider = 'Browserbase' | 'Browserless';
 
 type BrowserbaseSession = {
     id: string;
@@ -753,15 +759,18 @@ async function closeBrowserbaseRuntime(): Promise<void> {
     }
 }
 
-async function fetchScrapedStreamsViaBrowserbase(pageUrl: string): Promise<ScrapedStream[]> {
-    const { page } = await getBrowserbaseRuntime();
+async function scrapeStreamsFromBrowserPage(
+    page: Page,
+    pageUrl: string,
+    provider: BrowserProvider
+): Promise<ScrapedStream[]> {
     await page.goto('about:blank', { waitUntil: 'load', timeout: 10000 }).catch(() => undefined);
     await page.waitForTimeout(100);
 
     const streams = new Map<string, ScrapedStream>();
     const addUrl = (url: string, referer?: string): void => {
         if (!url.toLowerCase().includes('.m3u8')) return;
-        streams.set(url, { url: decodeHtmlAttribute(url), origin: 'Browserbase', referer });
+        streams.set(url, { url: decodeHtmlAttribute(url), origin: provider, referer });
     };
     const onRequest = (request: Request): void => addUrl(request.url(), request.headers().referer);
     const onResponse = (response: PlaywrightResponse): void =>
@@ -770,7 +779,7 @@ async function fetchScrapedStreamsViaBrowserbase(pageUrl: string): Promise<Scrap
     page.on('request', onRequest);
     page.on('response', onResponse);
     try {
-        console.log(`🌐 Navigation Browserbase → ${pageUrl}`);
+        console.log(`🌐 Navigation ${provider} → ${pageUrl}`);
         const navigation = await page.goto(pageUrl, {
             waitUntil: 'domcontentloaded',
             timeout: 60000,
@@ -838,7 +847,7 @@ async function fetchScrapedStreamsViaBrowserbase(pageUrl: string): Promise<Scrap
         }
 
         if (streams.size === 0) {
-            throw new Error('Browserbase n’a observé aucune URL M3U8 dans la page ou ses iframes');
+            throw new Error(`${provider} n’a observé aucune URL M3U8 dans la page ou ses iframes`);
         }
         return [...streams.values()];
     } finally {
@@ -847,9 +856,33 @@ async function fetchScrapedStreamsViaBrowserbase(pageUrl: string): Promise<Scrap
     }
 }
 
+async function fetchScrapedStreamsViaBrowserbase(pageUrl: string): Promise<ScrapedStream[]> {
+    const { page } = await getBrowserbaseRuntime();
+    return scrapeStreamsFromBrowserPage(page, pageUrl, 'Browserbase');
+}
+
+async function fetchScrapedStreamsViaBrowserless(pageUrl: string): Promise<ScrapedStream[]> {
+    if (!BROWSERLESS_API_KEY) {
+        throw new Error('Browserless nécessite la variable BROWSERLESS_API_KEY');
+    }
+
+    const endpoint =
+        `wss://production-ams.browserless.io/stealth?token=${encodeURIComponent(BROWSERLESS_API_KEY)}`;
+    console.log('🌐 Connexion à Browserless (Amsterdam)');
+    const browser = await chromium.connectOverCDP(endpoint, { timeout: 30000 });
+    try {
+        const context = browser.contexts()[0];
+        if (!context) throw new Error('Browserless n’a fourni aucun contexte navigateur');
+        const page = context.pages()[0] ?? await context.newPage();
+        return await scrapeStreamsFromBrowserPage(page, pageUrl, 'Browserless');
+    } finally {
+        await browser.close();
+    }
+}
+
 async function runScrapeTest(): Promise<void> {
-    console.log(`🧪 Test LiveHD via Browserbase : ${SCRAPE_TEST_URL}`);
-    const streams = await fetchScrapedStreamsViaBrowserbase(SCRAPE_TEST_URL);
+    console.log(`🧪 Test LiveHD via Browserless : ${SCRAPE_TEST_URL}`);
+    const streams = await fetchScrapedStreamsViaBrowserless(SCRAPE_TEST_URL);
 
     console.log(`🔎 ${streams.length} URL(s) M3U8 unique(s) trouvée(s)`);
     const results = await Promise.all(streams.map(async (stream, index) => {
@@ -965,6 +998,31 @@ function elapsedSince(timestamp?: string, now = Date.now()): number {
     return Number.isFinite(parsed) ? Math.max(0, now - parsed) : Number.POSITIVE_INFINITY;
 }
 
+function getHourInTimeZone(now: Date, timeZone: string): number {
+    const hour = new Intl.DateTimeFormat('en-GB', {
+        timeZone,
+        hour: '2-digit',
+        hourCycle: 'h23',
+    }).formatToParts(now).find((part) => part.type === 'hour')?.value;
+
+    if (hour === undefined) throw new Error(`Impossible de déterminer l'heure dans le fuseau ${timeZone}`);
+    return Number(hour);
+}
+
+function isAutoQuietHours(now = new Date()): boolean {
+    const hour = getHourInTimeZone(now, AUTO_TIME_ZONE);
+    return hour >= AUTO_QUIET_START_HOUR || hour < AUTO_QUIET_END_HOUR;
+}
+
+function formatAutoLocalTime(now = new Date()): string {
+    return new Intl.DateTimeFormat('fr-FR', {
+        timeZone: AUTO_TIME_ZONE,
+        hour: '2-digit',
+        minute: '2-digit',
+        hourCycle: 'h23',
+    }).format(now);
+}
+
 async function markCompleted(mode: 'full' | 'update'): Promise<void> {
     const state = await loadState();
     const completedAt = new Date().toISOString();
@@ -1024,6 +1082,14 @@ async function main(): Promise<"full" | "update" | "test" | "skip"> {
 
     let chosen: 'full' | 'update' | 'skip';
     if (mode === 'auto') {
+        if (isAutoQuietHours()) {
+            console.log(
+                `Auto: pause nocturne à ${formatAutoLocalTime()} (${AUTO_TIME_ZONE}), ` +
+                `aucun scraping entre ${AUTO_QUIET_START_HOUR}h et ${AUTO_QUIET_END_HOUR}h.`,
+            );
+            return 'skip';
+        }
+
         const state = await loadState();
         chosen = chooseAutoMode(state, fs.existsSync(INTERMEDIATE_JSON));
         if (chosen === 'skip') {
