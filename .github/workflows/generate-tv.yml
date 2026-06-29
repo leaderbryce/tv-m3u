@@ -3,7 +3,7 @@ name: Generate TV M3U
 on:
   workflow_dispatch:
   schedule:
-    - cron: "15 * * * *"
+    - cron: "37 * * * *"
 
 permissions:
   contents: write
