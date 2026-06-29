@@ -12,7 +12,7 @@ const PLAYWRIGHT_USER_AGENT = process.env.PLAYWRIGHT_USER_AGENT?.trim() ||
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0 Safari/537.36';
 
 // Intervalles
-const UPDATE_INTERVAL_MS = 2 * 60 * 60 * 1000;  // 2h
+const UPDATE_INTERVAL_MS = 90 * 60 * 1000;       // 1h30, avant l'expiration des flux à 2h
 const FULL_INTERVAL_MS   = 24 * 60 * 60 * 1000; // 24h
 const STREAM_TEST_CONCURRENCY = 4;
 const LOCK_TIMEOUT_MS = 30 * 60 * 1000; // 30 min

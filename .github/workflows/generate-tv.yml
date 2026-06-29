@@ -3,7 +3,11 @@ name: Generate TV M3U
 on:
   workflow_dispatch:
   schedule:
-    - cron: "37 * * * *"
+    - cron: "7,27,47 * * * *"
+
+concurrency:
+  group: generate-tv-m3u
+  cancel-in-progress: false
 
 permissions:
   contents: write
