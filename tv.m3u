@@ -1,30 +1,32 @@
 #EXTM3U
 #EXTINF:-1 tvg-id="TF1.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/tf1-fr.png?raw=true" group-title="LIVETV;TVFRANCE",TF1
-https://helpfullive.info/tf1/index.m3u8?token=b74eb404f4f548b747df7d58feb488866732fa2e-0b0560d26d4bdc482fee4986d9ca1247-1783035097-1783024297
+https://helpfullive.info/tf1/index.m3u8?token=b71b51dcba6ef8d9c8777e4c1d192b7c2661de22-3e75863647618d640b34b251b8092fbd-1783044903-1783034103
 #EXTINF:-1 tvg-id="France2.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/france-2-fr.png?raw=true" group-title="LIVETV;TVFRANCE",France 2
 http://69.64.57.208/france2/mono.m3u8
 #EXTINF:-1 tvg-id="France3.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/france-3-fr.png?raw=true" group-title="LIVETV;TVFRANCE",France 3
 http://85.14.32.26:8800/udp/239.100.10.144:5000
 #EXTINF:-1 tvg-id="CanalPlus.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/canal-plus-cinemas-fr.png?raw=true" group-title="LIVETV;TVFRANCE",Canal+ Cinemas
 http://151.80.18.177:86/Canal+_cinema_HD/index.m3u8
+#EXTINF:-1 tvg-id="CanalPlus.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/canal-plus-fr.png?raw=true" group-title="LIVETV;TVFRANCE",Canal+ Family
+http://151.80.18.177:86/Canal+_Family_HD/index.m3u8
 #EXTINF:-1 tvg-id="France5.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/france-5-fr.png?raw=true" group-title="LIVETV;TVFRANCE",France 5
 http://69.64.57.208/france5/mono.m3u8
 #EXTINF:-1 tvg-id="M6.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/m6-fr.png?raw=true" group-title="LIVETV;TVFRANCE",M6
-https://helpfullive.info/m6/index.m3u8?token=b3662c6a95d8169bca72c679ee70ab32f99481a9-41f902593ec2e050882cc0e1e4b47a6e-1783023409-1783012609
+https://helpfullive.info/m6/index.m3u8?token=f539f07a979231bab8c2150410a07cbb4e9a2d5e-fd46940b6845b5f2d8b4160ab9672a35-1783044907-1783034107
 #EXTINF:-1 tvg-id="Arte.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/hd/arte-hd-fr.png?raw=true" group-title="LIVETV;TVFRANCE",Arte
-https://helpfullive.info/artefr/index.m3u8?token=7543d98ca91c59cf192fd3af24b6179f5e2ceadf-4f6c6ddcfc81c59041367b1f8ed67cc8-1783035115-1783024315
+https://helpfullive.info/artefr/index.m3u8?token=79250f9e4c056ef5287ed1ecf230a2f3b1a128e5-a1748c3f37cb58337eb98289eb1ac479-1783044911-1783034111
 #EXTINF:-1 tvg-id="W9.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/w9-fr.png?raw=true" group-title="LIVETV;TVFRANCE",W9
 https://origin-m6web.live.6cloud.fr/out/v1/6play/6play-w9/cmaf_q2hyb21h/hls-short-hd.m3u8
 #EXTINF:-1 tvg-id="TMC.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/tmc-fr.png?raw=true" group-title="LIVETV;TVFRANCE",TMC
-https://helpfullive.info/tmc/index.m3u8?token=1fdffe0f381c5360860092a3f28a2ef917df6976-500dbbd9506e22030d408076fa76a71b-1783029113-1783018313
+https://helpfullive.info/tmc/index.m3u8?token=41d6c80a31c9a73ce6945583e2dfc27d350dc9d2-dc59e3156d0c321c0e039d7da99d8fdb-1783044914-1783034114
 #EXTINF:-1 tvg-id="TFX.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/tfx-fr.png?raw=true" group-title="LIVETV;TVFRANCE",TFX
-https://helpfullive.info/tfx/index.m3u8?token=e6b5011549914dccabb6c8df18bc4daec4d778d3-0667f6008a4548f4e9f3b970b15e4749-1783016658-1783005858
+https://helpfullive.info/tfx/index.m3u8?token=1446f93dcc8ea969a17a428bb80b7e26249c2d8f-59318f08b0870c594fe5346347b6425a-1783044916-1783034116
 #EXTINF:-1 tvg-id="Cherie25.fr" tvg-logo="https://upload.wikimedia.org/wikipedia/fr/thumb/1/1f/Ch%C3%A9rie_25_logo.svg/330px-Ch%C3%A9rie_25_logo.svg.png" group-title="LIVETV;TVFRANCE",Chérie 25
 https://cherie25.nrjaudio.fm/hls/live/2038375/c25/master.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9NS8xMi8yMDE4IDEwOjExOjA2IFBNJmhhc2hfdmFsdWU9cGtzUElvZjBwOUFIcDZRenpxQmxLdz09JnZhbGlkbWludXRlcz01
 #EXTINF:-1 tvg-id="CNews.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/c-news-fr.png?raw=true" group-title="LIVETV;TVFRANCE",CNews
 https://raw.githubusercontent.com/LeBazarDeBryan/XTVZ_/main/Stream/Live/CNews.m3u8
 #EXTINF:-1 tvg-id="CStar.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/c-star-fr.png?raw=true" group-title="LIVETV;TVFRANCE",CStar
-https://helpfullive.info/cstar/index.m3u8?token=9df548cb4d9391436f5848446c3fff702c76736d-6a1aceb823f45604af20e38b3d95f4fb-1783035147-1783024347
+https://helpfullive.info/cstar/index.m3u8?token=6d92e5aa80e961ec16f7a856bd403789940b54ed-6ccdbcfaf2dfba94717719873f80adf4-1783044921-1783034121
 #EXTINF:-1 tvg-id="RTL9.fr" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/france/rtl9-fr.png" group-title="LIVETV;TVFRANCE",RTL9
 http://rezofoot.tv/rtl-9/index.m3u8
 #EXTINF:-1 tvg-id="Gulli.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/gulli-fr.png?raw=true" group-title="LIVETV;TVFRANCE",Gulli
@@ -32,7 +34,7 @@ http://41.205.77.102/GULLI/index.m3u8
 #EXTINF:-1 tvg-id="T18.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/t18-fr.png?raw=true" group-title="LIVETV;TVFRANCE",T18
 https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/t18/t18-dm.m3u8
 #EXTINF:-1 tvg-id="6ter.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/6ter-fr.png?raw=true" group-title="LIVETV;TVFRANCE",6ter
-https://helpfullive.info/6ter/index.m3u8?token=90ef8a6c7461da649e33abd1de2ab04881dd1cfd-c40a00cd947890c2e08f912a05d9b4bc-1783035151-1783024351
+https://helpfullive.info/6ter/index.m3u8?token=7c71252172c6f94594256f6cf5e11038870fcd92-7679119bfccf49f5d390734d7992b527-1783044924-1783034124
 #EXTINF:-1 tvg-id="RMCStory.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/rmc-story-fr.png?raw=true" group-title="LIVETV;TVFRANCE",RMC Story
 https://d15aro46bnpfm8.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-fqkqiax1078up/RMC_Story_FR.m3u8
 #EXTINF:-1 tvg-id="RMCDecouverte.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/rmc-decouverte-fr.png?raw=true" group-title="LIVETV;TVFRANCE",RMC Découverte
