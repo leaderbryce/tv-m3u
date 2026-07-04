@@ -10,7 +10,7 @@
     "group": "TVFRANCE",
     "tvgId": "TF1.fr",
     "scrapUrl": "https://www.livehdtv.com/ch123/",
-    "url": "https://helpfullive.info/tf1/index.m3u8?token=42b9d42395850e3d6eb02f567d3ebbc939c06d4b-e44581df33947a2b9bc286c56ba37eac-1783183797-1783172997",
+    "url": "https://helpfullive.info/tf1/index.m3u8?token=2cff4c13fbe045686fe43f64c09a43fc40f989fd-628df277446c9d79e70fcb6587117a95-1783204158-1783193358",
     "country": "FR"
   },
   {
@@ -124,7 +124,7 @@
     "group": "TVFRANCE",
     "tvgId": "Arte.fr",
     "scrapUrl": "https://www.livehdtv.com/arte-french/",
-    "url": "https://helpfullive.info/artefr/index.m3u8?token=5a8095d7160f6a8b9e555cdbce0a9b400527272d-1dc51a2069c0908d515e83c75bc930fc-1783193174-1783182374",
+    "url": "https://helpfullive.info/artefr/index.m3u8?token=d2115522d45b55f4cb5d7b7dee80e9966dea68b9-2a4e5c58d37084706c5ed28ac8c9893f-1783204175-1783193375",
     "country": "FR"
   },
   {
@@ -223,7 +223,7 @@
     "group": "TVFRANCE",
     "tvgId": "CStar.fr",
     "scrapUrl": "https://www.livehdtv.com/ch193/",
-    "url": "https://helpfullive.info/cstar/index.m3u8?token=378399747f516941fad2cabf19cfd5af2d6dba99-2abcc8a59546e97eea27d811ee2e6f46-1783183833-1783173033",
+    "url": "https://helpfullive.info/cstar/index.m3u8?token=f322bf4a08444ba9dfb0632c78707a3b4fc1a76a-9ad48701cfd7afa87a4cdaadb8bde2ed-1783204205-1783193405",
     "country": "FR"
   },
   {
@@ -284,7 +284,7 @@
     "group": "TVFRANCE",
     "tvgId": "6ter.fr",
     "scrapUrl": "https://www.livehdtv.com/6ter/",
-    "url": "https://helpfullive.info/6ter/index.m3u8?token=157af99e7ccee0270f1a7692f6df6089cd23a894-d7abe625a97159df4c6577c48d132611-1783193198-1783182398",
+    "url": "https://helpfullive.info/6ter/index.m3u8?token=e8eff6398031c8a145e42a428312cb9f0316aee5-c2594da26384eda8bbc51450feec6800-1783204207-1783193407",
     "country": "FR"
   },
   {
