@@ -1,6 +1,6 @@
 #EXTM3U
 #EXTINF:-1 tvg-id="TF1.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/tf1-fr.png?raw=true" group-title="LIVETV;TVFRANCE",TF1
-https://helpfullive.info/tf1/index.m3u8?token=562a18aa70834680c693b6526bcc656b928618cc-cc51f38fc350f3268018d5f8bb286da3-1783397444-1783386644
+https://helpfullive.info/tf1/index.m3u8?token=d7616a6947d17725a8e46cda021b8218cd9bb9a7-3aaa76287c22441acf84929aafa44280-1783412928-1783402128
 #EXTINF:-1 tvg-id="France2.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/france-2-fr.png?raw=true" group-title="LIVETV;TVFRANCE",France 2
 http://69.64.57.208/france2/mono.m3u8
 #EXTINF:-1 tvg-id="CanalPlus.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/canal-plus-cinemas-fr.png?raw=true" group-title="LIVETV;TVFRANCE",Canal+ Cinemas
@@ -9,26 +9,20 @@ http://151.80.18.177:86/Canal+_cinema_HD/index.m3u8
 http://151.80.18.177:86/Canal+_Family_HD/index.m3u8
 #EXTINF:-1 tvg-id="France5.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/france-5-fr.png?raw=true" group-title="LIVETV;TVFRANCE",France 5
 http://69.64.57.208/france5/mono.m3u8
-#EXTINF:-1 tvg-id="M6.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/m6-fr.png?raw=true" group-title="LIVETV;TVFRANCE",M6
-https://helpfullive.info/m6/index.m3u8?token=a2214c17e05be308d88638606940c6416abf7e00-2cec6699b897d74250a94279e49314a3-1783373316-1783362516
 #EXTINF:-1 tvg-id="Arte.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/hd/arte-hd-fr.png?raw=true" group-title="LIVETV;TVFRANCE",Arte
-https://helpfullive.info/artefr/index.m3u8?token=e62321e781e506d2b4f350f483b5a205a7bb483d-7588eec4913c4569b0a7de9fadcba888-1783373319-1783362519
-#EXTINF:-1 tvg-id="W9.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/w9-fr.png?raw=true" group-title="LIVETV;TVFRANCE",W9
-https://origin-m6web.live.6cloud.fr/out/v1/6play/6play-w9/cmaf_q2hyb21h/hls-short-hd.m3u8
+https://helpfullive.info/artefr/index.m3u8?token=c647345dc086a3e1600ee7a8b75cb7aad7384ecb-f9bc638d47e2629c0eef2de4c3b572cd-1783412944-1783402144
 #EXTINF:-1 tvg-id="TMC.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/tmc-fr.png?raw=true" group-title="LIVETV;TVFRANCE",TMC
-https://helpfullive.info/tmc/index.m3u8?token=3f3f767a0793740f4f2165eeb1493c2b1f51ae9f-921d803ddafd20cb25eb3916d67ee66e-1783373321-1783362521
+https://helpfullive.info/tmc/index.m3u8?token=5741547043c4247311f5909c40ddaa1a282584d2-86ab068584d94e0ed41113fc207129c0-1783412946-1783402146
 #EXTINF:-1 tvg-id="TFX.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/tfx-fr.png?raw=true" group-title="LIVETV;TVFRANCE",TFX
-https://helpfullive.info/tfx/index.m3u8?token=0f38e682ee29b0fc2bac46e80c087b5e9b172826-510e9e80b930163d2914d03be673e1cf-1783365822-1783355022
+https://helpfullive.info/tfx/index.m3u8?token=bc3c68bd56f4749e2ec850a40a728716baf07498-970caba3cd25479f4017a0030e9d1acd-1783412949-1783402149
 #EXTINF:-1 tvg-id="Cherie25.fr" tvg-logo="https://upload.wikimedia.org/wikipedia/fr/thumb/1/1f/Ch%C3%A9rie_25_logo.svg/330px-Ch%C3%A9rie_25_logo.svg.png" group-title="LIVETV;TVFRANCE",Chérie 25
 https://cherie25.nrjaudio.fm/hls/live/2038375/c25/master.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9NS8xMi8yMDE4IDEwOjExOjA2IFBNJmhhc2hfdmFsdWU9cGtzUElvZjBwOUFIcDZRenpxQmxLdz09JnZhbGlkbWludXRlcz01
 #EXTINF:-1 tvg-id="CStar.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/c-star-fr.png?raw=true" group-title="LIVETV;TVFRANCE",CStar
-https://helpfullive.info/cstar/index.m3u8?token=0c30b1f6b3e2d0a3d5ac247f35ef7b5f3a3b214e-cc8a7d602177bfd7b3219ac030338381-1783373339-1783362539
+https://helpfullive.info/cstar/index.m3u8?token=e7776929e72886bf13bcbe1fae995719d0921a2f-946f50597d0aefdb5d7b362336acb14c-1783412953-1783402153
 #EXTINF:-1 tvg-id="Gulli.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/gulli-fr.png?raw=true" group-title="LIVETV;TVFRANCE",Gulli
 http://41.205.77.102/GULLI/index.m3u8
 #EXTINF:-1 tvg-id="T18.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/t18-fr.png?raw=true" group-title="LIVETV;TVFRANCE",T18
 https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/t18/t18-dm.m3u8
-#EXTINF:-1 tvg-id="6ter.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/6ter-fr.png?raw=true" group-title="LIVETV;TVFRANCE",6ter
-https://helpfullive.info/6ter/index.m3u8?token=a0546d128e041b4af5c328463318c537dbe4b8c6-7268127d5ce4b6d960a93c1874d5aff8-1783373341-1783362541
 #EXTINF:-1 tvg-id="RMCStory.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/rmc-story-fr.png?raw=true" group-title="LIVETV;TVFRANCE",RMC Story
 https://d15aro46bnpfm8.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-fqkqiax1078up/RMC_Story_FR.m3u8
 #EXTINF:-1 tvg-id="RMCDecouverte.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/rmc-decouverte-fr.png?raw=true" group-title="LIVETV;TVFRANCE",RMC Découverte
@@ -51,8 +45,6 @@ http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/51550
 https://cdnbarinas.tvzamora.com/hbofamily/index.m3u8
 #EXTINF:-1 tvg-id="465255" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hbo-hits-us.png?raw=true" group-title="LIVETV;TVUSA",HBO Hits
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/648976
-#EXTINF:-1 tvg-id="403537" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/showtime-hd-us.png?raw=true" group-title="LIVETV;TVUSA",Showtime
-http://23.237.104.106:8080/USA_SHOWTIME/index.m3u8
 #EXTINF:-1 tvg-id="403651" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/showtime-2-us.png?raw=true" group-title="LIVETV;TVUSA",Showtime 2
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3965
 #EXTINF:-1 tvg-id="403520" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/showtime-next-us.png?raw=true" group-title="LIVETV;TVUSA",Showtime Next
@@ -132,7 +124,7 @@ http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3093
 #EXTINF:-1 tvg-id="403631" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/syfy-hd-us.png?raw=true" group-title="LIVETV;TVUSA",Syfy
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3841
 #EXTINF:-1 tvg-id="403921" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mtv-us.png?raw=true" group-title="LIVETV;TVUSA",MTV
-http://23.237.104.106:8080/USA_MTV/index.m3u8
+http://198.58.104.90:8989/mtv/index.m3u8
 #EXTINF:-1 tvg-id="403593" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mtv-2-us.png?raw=true" group-title="LIVETV;TVUSA",MTV 2
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/97469
 #EXTINF:-1 tvg-id="403621" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mtv-live-us.png?raw=true" group-title="LIVETV;TVUSA",MTV Live
