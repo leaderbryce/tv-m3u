@@ -10,7 +10,7 @@ http://151.80.18.177:86/Canal+_Family_HD/index.m3u8
 #EXTINF:-1 tvg-id="France5.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/france-5-fr.png?raw=true" group-title="LIVETV;TVFRANCE",France 5
 http://69.64.57.208/france5/mono.m3u8
 #EXTINF:-1 tvg-id="M6.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/m6-fr.png?raw=true" group-title="LIVETV;TVFRANCE",M6
-https://helpfullive.info/m6/index.m3u8?token=08cb41299cc1efceb80fb10e5efca671c72a50da-3c58d04f228a3d1dc0eb9e7c9053f710-1783448427-1783437627
+https://helpfullive.info/m6/index.m3u8?token=037ec7fb446df38fccf7e9debad115749b299c69-66e994f26b5c805910b258784e4b6530-1783456172-1783445372
 #EXTINF:-1 tvg-id="Arte.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/hd/arte-hd-fr.png?raw=true" group-title="LIVETV;TVFRANCE",Arte
 https://helpfullive.info/artefr/index.m3u8?token=9f7108f7fbd0133e7f25d4ad53580743b7ea7136-c46a836343148a42bff10d288b19d612-1783448430-1783437630
 #EXTINF:-1 tvg-id="TMC.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/tmc-fr.png?raw=true" group-title="LIVETV;TVFRANCE",TMC
