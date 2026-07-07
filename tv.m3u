@@ -10,11 +10,11 @@ http://151.80.18.177:86/Canal+_Family_HD/index.m3u8
 #EXTINF:-1 tvg-id="France5.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/france-5-fr.png?raw=true" group-title="LIVETV;TVFRANCE",France 5
 http://69.64.57.208/france5/mono.m3u8
 #EXTINF:-1 tvg-id="Arte.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/hd/arte-hd-fr.png?raw=true" group-title="LIVETV;TVFRANCE",Arte
-https://helpfullive.info/artefr/index.m3u8?token=c647345dc086a3e1600ee7a8b75cb7aad7384ecb-f9bc638d47e2629c0eef2de4c3b572cd-1783412944-1783402144
+https://helpfullive.info/artefr/index.m3u8?token=cf73cc08683462e5b1f6b9363717157877c0759f-7258032d277dc9a7d8eaa852916081ae-1783425093-1783414293
 #EXTINF:-1 tvg-id="TMC.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/tmc-fr.png?raw=true" group-title="LIVETV;TVFRANCE",TMC
 https://helpfullive.info/tmc/index.m3u8?token=5741547043c4247311f5909c40ddaa1a282584d2-86ab068584d94e0ed41113fc207129c0-1783412946-1783402146
 #EXTINF:-1 tvg-id="TFX.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/tfx-fr.png?raw=true" group-title="LIVETV;TVFRANCE",TFX
-https://helpfullive.info/tfx/index.m3u8?token=bc3c68bd56f4749e2ec850a40a728716baf07498-970caba3cd25479f4017a0030e9d1acd-1783412949-1783402149
+https://helpfullive.info/tfx/index.m3u8?token=6bbb37c8622d07cc2447a31118ffd7ae34561031-e889ad9607c88cde27582f7494d2468d-1783425109-1783414309
 #EXTINF:-1 tvg-id="Cherie25.fr" tvg-logo="https://upload.wikimedia.org/wikipedia/fr/thumb/1/1f/Ch%C3%A9rie_25_logo.svg/330px-Ch%C3%A9rie_25_logo.svg.png" group-title="LIVETV;TVFRANCE",Chérie 25
 https://cherie25.nrjaudio.fm/hls/live/2038375/c25/master.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9NS8xMi8yMDE4IDEwOjExOjA2IFBNJmhhc2hfdmFsdWU9cGtzUElvZjBwOUFIcDZRenpxQmxLdz09JnZhbGlkbWludXRlcz01
 #EXTINF:-1 tvg-id="CStar.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/c-star-fr.png?raw=true" group-title="LIVETV;TVFRANCE",CStar
