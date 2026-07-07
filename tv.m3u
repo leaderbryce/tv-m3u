@@ -1,6 +1,6 @@
 #EXTM3U
 #EXTINF:-1 tvg-id="TF1.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/tf1-fr.png?raw=true" group-title="LIVETV;TVFRANCE",TF1
-https://helpfullive.info/tf1/index.m3u8?token=ec335e83ec927bdd0f688e5ea8c968be368328f2-3f7d5161942086b817a76a312f65aa6e-1783469028-1783458228
+https://helpfullive.info/tf1/index.m3u8?token=0ab6ec6ec00fcc03bb0abe5c66127ad6efd21537-aa6d8d2c4172a83baf3d4e93ac07b5b3-1783478115-1783467315
 #EXTINF:-1 tvg-id="France2.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/france-2-fr.png?raw=true" group-title="LIVETV;TVFRANCE",France 2
 http://69.64.57.208/france2/mono.m3u8
 #EXTINF:-1 tvg-id="CanalPlus.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/canal-plus-cinemas-fr.png?raw=true" group-title="LIVETV;TVFRANCE",Canal+ Cinemas
@@ -12,15 +12,15 @@ http://69.64.57.208/france5/mono.m3u8
 #EXTINF:-1 tvg-id="M6.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/m6-fr.png?raw=true" group-title="LIVETV;TVFRANCE",M6
 https://helpfullive.info/m6/index.m3u8?token=fa7e84b951bc435a7e2dc4bfab1d4150f7dd1127-b63771dc5ce6e28ad3e88473f31d42a4-1783469036-1783458236
 #EXTINF:-1 tvg-id="Arte.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/hd/arte-hd-fr.png?raw=true" group-title="LIVETV;TVFRANCE",Arte
-https://helpfullive.info/artefr/index.m3u8?token=9cc9731efd903fe8963bb906b23acc3d04e5b45c-ec926a1d9245e3af31268540c0f42cfa-1783462942-1783452142
+https://helpfullive.info/artefr/index.m3u8?token=d3cb74805ffec51090874b5d059b4eee10e37f91-7dce4415e2690145854bbab88ab13146-1783478136-1783467336
 #EXTINF:-1 tvg-id="TMC.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/tmc-fr.png?raw=true" group-title="LIVETV;TVFRANCE",TMC
-https://helpfullive.info/tmc/index.m3u8?token=5f48430cadc0e32056e57b028d4dcc8ea9bfcdf2-36386dd2c796e6e3c8fe6608edf70593-1783469052-1783458252
+https://helpfullive.info/tmc/index.m3u8?token=b818046f401c3880aabd943b7560425e7b92747a-b3bdfba8a3369138c9a446214656afcb-1783478140-1783467340
 #EXTINF:-1 tvg-id="TFX.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/tfx-fr.png?raw=true" group-title="LIVETV;TVFRANCE",TFX
 https://helpfullive.info/tfx/index.m3u8?token=adfcb1996a995bab9af7054d8ed700e14b0fe180-06a0aeff7e763654e37d927d10e406f6-1783469055-1783458255
 #EXTINF:-1 tvg-id="Cherie25.fr" tvg-logo="https://upload.wikimedia.org/wikipedia/fr/thumb/1/1f/Ch%C3%A9rie_25_logo.svg/330px-Ch%C3%A9rie_25_logo.svg.png" group-title="LIVETV;TVFRANCE",Chérie 25
 https://cherie25.nrjaudio.fm/hls/live/2038375/c25/master.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9NS8xMi8yMDE4IDEwOjExOjA2IFBNJmhhc2hfdmFsdWU9cGtzUElvZjBwOUFIcDZRenpxQmxLdz09JnZhbGlkbWludXRlcz01
 #EXTINF:-1 tvg-id="CStar.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/c-star-fr.png?raw=true" group-title="LIVETV;TVFRANCE",CStar
-https://helpfullive.info/cstar/index.m3u8?token=6d85a7ed1ac96993530a359429b00277bf9bae34-019e1a5f8ecf08ae47b9193fe0f5413d-1783469060-1783458260
+https://helpfullive.info/cstar/index.m3u8?token=a97e0397738fbd504522deae7fdb3b614bc8cd3e-efa081f7f070f1c718b3c01e27825145-1783478149-1783467349
 #EXTINF:-1 tvg-id="Gulli.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/gulli-fr.png?raw=true" group-title="LIVETV;TVFRANCE",Gulli
 http://41.205.77.102/GULLI/index.m3u8
 #EXTINF:-1 tvg-id="T18.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/t18-fr.png?raw=true" group-title="LIVETV;TVFRANCE",T18
