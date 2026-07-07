@@ -10,7 +10,7 @@
     "group": "TVFRANCE",
     "tvgId": "TF1.fr",
     "scrapUrl": "https://www.livehdtv.com/ch123/",
-    "url": "https://helpfullive.info/tf1/index.m3u8?token=d7616a6947d17725a8e46cda021b8218cd9bb9a7-3aaa76287c22441acf84929aafa44280-1783412928-1783402128",
+    "url": "https://helpfullive.info/tf1/index.m3u8?token=1c53b03ba84c1fef4e2dfeaa1871111b9f3f7d68-430dba85acb28c3d55d35a99747ae455-1783436602-1783425802",
     "country": "FR"
   },
   {
@@ -124,7 +124,7 @@
     "group": "TVFRANCE",
     "tvgId": "Arte.fr",
     "scrapUrl": "https://www.livehdtv.com/arte-french/",
-    "url": "https://helpfullive.info/artefr/index.m3u8?token=cf73cc08683462e5b1f6b9363717157877c0759f-7258032d277dc9a7d8eaa852916081ae-1783425093-1783414293",
+    "url": "https://helpfullive.info/artefr/index.m3u8?token=e123f8ff06307906a522cb6815979ebf2034df05-43c033137e6152a20f855da236c7be48-1783436619-1783425819",
     "country": "FR"
   },
   {
@@ -150,7 +150,7 @@
     "group": "TVFRANCE",
     "tvgId": "TMC.fr",
     "scrapUrl": "https://www.livehdtv.com/tmc/",
-    "url": "https://helpfullive.info/tmc/index.m3u8?token=5741547043c4247311f5909c40ddaa1a282584d2-86ab068584d94e0ed41113fc207129c0-1783412946-1783402146",
+    "url": "https://helpfullive.info/tmc/index.m3u8?token=6a85eacad7fcba264e49105d521fb276bdf3c154-abcf4d57ba99d41714f2d5e78f25065d-1783436622-1783425822",
     "country": "FR"
   },
   {
@@ -163,7 +163,7 @@
     "group": "TVFRANCE",
     "tvgId": "TFX.fr",
     "scrapUrl": "https://www.livehdtv.com/tfx/",
-    "url": "https://helpfullive.info/tfx/index.m3u8?token=6bbb37c8622d07cc2447a31118ffd7ae34561031-e889ad9607c88cde27582f7494d2468d-1783425109-1783414309",
+    "url": "https://helpfullive.info/tfx/index.m3u8?token=6a9dadc54e7d6570fbe1f7892c4be37e2409578c-208b414238fb9c902b91ae9f5a3235ba-1783436624-1783425824",
     "country": "FR"
   },
   {
@@ -284,7 +284,7 @@
     "group": "TVFRANCE",
     "tvgId": "6ter.fr",
     "scrapUrl": "https://www.livehdtv.com/6ter/",
-    "url": "",
+    "url": "https://helpfullive.info/6ter/index.m3u8?token=ecd259ddcf78d5e742d3ae52096cff18612db225-6475266305f674cde67ee5c88ce1a0df-1783436644-1783425844",
     "country": "FR"
   },
   {
