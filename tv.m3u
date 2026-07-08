@@ -12,9 +12,9 @@ http://69.64.57.208/france5/mono.m3u8
 #EXTINF:-1 tvg-id="M6.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/m6-fr.png?raw=true" group-title="LIVETV;TVFRANCE",M6
 https://helpfullive.info/m6/index.m3u8?token=c075b691d2f05b0173bf6997d876c3f9f2cd04ba-c5cab00f48b576c93587231e837a2935-1783483724-1783472924
 #EXTINF:-1 tvg-id="Arte.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/hd/arte-hd-fr.png?raw=true" group-title="LIVETV;TVFRANCE",Arte
-https://helpfullive.info/artefr/index.m3u8?token=334edfecd58c0fdce0e34aa16097f2d796e5e3a0-3565706fb710130bb3cc48665a479192-1783483727-1783472927
+https://helpfullive.info/artefr/index.m3u8?token=aed60f77079d23cc719569927421452d3ae660bd-2c14825980d52dbebfc381a87eecf00e-1783496339-1783485539
 #EXTINF:-1 tvg-id="TMC.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/tmc-fr.png?raw=true" group-title="LIVETV;TVFRANCE",TMC
-https://helpfullive.info/tmc/index.m3u8?token=8c77eb39a746f406af330f1e0e2bc73c048ca67e-5827e2bd27e0fb429a0a9bda644aa1b4-1783483729-1783472929
+https://helpfullive.info/tmc/index.m3u8?token=3b116c35a529fc9724b032cc1ae0b4d35cd81aac-a245c36730c8e16ab028040249aa6ebe-1783496342-1783485542
 #EXTINF:-1 tvg-id="TFX.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/tfx-fr.png?raw=true" group-title="LIVETV;TVFRANCE",TFX
 https://helpfullive.info/tfx/index.m3u8?token=adfcb1996a995bab9af7054d8ed700e14b0fe180-06a0aeff7e763654e37d927d10e406f6-1783469055-1783458255
 #EXTINF:-1 tvg-id="Cherie25.fr" tvg-logo="https://upload.wikimedia.org/wikipedia/fr/thumb/1/1f/Ch%C3%A9rie_25_logo.svg/330px-Ch%C3%A9rie_25_logo.svg.png" group-title="LIVETV;TVFRANCE",Chérie 25
@@ -26,7 +26,7 @@ http://41.205.77.102/GULLI/index.m3u8
 #EXTINF:-1 tvg-id="T18.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/t18-fr.png?raw=true" group-title="LIVETV;TVFRANCE",T18
 https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/t18/t18-dm.m3u8
 #EXTINF:-1 tvg-id="6ter.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/6ter-fr.png?raw=true" group-title="LIVETV;TVFRANCE",6ter
-https://helpfullive.info/6ter/index.m3u8?token=fd9ae88f8086afa8649e6438a06e5ad7f6ace103-bf9206bcd2f48f24b7c0ce5ac092aa95-1783483738-1783472938
+https://helpfullive.info/6ter/index.m3u8?token=76575dae885139bf0125bb002d87dce12c5476a7-66bce29f599413537d7c30ec50099ee6-1783496373-1783485573
 #EXTINF:-1 tvg-id="RMCStory.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/rmc-story-fr.png?raw=true" group-title="LIVETV;TVFRANCE",RMC Story
 https://d15aro46bnpfm8.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-fqkqiax1078up/RMC_Story_FR.m3u8
 #EXTINF:-1 tvg-id="RMCDecouverte.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/rmc-decouverte-fr.png?raw=true" group-title="LIVETV;TVFRANCE",RMC Découverte
