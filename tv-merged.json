@@ -10,7 +10,7 @@
     "group": "TVFRANCE",
     "tvgId": "TF1.fr",
     "scrapUrl": "https://www.livehdtv.com/ch123/",
-    "url": "https://helpfullive.info/tf1/index.m3u8?token=a6dbf74b058ce8f316cd39e66b8ef5cba1a88810-fdbd9fd063aa219983ec3668a623d492-1783547339-1783536539",
+    "url": "https://helpfullive.info/tf1/index.m3u8?token=b711a319d2961d45c3277bd90514c549ae9f6de8-fc2fdf2fe6eee8578b48236e9f07dbb3-1783553457-1783542657",
     "country": "FR"
   },
   {
@@ -112,7 +112,7 @@
     "group": "TVFRANCE",
     "tvgId": "M6.fr",
     "scrapUrl": "https://www.livehdtv.com/m6/",
-    "url": "https://helpfullive.info/m6/index.m3u8?token=36aa979ce2ff0bb1f3c07bf90bd3d9bf628db915-681025d1e0aef6790738abd355d99989-1783547343-1783536543",
+    "url": "https://helpfullive.info/m6/index.m3u8?token=a2189d56d394457181ad81e24d89c020c69fc26f-2fce54ca96bcb547b93efbf00f586598-1783553460-1783542660",
     "country": "FR"
   },
   {
@@ -150,7 +150,7 @@
     "group": "TVFRANCE",
     "tvgId": "TMC.fr",
     "scrapUrl": "https://www.livehdtv.com/tmc/",
-    "url": "https://helpfullive.info/tmc/index.m3u8?token=33107b7b7fd684bcbbb772a02b5cbe22ce5da9bc-c0af09419a36c89a3986c0614d1a3f49-1783547349-1783536549",
+    "url": "https://helpfullive.info/tmc/index.m3u8?token=fc8320f7391596e1c84e75720b49fb1ad2c6e07e-cf02f4fdab3e89a18969cc7ad6522966-1783553476-1783542676",
     "country": "FR"
   },
   {
@@ -163,7 +163,7 @@
     "group": "TVFRANCE",
     "tvgId": "TFX.fr",
     "scrapUrl": "https://www.livehdtv.com/tfx/",
-    "url": "https://helpfullive.info/tfx/index.m3u8?token=01f5cfaa717e4a9d91123bcd8f8f264707f8e079-4ea5ef7ccfd86156d01709e76a71a989-1783547352-1783536552",
+    "url": "https://helpfullive.info/tfx/index.m3u8?token=4c60a3a17b42d7ac9332b05624c6a1f55f328709-b69b15209288f81d9f90eedc2191ab5f-1783553479-1783542679",
     "country": "FR"
   },
   {
@@ -284,7 +284,7 @@
     "group": "TVFRANCE",
     "tvgId": "6ter.fr",
     "scrapUrl": "https://www.livehdtv.com/6ter/",
-    "url": "https://helpfullive.info/6ter/index.m3u8?token=d9da50b7ff032e0ccaa2e5eb2ce0069fc2325de9-8028f7e5b1f8ec911546430d4b662da5-1783547359-1783536559",
+    "url": "https://helpfullive.info/6ter/index.m3u8?token=7968284bdcbe5fe1868b98ac1d8d028c8c4d795d-7b7fb21b5229ac339425159af2fb70fa-1783553501-1783542701",
     "country": "FR"
   },
   {
