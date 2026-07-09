@@ -10,7 +10,7 @@
     "group": "TVFRANCE",
     "tvgId": "TF1.fr",
     "scrapUrl": "https://www.livehdtv.com/ch123/",
-    "url": "https://helpfullive.info/tf1/index.m3u8?token=9841dfbc1ec5822eb45726e306ec663bfb043783-49bc90f2fb193581b341bb2e829d9f3b-1783585806-1783575006",
+    "url": "https://helpfullive.info/tf1/index.m3u8?token=8785410d8cf789acf9e1238b5193ef2b9c43b2fd-c1d559b53389a08ce0be34b61268a8f9-1783610071-1783599271",
     "country": "FR"
   },
   {
@@ -72,7 +72,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/canal-plus-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "CanalPlus.fr",
-    "url": "http://151.80.18.177:86/Canal+_Family_HD/index.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -85,7 +85,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/france-4-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "France4.fr",
-    "url": "",
+    "url": "http://176.65.146.100:8047/play/a074/index.m3u8",
     "country": "FR"
   },
   {
@@ -112,7 +112,7 @@
     "group": "TVFRANCE",
     "tvgId": "M6.fr",
     "scrapUrl": "https://www.livehdtv.com/m6/",
-    "url": "https://helpfullive.info/m6/index.m3u8?token=fb1d17db382115ba0c81c7c0e0916905893ec10a-bc474b41c9df1979cb2cdafed0df86dd-1783585812-1783575012",
+    "url": "https://helpfullive.info/m6/index.m3u8?token=7f7e7aa072f9f21bf2f8698a7322c75a54870820-e54e6542785581a8e0823217b1d58306-1783610077-1783599277",
     "country": "FR"
   },
   {
@@ -124,7 +124,7 @@
     "group": "TVFRANCE",
     "tvgId": "Arte.fr",
     "scrapUrl": "https://www.livehdtv.com/arte-french/",
-    "url": "https://helpfullive.info/artefr/index.m3u8?token=b2e1c3520f045ae65ce7761c9e5922b3306f41e5-bfc22002d5e29c2d257a51218dd8fd62-1783585815-1783575015",
+    "url": "",
     "country": "FR"
   },
   {
@@ -150,7 +150,7 @@
     "group": "TVFRANCE",
     "tvgId": "TMC.fr",
     "scrapUrl": "https://www.livehdtv.com/tmc/",
-    "url": "https://helpfullive.info/tmc/index.m3u8?token=b0e773a648ffb63d9cb86652247e846eb621b526-9c37106d517b59a8e08ef0f826e51282-1783585818-1783575018",
+    "url": "https://helpfullive.info/tmc/index.m3u8?token=86741119691109a46bb6a6029b277f765bd7c83b-31f0bff65404cf2ce8fea1dda6a9e308-1783610084-1783599284",
     "country": "FR"
   },
   {
@@ -163,7 +163,7 @@
     "group": "TVFRANCE",
     "tvgId": "TFX.fr",
     "scrapUrl": "https://www.livehdtv.com/tfx/",
-    "url": "https://helpfullive.info/tfx/index.m3u8?token=6b1400003dd2299251f3722980f8caebddca8edb-b5567fe3a382ec7397f56896b05311de-1783585821-1783575021",
+    "url": "https://helpfullive.info/tfx/index.m3u8?token=6c890183e773ace81fbcc363ee8573e52f1a7ec3-a9b9ff5bbe2c2e7fb6c0a80c35406299-1783610086-1783599286",
     "country": "FR"
   },
   {
@@ -223,7 +223,7 @@
     "group": "TVFRANCE",
     "tvgId": "CStar.fr",
     "scrapUrl": "https://www.livehdtv.com/ch193/",
-    "url": "https://helpfullive.info/cstar/index.m3u8?token=fb90770329ada25d4090f5779382e59d55274ab7-98a6b8c5cd0b6f23bab87d634e454b0d-1783547356-1783536556",
+    "url": "",
     "country": "FR"
   },
   {
@@ -284,7 +284,7 @@
     "group": "TVFRANCE",
     "tvgId": "6ter.fr",
     "scrapUrl": "https://www.livehdtv.com/6ter/",
-    "url": "https://helpfullive.info/6ter/index.m3u8?token=3d88dee82a947e569753f125ca7a00765a115b78-cdb915b6b53777da4819a2575f3786e6-1783585839-1783575039",
+    "url": "https://helpfullive.info/6ter/index.m3u8?token=7d6b30095ecd3c9c0b3a61911f921a87605524e3-94803e05664459ae43f94d0f253b9eb8-1783610105-1783599305",
     "country": "FR"
   },
   {
@@ -921,7 +921,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/disney-channel-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403788",
-    "url": "",
+    "url": "http://206.212.244.63/650/index.m3u8",
     "country": "USA"
   },
   {
@@ -1081,7 +1081,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mtv-2-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403593",
-    "url": "",
+    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/97469",
     "country": "USA"
   },
   {
