@@ -1,6 +1,6 @@
 #EXTM3U
 #EXTINF:-1 tvg-id="TF1.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/tf1-fr.png?raw=true" group-title="LIVETV;TVFRANCE",TF1
-https://helpfullive.info/tf1/index.m3u8?token=dd7aadc10b9eecc15e946206103bc075cb962ded-6373d45b0cf866716577b1de00081617-1783634928-1783624128
+https://helpfullive.info/tf1/index.m3u8?token=65c85d3a7bcbbde01071a1fdebcedca6e8d989b4-d211c8848f3c9dac811e759b5334dc42-1783641442-1783630642
 #EXTINF:-1 tvg-id="France2.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/france-2-fr.png?raw=true" group-title="LIVETV;TVFRANCE",France 2
 http://69.64.57.208/france2/mono.m3u8
 #EXTINF:-1 tvg-id="CanalPlus.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/canal-plus-cinemas-fr.png?raw=true" group-title="LIVETV;TVFRANCE",Canal+ Cinemas
@@ -14,7 +14,7 @@ https://helpfullive.info/m6/index.m3u8?token=ee017630e1b66c3f78c9864db82f56ac668
 #EXTINF:-1 tvg-id="Arte.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/hd/arte-hd-fr.png?raw=true" group-title="LIVETV;TVFRANCE",Arte
 https://helpfullive.info/artefr/index.m3u8?token=73c1f2689854028ab01a326aaa2c9c4a4801ccad-c77b90c105807d7921031b8077c43f10-1783628990-1783618190
 #EXTINF:-1 tvg-id="TMC.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/tmc-fr.png?raw=true" group-title="LIVETV;TVFRANCE",TMC
-https://helpfullive.info/tmc/index.m3u8?token=97cf4b40a97aa3cf12e7292ae92025be9581ee6d-3ce1502733b25957abb3663cd4b3560b-1783634948-1783624148
+https://helpfullive.info/tmc/index.m3u8?token=7d56ee57846f9363dc02c812b15ed1b5d4eb83da-11968a4777d421acab6d3606d177756d-1783641462-1783630662
 #EXTINF:-1 tvg-id="TFX.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/tfx-fr.png?raw=true" group-title="LIVETV;TVFRANCE",TFX
 https://helpfullive.info/tfx/index.m3u8?token=09a1d1a7aa68b0ff78f9e9aa422354a4d9a1c7e5-d8e599940105d9188b4239af7785a124-1783634950-1783624150
 #EXTINF:-1 tvg-id="Cherie25.fr" tvg-logo="https://upload.wikimedia.org/wikipedia/fr/thumb/1/1f/Ch%C3%A9rie_25_logo.svg/330px-Ch%C3%A9rie_25_logo.svg.png" group-title="LIVETV;TVFRANCE",Chérie 25

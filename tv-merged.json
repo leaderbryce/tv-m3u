@@ -10,7 +10,7 @@
     "group": "TVFRANCE",
     "tvgId": "TF1.fr",
     "scrapUrl": "https://www.livehdtv.com/ch123/",
-    "url": "https://helpfullive.info/tf1/index.m3u8?token=dd7aadc10b9eecc15e946206103bc075cb962ded-6373d45b0cf866716577b1de00081617-1783634928-1783624128",
+    "url": "https://helpfullive.info/tf1/index.m3u8?token=65c85d3a7bcbbde01071a1fdebcedca6e8d989b4-d211c8848f3c9dac811e759b5334dc42-1783641442-1783630642",
     "country": "FR"
   },
   {
@@ -150,7 +150,7 @@
     "group": "TVFRANCE",
     "tvgId": "TMC.fr",
     "scrapUrl": "https://www.livehdtv.com/tmc/",
-    "url": "https://helpfullive.info/tmc/index.m3u8?token=97cf4b40a97aa3cf12e7292ae92025be9581ee6d-3ce1502733b25957abb3663cd4b3560b-1783634948-1783624148",
+    "url": "https://helpfullive.info/tmc/index.m3u8?token=7d56ee57846f9363dc02c812b15ed1b5d4eb83da-11968a4777d421acab6d3606d177756d-1783641462-1783630662",
     "country": "FR"
   },
   {
