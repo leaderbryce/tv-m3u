@@ -72,7 +72,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/canal-plus-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "CanalPlus.fr",
-    "url": "",
+    "url": "http://151.80.18.177:86/Canal+_Family_HD/index.m3u8",
     "country": "FR"
   },
   {
@@ -175,7 +175,7 @@
     "group": "TVFRANCE",
     "tvgId": "Cherie25.fr",
     "scrapUrl": "https://www.livehdtv.com/cherie-25/",
-    "url": "https://cherie25.nrjaudio.fm/hls/live/2038375/c25/master.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9NS8xMi8yMDE4IDEwOjExOjA2IFBNJmhhc2hfdmFsdWU9cGtzUElvZjBwOUFIcDZRenpxQmxLdz09JnZhbGlkbWludXRlcz01",
+    "url": "",
     "country": "FR"
   },
   {
