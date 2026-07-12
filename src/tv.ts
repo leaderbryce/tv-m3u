@@ -6,7 +6,7 @@ import { fetch as undiciFetch } from 'undici';
 const M3U_FILEPATH = "./tv.m3u";
 const INTERMEDIATE_JSON = "./tv-merged.json";
 const STATE_FILE = "./.state.json"; // lastRun, lastFull, lock
-const SCRAPE_TEST_URL = 'https://www.livehdtv.com/ch123/';
+const SCRAPE_TEST_URL = 'https://endirecttv.com/tf1-direct/';
 const PLAYWRIGHT_CHANNEL = process.env.PLAYWRIGHT_CHANNEL?.trim() || 'chrome';
 const PLAYWRIGHT_USER_AGENT = process.env.PLAYWRIGHT_USER_AGENT?.trim() ||
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0 Safari/537.36';
