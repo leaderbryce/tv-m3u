@@ -355,7 +355,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fuse-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403455",
-    "url": "http://23.237.104.106:8080/USA_FUSE/index.m3u8",
+    "url": "",
     "country": "USA"
   },
   {
@@ -568,7 +568,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cooking-channel-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403832",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/2605",
+    "url": "http://206.212.244.63/47/index.m3u8",
     "country": "USA"
   },
   {
@@ -580,7 +580,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/food-network-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403509",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3644",
+    "url": "http://206.212.244.63/61/index.m3u8",
     "country": "USA"
   },
   {
@@ -628,7 +628,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/bbc-america-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403895",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3610",
+    "url": "http://206.212.244.63/13/index.m3u8",
     "country": "USA"
   },
   {
@@ -654,7 +654,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/comedy-central-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403666",
-    "url": "http://23.237.104.106:8080/USA_COMEDY_CENTRAL/index.m3u8",
+    "url": "http://206.212.244.63/44/index.m3u8",
     "country": "USA"
   },
   {
@@ -676,7 +676,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/tlc-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403827",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3686",
+    "url": "http://206.212.244.63/159/index.m3u8",
     "country": "USA"
   },
   {
@@ -713,7 +713,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fxm-movie-channel-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403717",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/2497",
+    "url": "",
     "country": "USA"
   },
   {
@@ -747,7 +747,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/e-entertainment-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403733",
-    "url": "http://23.237.104.106:8080/USA_E/index.m3u8",
+    "url": "",
     "country": "USA"
   },
   {
@@ -760,7 +760,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/vh1-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403653",
-    "url": "http://rezofoot.tv/VH1/index.m3u8",
+    "url": "http://206.212.244.63/169/index.m3u8",
     "country": "USA"
   },
   {
@@ -773,7 +773,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cinemax-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403854",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/2612",
+    "url": "http://40.160.24.52/CINEMAX_EAST/index.m3u8",
     "country": "USA"
   },
   {
@@ -932,7 +932,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/disney-jr-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403674",
-    "url": "http://23.237.104.106:8080/USA_DISNEY_JUNIOR/index.m3u8",
+    "url": "",
     "country": "USA"
   },
   {
@@ -958,7 +958,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nickelodeon-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403620",
-    "url": "http://23.237.104.106:8080/USA_NICKELODEON/index.m3u8",
+    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3673",
     "country": "USA"
   },
   {
@@ -1005,7 +1005,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/boomerang-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403576",
-    "url": "http://23.237.104.106:8080/USA_BOOMERANG/index.m3u8",
+    "url": "http://206.212.244.63/642/index.m3u8",
     "country": "USA"
   },
   {
@@ -1018,7 +1018,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/usa-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403626",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3694",
+    "url": "http://206.212.244.63/168/index.m3u8",
     "country": "USA"
   },
   {
@@ -1030,7 +1030,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/discovery-science-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403564",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3679",
+    "url": "http://206.212.244.63/55/index.m3u8",
     "country": "USA"
   },
   {
@@ -1081,7 +1081,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mtv-2-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403593",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/97469",
+    "url": "http://206.212.244.63/116/index.m3u8",
     "country": "USA"
   },
   {
@@ -1090,7 +1090,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mtv-live-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403621",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/57970",
+    "url": "http://206.212.244.63/118/index.m3u8",
     "country": "USA"
   },
   {
@@ -1126,7 +1126,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cnbc-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403527",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/2609",
+    "url": "http://206.212.244.63/42/index.m3u8",
     "country": "USA"
   },
   {
