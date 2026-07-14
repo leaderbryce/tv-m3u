@@ -592,7 +592,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/abc-logo-2013-default-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "399930",
-    "url": "",
+    "url": "http://40.160.24.52/ABC/index.m3u8",
     "country": "USA"
   },
   {
@@ -760,7 +760,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/vh1-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403653",
-    "url": "http://206.212.244.63/169/index.m3u8",
+    "url": "http://40.160.24.55/VH1/index.m3u8",
     "country": "USA"
   },
   {
@@ -1068,7 +1068,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mtv-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403921",
-    "url": "http://198.58.104.90:8989/mtv/index.m3u8",
+    "url": "http://40.160.24.53/MTV/index.m3u8",
     "country": "USA"
   },
   {
