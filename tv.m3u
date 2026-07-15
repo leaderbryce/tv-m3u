@@ -65,6 +65,8 @@ http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3055
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/2504
 #EXTINF:-1 tvg-id="" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fox-sports-1-us.png?raw=true" group-title="LIVETV;TVUSA",FS1
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3645
+#EXTINF:-1 tvg-id="403733" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/e-entertainment-us.png?raw=true" group-title="LIVETV;TVUSA",E!
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3109
 #EXTINF:-1 tvg-id="403653" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/vh1-us.png?raw=true" group-title="LIVETV;TVUSA",VH1
 http://40.160.24.55/VH1/index.m3u8
 #EXTINF:-1 tvg-id="403854" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cinemax-us.png?raw=true" group-title="LIVETV;TVUSA",Cinemax
