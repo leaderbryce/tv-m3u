@@ -355,7 +355,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fuse-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403455",
-    "url": "",
+    "url": "http://23.237.104.106:8080/USA_FUSE/index.m3u8",
     "country": "USA"
   },
   {
@@ -654,7 +654,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/comedy-central-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403666",
-    "url": "http://206.212.244.63/44/index.m3u8",
+    "url": "http://23.237.104.106:8080/USA_COMEDY_CENTRAL/index.m3u8",
     "country": "USA"
   },
   {
@@ -747,7 +747,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/e-entertainment-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403733",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3109",
+    "url": "http://23.237.104.106:8080/USA_E/index.m3u8",
     "country": "USA"
   },
   {
@@ -857,7 +857,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mgm-plus-hits-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "8730",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3724",
+    "url": "",
     "country": "USA"
   },
   {
@@ -958,7 +958,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nickelodeon-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403620",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3673",
+    "url": "http://23.237.104.106:8080/USA_NICKELODEON/index.m3u8",
     "country": "USA"
   },
   {
