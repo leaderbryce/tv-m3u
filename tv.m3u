@@ -1,4 +1,6 @@
 #EXTM3U
+#EXTINF:-1 tvg-id="CanalPlus.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/canal-plus-cinemas-fr.png?raw=true" group-title="LIVETV;TVFRANCE",Canal+ Cinemas
+http://151.80.18.177:86/Canal+_cinema_HD/index.m3u8
 #EXTINF:-1 tvg-id="France4.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/france-4-fr.png?raw=true" group-title="LIVETV;TVFRANCE",France 4
 http://176.65.146.100:8047/play/a074/index.m3u8
 #EXTINF:-1 tvg-id="Gulli.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/gulli-fr.png?raw=true" group-title="LIVETV;TVFRANCE",Gulli
@@ -14,15 +16,25 @@ https://live.france24.com/hls/live/2037179-b/F24_FR_HI_HLS/master_5000.m3u8
 #EXTINF:-1 tvg-id="403455" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fuse-us.png?raw=true" group-title="LIVETV;TVUSA",Fuse
 http://23.237.104.106:8080/USA_FUSE/index.m3u8
 #EXTINF:-1 tvg-id="403926" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/hbo-hd-us.png?raw=true" group-title="LIVETV;TVUSA",HBO
-http://38.194.226.190:8000/play/a02g/index.m3u8?hls
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3655
 #EXTINF:-1 tvg-id="403522" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/hbo-2-hd-us.png?raw=true" group-title="LIVETV;TVUSA",HBO 2
-http://38.194.226.190:8000/play/a02h/index.m3u8?hls
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3188
 #EXTINF:-1 tvg-id="480609" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-states/hbo-movies-us.png" group-title="LIVETV;TVUSA",HBO Movies
-http://206.212.244.63/6157/index.m3u8
-#EXTINF:-1 tvg-id="403477" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/hbo-signature-hd-us.png?raw=true" group-title="LIVETV;TVUSA",HBO Signature
-http://38.194.226.190:8000/play/a028/index.m3u8?hls
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/51552
+#EXTINF:-1 tvg-id="403650" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hbo-comedy-us.png?raw=true" group-title="LIVETV;TVUSA",HBO Comedy
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/51550
 #EXTINF:-1 tvg-id="403783" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hbo-family-us.png?raw=true" group-title="LIVETV;TVUSA",HBO Family
 https://cdnbarinas.tvzamora.com/hbofamily/index.m3u8
+#EXTINF:-1 tvg-id="465255" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hbo-hits-us.png?raw=true" group-title="LIVETV;TVUSA",HBO Hits
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/648976
+#EXTINF:-1 tvg-id="403651" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/showtime-2-us.png?raw=true" group-title="LIVETV;TVUSA",Showtime 2
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3965
+#EXTINF:-1 tvg-id="403520" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/showtime-next-us.png?raw=true" group-title="LIVETV;TVUSA",Showtime Next
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/648985
+#EXTINF:-1 tvg-id="403681" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/showtime-extreme-us.png?raw=true" group-title="LIVETV;TVUSA",Showtime Extreme
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3967
+#EXTINF:-1 tvg-id="8841" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/showtime-family-zone-us.png?raw=true" group-title="LIVETV;TVUSA",Showtime Family Zone
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3969
 #EXTINF:-1 tvg-id="403838" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/amc-hd-us.png?raw=true" group-title="LIVETV;TVUSA",AMC
 http://23.239.31.26:8989/amc/index.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/amc-hd-us.png?raw=true" group-title="LIVETV;TVUSA",AMC Thriller
@@ -31,8 +43,6 @@ https://18f2fbf906cb473e8adbe37026e7e27f.mediatailor.us-east-1.amazonaws.com/v1/
 http://206.212.244.63/47/index.m3u8
 #EXTINF:-1 tvg-id="403509" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/food-network-us.png?raw=true" group-title="LIVETV;TVUSA",Food Network
 http://206.212.244.63/61/index.m3u8
-#EXTINF:-1 tvg-id="399930" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/abc-logo-2013-default-us.png?raw=true" group-title="LIVETV;TVUSA",ABC
-http://40.160.24.52/ABC/index.m3u8
 #EXTINF:-1 tvg-id="403718" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/ion-television-us.png?raw=true" group-title="LIVETV;TVUSA",Ion TV
 https://pb-xhb3ic8b61whm.akamaized.net/Ion_US.m3u8
 #EXTINF:-1 tvg-id="399929" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/ion-plus-us.png?raw=true" group-title="LIVETV;TVUSA",Ion Plus
@@ -45,20 +55,44 @@ http://23.237.104.106:8080/USA_COMEDY_CENTRAL/index.m3u8
 https://dbrb49pjoymg4.cloudfront.net/10001/99951244/hls/master.m3u8?includeAssetTags=true&ads.xumo_channelId=99951244
 #EXTINF:-1 tvg-id="403827" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/tlc-us.png?raw=true" group-title="LIVETV;TVUSA",TLC
 http://206.212.244.63/159/index.m3u8
+#EXTINF:-1 tvg-id="403815" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fx-us.png?raw=true" group-title="LIVETV;TVUSA",FX
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3054
+#EXTINF:-1 tvg-id="403518" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fxx-us.png?raw=true" group-title="LIVETV;TVUSA",FXX
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3055
+#EXTINF:-1 tvg-id="403717" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fxm-movie-channel-us.png?raw=true" group-title="LIVETV;TVUSA",FXM
+http://40.160.24.52/FXM/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-states/fox-us.png" group-title="LIVETV;TVUSA",Fox
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/2504
+#EXTINF:-1 tvg-id="" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fox-sports-1-us.png?raw=true" group-title="LIVETV;TVUSA",FS1
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3645
 #EXTINF:-1 tvg-id="403733" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/e-entertainment-us.png?raw=true" group-title="LIVETV;TVUSA",E!
 http://23.237.104.106:8080/USA_E/index.m3u8
 #EXTINF:-1 tvg-id="403653" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/vh1-us.png?raw=true" group-title="LIVETV;TVUSA",VH1
 http://40.160.24.55/VH1/index.m3u8
 #EXTINF:-1 tvg-id="403854" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cinemax-us.png?raw=true" group-title="LIVETV;TVUSA",Cinemax
 http://40.160.24.52/CINEMAX_EAST/index.m3u8
+#EXTINF:-1 tvg-id="8730" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mgm-plus-hits-us.png?raw=true" group-title="LIVETV;TVUSA",MGM+ Hits
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3724
+#EXTINF:-1 tvg-id="8426" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mgm-plus-drive-in-us.png?raw=true" group-title="LIVETV;TVUSA",MGM+ Drive-In
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/4431
+#EXTINF:-1 tvg-id="8400" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/movie-plex-us.png?raw=true" group-title="LIVETV;TVUSA",MoviePlex
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/93060
+#EXTINF:-1 tvg-id="403665" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/sony-movie-channel-us.png?raw=true" group-title="LIVETV;TVUSA",Sony Movie Channel
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/2412
 #EXTINF:-1 tvg-id="405735" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/paramount-network-hd-us.png?raw=true" group-title="LIVETV;TVUSA",Paramount Movie Channel
 https://jmp2.uk/plu-5cb0cae7a461406ffe3f5213.m3u8
+#EXTINF:-1 tvg-id="403537" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/paramount-plus-with-showtime-us.png?raw=true" group-title="LIVETV;TVUSA",Paramount+ with Showtime
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3758
 #EXTINF:-1 tvg-id="403788" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/disney-channel-us.png?raw=true" group-title="LIVETV;TVUSA",Disney Channel
 http://206.212.244.63/650/index.m3u8
+#EXTINF:-1 tvg-id="403837" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/disney-xd-us.png?raw=true" group-title="LIVETV;TVUSA",Disney XD
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3720
 #EXTINF:-1 tvg-id="403620" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nickelodeon-us.png?raw=true" group-title="LIVETV;TVUSA",Nickelodeon
 http://23.237.104.106:8080/USA_NICKELODEON/index.m3u8
+#EXTINF:-1 tvg-id="403655" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nick-jr-us.png?raw=true" group-title="LIVETV;TVUSA",Nick Jr
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/74691
 #EXTINF:-1 tvg-id="403461" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cartoon-network-us.png?raw=true" group-title="LIVETV;TVUSA",Cartoon Network
-http://206.212.244.63/646/index.m3u8
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3248
 #EXTINF:-1 tvg-id="403469" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/pbs-kids-dash-icon-us.png?raw=true" group-title="LIVETV;TVUSA",PBS Kids
 https://2-fss-2.streamhoster.com/pl_140/amlst:200914-1298290/playlist.m3u8
 #EXTINF:-1 tvg-id="403576" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/boomerang-us.png?raw=true" group-title="LIVETV;TVUSA",Boomerang
@@ -68,7 +102,9 @@ http://206.212.244.63/168/index.m3u8
 #EXTINF:-1 tvg-id="403564" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/discovery-science-us.png?raw=true" group-title="LIVETV;TVUSA",Discovery Science
 http://206.212.244.63/55/index.m3u8
 #EXTINF:-1 tvg-id="403578" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/national-geographic-us.png?raw=true" group-title="LIVETV;TVUSA",National Geographic
-http://198.58.104.90:8989/natgeo/index.m3u8
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3093
+#EXTINF:-1 tvg-id="403631" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/syfy-hd-us.png?raw=true" group-title="LIVETV;TVUSA",Syfy
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3841
 #EXTINF:-1 tvg-id="403921" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mtv-us.png?raw=true" group-title="LIVETV;TVUSA",MTV
 http://40.160.24.53/MTV/index.m3u8
 #EXTINF:-1 tvg-id="403593" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mtv-2-us.png?raw=true" group-title="LIVETV;TVUSA",MTV 2
@@ -76,6 +112,12 @@ http://206.212.244.63/116/index.m3u8
 #EXTINF:-1 tvg-id="403621" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mtv-live-us.png?raw=true" group-title="LIVETV;TVUSA",MTV Live
 http://206.212.244.63/118/index.m3u8
 #EXTINF:-1 tvg-id="409470" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/adult-swim-us.png?raw=true" group-title="LIVETV;TVUSA",Adult Swim
-https://raw.githubusercontent.com/insolencewillow/insolencetvgo/main/streams/aseast.us.m3u8
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3077
+#EXTINF:-1 tvg-id="403470" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/msnbc-alt-us.png?raw=true" group-title="LIVETV;TVUSA",MSNBC
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/93125
 #EXTINF:-1 tvg-id="403527" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cnbc-us.png?raw=true" group-title="LIVETV;TVUSA",CNBC
 http://206.212.244.63/42/index.m3u8
+#EXTINF:-1 tvg-id="403819" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cnn-us.png?raw=true" group-title="LIVETV;TVUSA",CNN
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3257
+#EXTINF:-1 tvg-id="403903" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fox-news-us.png?raw=true" group-title="LIVETV;TVUSA",Fox News
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3275
