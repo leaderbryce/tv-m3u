@@ -248,7 +248,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/gulli-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "Gulli.fr",
-    "url": "http://41.205.77.102/GULLI/index.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -307,7 +307,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/rmc-decouverte-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "RMCDecouverte.fr",
-    "url": "http://41.205.77.102/RMCDECOUVERTE/index.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -383,7 +383,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/hbo-2-hd-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403522",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3188",
+    "url": "http://38.194.226.190:8000/play/a02h/index.m3u8?hls",
     "country": "USA"
   },
   {
@@ -409,7 +409,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/hbo-signature-hd-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403477",
-    "url": "",
+    "url": "http://38.194.226.190:8000/play/a028/index.m3u8?hls",
     "country": "USA"
   },
   {
