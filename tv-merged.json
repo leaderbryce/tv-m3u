@@ -9,7 +9,6 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tf1-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TF1.fr",
-    "scrapUrl": "https://endirecttv.com/tf1-direct/",
     "url": "",
     "country": "FR"
   },
@@ -111,7 +110,6 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/m6-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "M6.fr",
-    "scrapUrl": "https://endirecttv.com/m6-direct/",
     "url": "",
     "country": "FR"
   },
@@ -283,7 +281,6 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/6ter-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "6ter.fr",
-    "scrapUrl": "https://www.livehdtv.com/6ter/",
     "url": "",
     "country": "FR"
   },
