@@ -69,7 +69,6 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/m6-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "M6.fr",
-    "scrapUrl": "https://endirecttv.com/m6-direct/",
     "url": ""
   },
   {
@@ -187,6 +186,14 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/6ter-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "6ter.fr",
+    "url": ""
+  },
+  {
+    "nom": "M6 Music",
+    "identifiant": ["M6 Music (720p)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/m6-music-fr.png?raw=true",
+    "group": "TVFRANCE",
+    "tvgId": "M6Music.fr",
     "url": ""
   },
   {
