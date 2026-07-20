@@ -4,12 +4,13 @@
     "identifiant": [
       "TF1 HD",
       "TF1 HD (720p)",
-      "TF1 HD (720p) [Geo-Blocked]"
+      "TF1 HD (720p) [Geo-Blocked]",
+      "like Gecko) Chrome/149.0.0.0 Safari/537.36\" group-title=\"Entertainment\",TF1 HD (720p)"
     ],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tf1-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TF1.fr",
-    "url": "",
+    "url": "http://151.80.18.177:86/TF1_HD/index.m3u8",
     "country": "FR"
   },
   {
@@ -110,7 +111,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/m6-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "M6.fr",
-    "url": "",
+    "url": "http://99.27.51.147:8080/M6/index.m3u8",
     "country": "FR"
   },
   {
@@ -276,12 +277,24 @@
   {
     "nom": "6ter",
     "identifiant": [
-      "6ter HD"
+      "6ter HD",
+      "6ter (1080p)"
     ],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/6ter-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "6ter.fr",
-    "url": "",
+    "url": "http://145.239.5.177/314/index.m3u8",
+    "country": "FR"
+  },
+  {
+    "nom": "M6 Music",
+    "identifiant": [
+      "M6 Music (720p)"
+    ],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/m6-music-fr.png?raw=true",
+    "group": "TVFRANCE",
+    "tvgId": "M6Music.fr",
+    "url": "http://145.239.5.177/320/index.m3u8",
     "country": "FR"
   },
   {
