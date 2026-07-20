@@ -1,11 +1,10 @@
 [
   {
     "nom": "TF1",
-    "identifiant": ["TF1 HD", "TF1 HD (720p)", "TF1 HD (720p) [Geo-Blocked]"],
+    "identifiant": ["TF1 HD", "TF1 HD (720p)", "TF1 HD (720p) [Geo-Blocked]", "like Gecko) Chrome/149.0.0.0 Safari/537.36\" group-title=\"Entertainment\",TF1 HD (720p)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tf1-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TF1.fr",
-    "scrapUrl": "https://endirecttv.com/tf1-direct/",
     "url": ""
   },
   {
@@ -184,11 +183,10 @@
   },
   {
     "nom": "6ter",
-    "identifiant": ["6ter HD"],
+    "identifiant": ["6ter HD", "6ter (1080p)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/6ter-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "6ter.fr",
-    "scrapUrl": "https://www.livehdtv.com/6ter/",
     "url": ""
   },
   {
