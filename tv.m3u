@@ -22,11 +22,9 @@ http://23.237.104.106:8080/USA_FUSE/index.m3u8
 #EXTINF:-1 tvg-id="403926" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/hbo-hd-us.png?raw=true" group-title="LIVETV;TVUSA",HBO
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3655
 #EXTINF:-1 tvg-id="403522" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/hbo-2-hd-us.png?raw=true" group-title="LIVETV;TVUSA",HBO 2
-http://38.194.226.190:8000/play/a02h/index.m3u8?hls
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3188
 #EXTINF:-1 tvg-id="480609" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-states/hbo-movies-us.png" group-title="LIVETV;TVUSA",HBO Movies
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/51552
-#EXTINF:-1 tvg-id="403477" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/hbo-signature-hd-us.png?raw=true" group-title="LIVETV;TVUSA",HBO Signature
-http://38.194.226.190:8000/play/a028/index.m3u8?hls
 #EXTINF:-1 tvg-id="403650" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hbo-comedy-us.png?raw=true" group-title="LIVETV;TVUSA",HBO Comedy
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/51550
 #EXTINF:-1 tvg-id="403783" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hbo-family-us.png?raw=true" group-title="LIVETV;TVUSA",HBO Family
@@ -35,8 +33,6 @@ https://cdnbarinas.tvzamora.com/hbofamily/index.m3u8
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/648976
 #EXTINF:-1 tvg-id="403651" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/showtime-2-us.png?raw=true" group-title="LIVETV;TVUSA",Showtime 2
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3965
-#EXTINF:-1 tvg-id="403520" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/showtime-next-us.png?raw=true" group-title="LIVETV;TVUSA",Showtime Next
-http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/648985
 #EXTINF:-1 tvg-id="403681" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/showtime-extreme-us.png?raw=true" group-title="LIVETV;TVUSA",Showtime Extreme
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3967
 #EXTINF:-1 tvg-id="8841" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/showtime-family-zone-us.png?raw=true" group-title="LIVETV;TVUSA",Showtime Family Zone
