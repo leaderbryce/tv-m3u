@@ -117,3 +117,5 @@ http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/93125
 http://206.212.244.63/42/index.m3u8
 #EXTINF:-1 tvg-id="403819" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cnn-us.png?raw=true" group-title="LIVETV;TVUSA",CNN
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3257
+#EXTINF:-1 tvg-id="403903" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fox-news-us.png?raw=true" group-title="LIVETV;TVUSA",Fox News
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3275
