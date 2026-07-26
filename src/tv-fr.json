@@ -73,7 +73,7 @@
   },
   {
     "nom": "Arte",
-    "identifiant": ["Arte (720p) [Geo-blocked]"],
+    "identifiant": ["Arte (720p) [Geo-blocked]", "arte (720p)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/hd/arte-hd-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "Arte.fr",
@@ -133,7 +133,7 @@
   },
   {
     "nom": "LCI",
-    "identifiant": ["LCI HD"],
+    "identifiant": ["LCI HD", "LCI HD (1080p)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/lci-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "LCI.fr",
@@ -141,7 +141,7 @@
   },
   {
     "nom": "CStar",
-    "identifiant": ["CSTAR", "C Star (477p)"],
+    "identifiant": ["CSTAR", "C Star (1080p)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/c-star-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "CStar.fr",
@@ -197,6 +197,14 @@
     "url": ""
   },
   {
+    "nom": "AB1",
+    "identifiant": ["AB1 (720p)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/ab1-fr.png?raw=true",
+    "group": "TVFRANCE",
+    "tvgId": "AB1.fr",
+    "url": ""
+  },
+  {
     "nom": "RMC Story",
     "identifiant": ["RMC Story (1080p)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/rmc-story-fr.png?raw=true",
@@ -210,6 +218,14 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/rmc-decouverte-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "RMCDecouverte.fr",
+    "url": ""
+  },
+  {
+    "nom": "RMC Life",
+    "identifiant": ["RMC Life (1080p)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/rmc-life-fr.png?raw=true",
+    "group": "TVFRANCE",
+    "tvgId": "RMCLife.fr",
     "url": ""
   },
   {
