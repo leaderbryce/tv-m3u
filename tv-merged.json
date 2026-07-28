@@ -117,13 +117,14 @@
   {
     "nom": "Arte",
     "identifiant": [
-      "Arte (720p) [Geo-blocked]"
+      "Arte (720p) [Geo-blocked]",
+      "arte (720p)"
     ],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/hd/arte-hd-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "Arte.fr",
-    "scrapUrl": "https://www.livehdtv.com/arte-french/",
-    "url": "",
+    "scrapUrl": "",
+    "url": "http://145.239.5.177/300/index.m3u8",
     "country": "FR"
   },
   {
@@ -148,7 +149,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tmc-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TMC.fr",
-    "scrapUrl": "https://www.livehdtv.com/tmc/",
+    "scrapUrl": "",
     "url": "",
     "country": "FR"
   },
@@ -161,7 +162,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tfx-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TFX.fr",
-    "scrapUrl": "https://www.livehdtv.com/tfx/",
+    "scrapUrl": "",
     "url": "",
     "country": "FR"
   },
@@ -173,7 +174,7 @@
     "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/1/1f/Ch%C3%A9rie_25_logo.svg/330px-Ch%C3%A9rie_25_logo.svg.png",
     "group": "TVFRANCE",
     "tvgId": "Cherie25.fr",
-    "scrapUrl": "https://www.livehdtv.com/cherie-25/",
+    "scrapUrl": "",
     "url": "",
     "country": "FR"
   },
@@ -204,25 +205,26 @@
   {
     "nom": "LCI",
     "identifiant": [
-      "LCI HD"
+      "LCI HD",
+      "LCI HD (1080p)"
     ],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/lci-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "LCI.fr",
-    "url": "",
+    "url": "http://151.80.18.177:86/LCI_HD/index.m3u8",
     "country": "FR"
   },
   {
     "nom": "CStar",
     "identifiant": [
       "CSTAR",
-      "C Star (477p)"
+      "C Star (1080p)"
     ],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/c-star-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "CStar.fr",
-    "scrapUrl": "https://www.livehdtv.com/ch193/",
-    "url": "",
+    "scrapUrl": "",
+    "url": "http://145.239.5.177/361/index.m3u8",
     "country": "FR"
   },
   {
@@ -298,6 +300,17 @@
     "country": "FR"
   },
   {
+    "nom": "AB1",
+    "identifiant": [
+      "AB1 (720p)"
+    ],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/ab1-fr.png?raw=true",
+    "group": "TVFRANCE",
+    "tvgId": "AB1.fr",
+    "url": "http://145.239.5.177/332/index.m3u8",
+    "country": "FR"
+  },
+  {
     "nom": "RMC Story",
     "identifiant": [
       "RMC Story (1080p)"
@@ -321,6 +334,17 @@
     "country": "FR"
   },
   {
+    "nom": "RMC Life",
+    "identifiant": [
+      "RMC Life (1080p)"
+    ],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/rmc-life-fr.png?raw=true",
+    "group": "TVFRANCE",
+    "tvgId": "RMCLife.fr",
+    "url": "http://145.239.5.177/333/index.m3u8",
+    "country": "FR"
+  },
+  {
     "nom": "France Info",
     "identifiant": [
       "Franceinfo HD"
@@ -340,7 +364,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tv5-monde-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "",
-    "scrapUrl": "https://www.livehdtv.com/tv5-monde/",
+    "scrapUrl": "",
     "url": "",
     "country": "FR"
   },
