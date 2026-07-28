@@ -3,6 +3,8 @@
 http://151.80.18.177:86/TF1_HD/index.m3u8
 #EXTINF:-1 tvg-id="CanalPlus.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/canal-plus-cinemas-fr.png?raw=true" group-title="LIVETV;TVFRANCE",Canal+ Cinemas
 http://151.80.18.177:86/Canal+_cinema_HD/index.m3u8
+#EXTINF:-1 tvg-id="M6.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/m6-fr.png?raw=true" group-title="LIVETV;TVFRANCE",M6
+http://99.27.51.147:8080/M6/index.m3u8
 #EXTINF:-1 tvg-id="T18.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/t18-fr.png?raw=true" group-title="LIVETV;TVFRANCE",T18
 https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/t18/t18-dm.m3u8
 #EXTINF:-1 tvg-id="6ter.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/6ter-fr.png?raw=true" group-title="LIVETV;TVFRANCE",6ter
@@ -23,8 +25,6 @@ http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3188
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/51552
 #EXTINF:-1 tvg-id="403650" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hbo-comedy-us.png?raw=true" group-title="LIVETV;TVUSA",HBO Comedy
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/51550
-#EXTINF:-1 tvg-id="403783" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hbo-family-us.png?raw=true" group-title="LIVETV;TVUSA",HBO Family
-https://cdnbarinas.tvzamora.com/hbofamily/index.m3u8
 #EXTINF:-1 tvg-id="465255" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hbo-hits-us.png?raw=true" group-title="LIVETV;TVUSA",HBO Hits
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/648976
 #EXTINF:-1 tvg-id="403651" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/showtime-2-us.png?raw=true" group-title="LIVETV;TVUSA",Showtime 2
