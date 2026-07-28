@@ -90,7 +90,7 @@
   },
   {
     "nom": "TMC",
-    "identifiant": ["TMC", "TMC HD (1080p) [Geo-Blocked]"],
+    "identifiant": ["TMC", "TMC HD (1080p) [Geo-Blocked]", "like Gecko) Chrome/149.0.0.0 Safari/537.36\" group-title=\"General\",TMC (1080p)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tmc-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TMC.fr",
@@ -99,7 +99,7 @@
   },
   {
     "nom": "TFX",
-    "identifiant": ["TFX HD", "TFX (1080p) [Geo-Blocked]"],
+    "identifiant": ["TFX HD", "TFX (1080p) [Geo-Blocked]", "TFX (720p)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tfx-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TFX.fr",
