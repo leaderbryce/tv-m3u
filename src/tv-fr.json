@@ -77,7 +77,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/hd/arte-hd-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "Arte.fr",
-    "scrapUrl": "https://www.livehdtv.com/arte-french/",
+    "scrapUrl": "",
     "url": ""
   },
   {
@@ -94,7 +94,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tmc-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TMC.fr",
-    "scrapUrl": "https://www.livehdtv.com/tmc/",
+    "scrapUrl": "",
     "url": ""
   },
   {
@@ -103,7 +103,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tfx-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TFX.fr",
-    "scrapUrl": "https://www.livehdtv.com/tfx/",
+    "scrapUrl": "",
     "url": ""
   },
   {
@@ -112,7 +112,7 @@
     "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/1/1f/Ch%C3%A9rie_25_logo.svg/330px-Ch%C3%A9rie_25_logo.svg.png",
     "group": "TVFRANCE",
     "tvgId": "Cherie25.fr",
-    "scrapUrl": "https://www.livehdtv.com/cherie-25/",
+    "scrapUrl": "",
     "url": ""
   },
   {
@@ -145,7 +145,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/c-star-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "CStar.fr",
-    "scrapUrl": "https://www.livehdtv.com/ch193/",
+    "scrapUrl": "",
     "url": ""
   },
   {
@@ -242,7 +242,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tv5-monde-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "",
-    "scrapUrl": "https://www.livehdtv.com/tv5-monde/",
+    "scrapUrl": "",
     "url": ""
   },
   {
