@@ -117,7 +117,7 @@
   },
   {
     "nom": "BFMTV",
-    "identifiant": ["BFM TV (1080p)", "BFM TV HD"],
+    "identifiant": ["BFM TV (1080p)", "BFM TV HD", "like Gecko) Chrome/108.0.0.0 Safari/537.36\" group-title=\"News\",BFM TV (1080p)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/bfm-tv-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "BFMTV.fr",
@@ -158,7 +158,7 @@
   },
   {
     "nom": "Gulli",
-    "identifiant": ["Gulli HD (720p)", "GULLI", "Gulli"],
+    "identifiant": ["Gulli HD (720p)", "GULLI", "Gulli", "like Gecko) Chrome/149.0.0.0 Safari/537.3\" group-title=\"Kids\",Gulli"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/gulli-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "Gulli.fr",
@@ -251,6 +251,22 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/france-24-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "France24.fr",
+    "url": ""
+  },
+  {
+    "nom": "Disney Junior",
+    "identifiant": ["Disney Jr. (1080p)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/disney-jr-us.png?raw=true",
+    "group": "TVFRANCE",
+    "tvgId": "",
+    "url": ""
+  },
+  {
+    "nom": "Nick Jr",
+    "identifiant": ["Nickelodeon Junior (1080p)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nick-jr-us.png?raw=true",
+    "group": "TVFRANCE",
+    "tvgId": "",
     "url": ""
   }
 ]
