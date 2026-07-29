@@ -7,10 +7,16 @@ http://151.80.18.177:86/Canal+_cinema_HD/index.m3u8
 http://99.27.51.147:8080/M6/index.m3u8
 #EXTINF:-1 tvg-id="Arte.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/hd/arte-hd-fr.png?raw=true" group-title="LIVETV;TVFRANCE",Arte
 http://145.239.5.177/300/index.m3u8
+#EXTINF:-1 tvg-id="TMC.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/tmc-fr.png?raw=true" group-title="LIVETV;TVFRANCE",TMC
+http://151.80.18.177:86/TMC/index.m3u8
+#EXTINF:-1 tvg-id="TFX.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/tfx-fr.png?raw=true" group-title="LIVETV;TVFRANCE",TFX
+http://145.239.5.177/315/index.m3u8
 #EXTINF:-1 tvg-id="LCI.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/lci-fr.png?raw=true" group-title="LIVETV;TVFRANCE",LCI
 http://151.80.18.177:86/LCI_HD/index.m3u8
 #EXTINF:-1 tvg-id="CStar.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/c-star-fr.png?raw=true" group-title="LIVETV;TVFRANCE",CStar
 http://145.239.5.177/361/index.m3u8
+#EXTINF:-1 tvg-id="Gulli.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/gulli-fr.png?raw=true" group-title="LIVETV;TVFRANCE",Gulli
+http://99.27.51.147:8080/Gulli/index.m3u8
 #EXTINF:-1 tvg-id="T18.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/t18-fr.png?raw=true" group-title="LIVETV;TVFRANCE",T18
 https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/t18/t18-dm.m3u8
 #EXTINF:-1 tvg-id="6ter.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/6ter-fr.png?raw=true" group-title="LIVETV;TVFRANCE",6ter
@@ -25,6 +31,10 @@ https://d15aro46bnpfm8.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68
 http://145.239.5.177/333/index.m3u8
 #EXTINF:-1 tvg-id="France24.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/france-24-fr.png?raw=true" group-title="LIVETV;TVFRANCE",France 24
 https://live.france24.com/hls/live/2037179-b/F24_FR_HI_HLS/master_5000.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/disney-jr-us.png?raw=true" group-title="LIVETV;TVFRANCE",Disney Junior
+http://151.80.18.177:86/Disney_Junior_HD/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nick-jr-us.png?raw=true" group-title="LIVETV;TVFRANCE",Nick Jr
+http://151.80.18.177:86/Nickelodeon_Junior/index.m3u8
 #EXTINF:-1 tvg-id="403455" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fuse-us.png?raw=true" group-title="LIVETV;TVUSA",Fuse
 http://23.237.104.106:8080/USA_FUSE/index.m3u8
 #EXTINF:-1 tvg-id="403926" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/hbo-hd-us.png?raw=true" group-title="LIVETV;TVUSA",HBO
@@ -94,7 +104,7 @@ http://206.212.244.63/650/index.m3u8
 #EXTINF:-1 tvg-id="403837" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/disney-xd-us.png?raw=true" group-title="LIVETV;TVUSA",Disney XD
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3720
 #EXTINF:-1 tvg-id="403620" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nickelodeon-us.png?raw=true" group-title="LIVETV;TVUSA",Nickelodeon
-http://23.237.104.106:8080/USA_NICKELODEON/index.m3u8
+http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3673
 #EXTINF:-1 tvg-id="403655" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nick-jr-us.png?raw=true" group-title="LIVETV;TVUSA",Nick Jr
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/74691
 #EXTINF:-1 tvg-id="403461" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cartoon-network-us.png?raw=true" group-title="LIVETV;TVUSA",Cartoon Network

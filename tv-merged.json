@@ -123,6 +123,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/hd/arte-hd-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "Arte.fr",
+    "scrapUrl": "",
     "url": "http://145.239.5.177/300/index.m3u8",
     "country": "FR"
   },
@@ -143,24 +144,28 @@
     "nom": "TMC",
     "identifiant": [
       "TMC",
-      "TMC HD (1080p) [Geo-Blocked]"
+      "TMC HD (1080p) [Geo-Blocked]",
+      "like Gecko) Chrome/149.0.0.0 Safari/537.36\" group-title=\"General\",TMC (1080p)"
     ],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tmc-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TMC.fr",
-    "url": "",
+    "scrapUrl": "",
+    "url": "http://151.80.18.177:86/TMC/index.m3u8",
     "country": "FR"
   },
   {
     "nom": "TFX",
     "identifiant": [
       "TFX HD",
-      "TFX (1080p) [Geo-Blocked]"
+      "TFX (1080p) [Geo-Blocked]",
+      "TFX (720p)"
     ],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tfx-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TFX.fr",
-    "url": "",
+    "scrapUrl": "",
+    "url": "http://145.239.5.177/315/index.m3u8",
     "country": "FR"
   },
   {
@@ -171,6 +176,7 @@
     "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/1/1f/Ch%C3%A9rie_25_logo.svg/330px-Ch%C3%A9rie_25_logo.svg.png",
     "group": "TVFRANCE",
     "tvgId": "Cherie25.fr",
+    "scrapUrl": "",
     "url": "",
     "country": "FR"
   },
@@ -178,7 +184,8 @@
     "nom": "BFMTV",
     "identifiant": [
       "BFM TV (1080p)",
-      "BFM TV HD"
+      "BFM TV HD",
+      "like Gecko) Chrome/108.0.0.0 Safari/537.36\" group-title=\"News\",BFM TV (1080p)"
     ],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/bfm-tv-fr.png?raw=true",
     "group": "TVFRANCE",
@@ -219,6 +226,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/c-star-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "CStar.fr",
+    "scrapUrl": "",
     "url": "http://145.239.5.177/361/index.m3u8",
     "country": "FR"
   },
@@ -239,12 +247,13 @@
     "identifiant": [
       "Gulli HD (720p)",
       "GULLI",
-      "Gulli"
+      "Gulli",
+      "like Gecko) Chrome/149.0.0.0 Safari/537.3\" group-title=\"Kids\",Gulli"
     ],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/gulli-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "Gulli.fr",
-    "url": "",
+    "url": "http://99.27.51.147:8080/Gulli/index.m3u8",
     "country": "FR"
   },
   {
@@ -359,6 +368,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tv5-monde-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "",
+    "scrapUrl": "",
     "url": "",
     "country": "FR"
   },
@@ -372,6 +382,28 @@
     "group": "TVFRANCE",
     "tvgId": "France24.fr",
     "url": "https://live.france24.com/hls/live/2037179-b/F24_FR_HI_HLS/master_5000.m3u8",
+    "country": "FR"
+  },
+  {
+    "nom": "Disney Junior",
+    "identifiant": [
+      "Disney Jr. (1080p)"
+    ],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/disney-jr-us.png?raw=true",
+    "group": "TVFRANCE",
+    "tvgId": "",
+    "url": "http://151.80.18.177:86/Disney_Junior_HD/index.m3u8",
+    "country": "FR"
+  },
+  {
+    "nom": "Nick Jr",
+    "identifiant": [
+      "Nickelodeon Junior (1080p)"
+    ],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nick-jr-us.png?raw=true",
+    "group": "TVFRANCE",
+    "tvgId": "",
+    "url": "http://151.80.18.177:86/Nickelodeon_Junior/index.m3u8",
     "country": "FR"
   },
   {
@@ -986,7 +1018,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nickelodeon-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403620",
-    "url": "http://23.237.104.106:8080/USA_NICKELODEON/index.m3u8",
+    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3673",
     "country": "USA"
   },
   {
