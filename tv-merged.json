@@ -123,6 +123,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/hd/arte-hd-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "Arte.fr",
+    "scrapUrl": "",
     "url": "http://145.239.5.177/300/index.m3u8",
     "country": "FR"
   },
@@ -149,6 +150,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tmc-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TMC.fr",
+    "scrapUrl": "",
     "url": "http://151.80.18.177:86/TMC/index.m3u8",
     "country": "FR"
   },
@@ -162,6 +164,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tfx-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TFX.fr",
+    "scrapUrl": "",
     "url": "http://145.239.5.177/315/index.m3u8",
     "country": "FR"
   },
@@ -173,6 +176,7 @@
     "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/1/1f/Ch%C3%A9rie_25_logo.svg/330px-Ch%C3%A9rie_25_logo.svg.png",
     "group": "TVFRANCE",
     "tvgId": "Cherie25.fr",
+    "scrapUrl": "",
     "url": "",
     "country": "FR"
   },
@@ -222,6 +226,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/c-star-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "CStar.fr",
+    "scrapUrl": "",
     "url": "http://145.239.5.177/361/index.m3u8",
     "country": "FR"
   },
@@ -234,7 +239,7 @@
     "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/france/rtl9-fr.png",
     "group": "TVFRANCE",
     "tvgId": "RTL9.fr",
-    "url": "",
+    "url": "http://145.239.5.177/308/index.m3u8",
     "country": "FR"
   },
   {
@@ -363,6 +368,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tv5-monde-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "",
+    "scrapUrl": "",
     "url": "",
     "country": "FR"
   },
@@ -489,7 +495,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hbo-family-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403783",
-    "url": "",
+    "url": "https://cdnbarinas.tvzamora.com/hbofamily/index.m3u8",
     "country": "USA"
   },
   {
@@ -767,7 +773,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fxm-movie-channel-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403717",
-    "url": "",
+    "url": "http://40.160.24.52/FXM/index.m3u8",
     "country": "USA"
   },
   {
@@ -920,7 +926,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mgm-plus-drive-in-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "8426",
-    "url": "",
+    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/4431",
     "country": "USA"
   },
   {
