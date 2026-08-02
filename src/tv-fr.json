@@ -121,7 +121,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/bfm-tv-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "BFMTV.fr",
-    "url": ""
+    "url": "https://ren1-cdn-edge-live01.pfd.sfr.net/bfm-ncdn-live-premium-pal1.pfd.sfr.net/sid=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3ODU2NDc1OTksImlwIjoiMTAyLjE2MC4xMy41NyIsInN1YiI6IkJGTV9UViIsImp0aSI6IjBjc2JkNnU1cWEwOWQ2bzY2ZGswIiwiZXhwIjoxNzg1NjkwNzk5LCJpc3MiOiJjYnY0LWNkbi1zcjAwIn0.Dj7kzWMVLmx8e-APBIs_XwdnmMHZAQGXHrGONSyuxEU/shls/LIVE$BFM_TV/index.m3u8?start=LIVE&end=END"
   },
   {
     "nom": "CNews",
@@ -146,7 +146,7 @@
     "group": "TVFRANCE",
     "tvgId": "CStar.fr",
     "scrapUrl": "",
-    "url": ""
+    "url": "https://live.eu-north-1a.cf.dmcdn.net/sec2(tUvnwfDIxBHZDlDwsjiRwAwDrOPshox3miKLfsUt_R_uPNujhvmODRQpHgZyuUiaZtVxB2mCHpECq4l3O-5ZosXi1G0DodZBeNHHnM_C6FfVcJ5o5TyqeyTYTWJ8hP5B)/dm/3/x5gv5v0/d/live-1080@60.m3u8"
   },
   {
     "nom": "RTL9",
@@ -218,7 +218,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/rmc-decouverte-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "RMCDecouverte.fr",
-    "url": ""
+    "url": " https://d1dagx0hs2fkxs.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/pb-2p2o2x977e2oh/RMC_Decouverte_FR.m3u8?ads.ads_cdn=cf&ads.app_domain=%7BAPP_DOMAIN%7D&ads.app_name=%7BAPP_NAME%7D&ads.cdn=cf&ads.consent=%7BTC_STRING%7D&ads.device_did=%7BPSID%7D&ads.device_dnt=%7BTARGETOPT%7D&ads.service_id=FRBD4100008QS&ads.ssai_vendor=SSSLIVE&pb_type=pb-2p2o2x977e2oh_cloudfront"
   },
   {
     "nom": "RMC Life",
