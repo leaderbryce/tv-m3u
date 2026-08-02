@@ -91,12 +91,12 @@
     "identifiant": [
       "France5 HD",
       "France 5 (1080p)",
-      "France 5 HD (720p) [Geo-Blocked]"
+      "France 5"
     ],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/france-5-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "France5.fr",
-    "url": "",
+    "url": "http://145.239.5.177/305/index.m3u8",
     "country": "FR"
   },
   {
@@ -179,6 +179,18 @@
     "country": "FR"
   },
   {
+    "nom": "Teva",
+    "identifiant": [
+      "Teva (1080p)"
+    ],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/teva-fr.png?raw=true",
+    "group": "TVFRANCE",
+    "tvgId": "Teva.fr",
+    "scrapUrl": "",
+    "url": "http://145.239.5.177/356/index.m3u8",
+    "country": "FR"
+  },
+  {
     "nom": "BFMTV",
     "identifiant": [
       "BFM TV (1080p)",
@@ -189,7 +201,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/bfm-tv-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "BFMTV.fr",
-    "url": "https://ncdn-live-bfm.pfd.sfr.net/shls/LIVE$BFM_TV/index.m3u8?end=END&start=LIVE",
+    "url": "https://live-cdn-stream-euw1.bfmtv.bct.nextradiotv.com/master.m3u8",
     "country": "FR"
   },
   {
@@ -369,7 +381,7 @@
     "group": "TVFRANCE",
     "tvgId": "",
     "scrapUrl": "",
-    "url": "https://ott.tv5monde.com/Content/HLS/Live/channel(tivi5)/variant.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -404,6 +416,17 @@
     "group": "TVFRANCE",
     "tvgId": "",
     "url": "http://151.80.18.177:86/Nickelodeon_Junior/index.m3u8",
+    "country": "FR"
+  },
+  {
+    "nom": "Qwest TV",
+    "identifiant": [
+      "Qwest TV Jazz & Beyond (1080p)"
+    ],
+    "logo": "https://i.imgur.com/89yWH5L.png",
+    "group": "TVFRANCE",
+    "tvgId": "",
+    "url": "https://samsungau-qwestjazz-samsungtv-zw2jc.amagi.tv/playlist/samsungau-qwestjazz-samsungtv/playlist.m3u8",
     "country": "FR"
   },
   {
@@ -664,7 +687,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/ion-television-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403718",
-    "url": "",
+    "url": "https://pb-xhb3ic8b61whm.akamaized.net/Ion_US.m3u8",
     "country": "USA"
   },
   {
