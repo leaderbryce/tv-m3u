@@ -7,6 +7,8 @@ http://151.80.18.177:86/Canal+_cinema_HD/index.m3u8
 http://145.239.5.177/300/index.m3u8
 #EXTINF:-1 tvg-id="W9.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/w9-fr.png?raw=true" group-title="LIVETV;TVFRANCE",W9
 http://145.239.5.177/331a/index.m3u8
+#EXTINF:-1 tvg-id="TMC.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/tmc-fr.png?raw=true" group-title="LIVETV;TVFRANCE",TMC
+http://151.80.18.177:86/TMC/index.m3u8
 #EXTINF:-1 tvg-id="TFX.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/tfx-fr.png?raw=true" group-title="LIVETV;TVFRANCE",TFX
 http://145.239.5.177/315/index.m3u8
 #EXTINF:-1 tvg-id="BFMTV.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/bfm-tv-fr.png?raw=true" group-title="LIVETV;TVFRANCE",BFMTV
@@ -37,6 +39,8 @@ https://d1dagx0hs2fkxs.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68
 http://145.239.5.177/333/index.m3u8
 #EXTINF:-1 tvg-id="France24.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/france-24-fr.png?raw=true" group-title="LIVETV;TVFRANCE",France 24
 https://live.france24.com/hls/live/2037179-b/F24_FR_HI_HLS/master_5000.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/disney-jr-us.png?raw=true" group-title="LIVETV;TVFRANCE",Disney Junior
+http://151.80.18.177:86/Disney_Junior_HD/index.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nick-jr-us.png?raw=true" group-title="LIVETV;TVFRANCE",Nick Jr
 http://151.80.18.177:86/Nickelodeon_Junior/index.m3u8
 #EXTINF:-1 tvg-id="403455" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fuse-us.png?raw=true" group-title="LIVETV;TVUSA",Fuse
