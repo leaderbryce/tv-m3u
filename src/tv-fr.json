@@ -116,6 +116,15 @@
     "url": ""
   },
   {
+    "nom": "Teva",
+    "identifiant": ["Teva (1080p)"],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/teva-fr.png?raw=true",
+    "group": "TVFRANCE",
+    "tvgId": "Teva.fr",
+    "scrapUrl": "",
+    "url": ""
+  },
+  {
     "nom": "BFMTV",
     "identifiant": ["BFM TV (1080p)", "BFM TV HD", "BFM TV (576p)", "like Gecko) Chrome/108.0.0.0 Safari/537.36\" group-title=\"News\",BFM TV (1080p)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/bfm-tv-fr.png?raw=true",
@@ -268,5 +277,13 @@
     "group": "TVFRANCE",
     "tvgId": "",
     "url": ""
-  }
+  },
+  {
+  "nom": "Qwest TV",
+  "identifiant": ["Qwest TV Jazz & Beyond (1080p)"],
+  "logo": "https://i.imgur.com/89yWH5L.png",
+  "group": "TVFRANCE",
+  "tvgId": "",
+  "url": ""
+}
 ]
