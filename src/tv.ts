@@ -48,7 +48,7 @@ const SOURCES = {
         localFile: './src/tv-fr.json',
         remoteUrls: [
             'https://raw.githubusercontent.com/bugsfreeweb/LiveTVCollector/refs/heads/main/LiveTV/France/LiveTV.json',
-            'https://raw.githubusercontent.com/iptv-ch/iptv-ch.github.io/refs/heads/master/webtv.m3u',
+            'https://raw.githubusercontent.com/iptv-org/iptv/refs/heads/master/streams/fr.m3u',
         ],
     },
     usa: {

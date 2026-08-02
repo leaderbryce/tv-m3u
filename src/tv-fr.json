@@ -1,7 +1,7 @@
 [
   {
     "nom": "TF1",
-    "identifiant": ["TF1 HD", "TF1 HD (720p)", "TF1 HD (720p) [Geo-Blocked]", "like Gecko) Chrome/149.0.0.0 Safari/537.36\" group-title=\"Entertainment\",TF1 HD (720p)"],
+    "identifiant": ["TF1 HD (720p)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tf1-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TF1.fr",
@@ -65,7 +65,7 @@
   },
   {
     "nom": "M6",
-    "identifiant": ["M6 HD", "M6 (1080p)", "like Gecko) Chrome/149.0.0.0 Safari/537.3\" group-title=\"Entertainment\",M6 (1080p)"],
+    "identifiant": ["M6 HD", "M6 (1080p)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/m6-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "M6.fr",
@@ -82,7 +82,7 @@
   },
   {
     "nom": "W9",
-    "identifiant": ["W9 HD", "W9", "W9 (1080p)"],
+    "identifiant": ["W9 HD", "W9", "W9 (1080p)", "W9 (720p)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/w9-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "W9.fr",
@@ -99,7 +99,7 @@
   },
   {
     "nom": "TFX",
-    "identifiant": ["TFX HD", "TFX (1080p) [Geo-Blocked]", "TFX (720p)"],
+    "identifiant": ["TFX HD", "TFX (720p)", "TFX (1080p) [Geo-Blocked]"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tfx-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TFX.fr",
@@ -117,15 +117,15 @@
   },
   {
     "nom": "BFMTV",
-    "identifiant": ["BFM TV (1080p)", "BFM TV HD", "like Gecko) Chrome/108.0.0.0 Safari/537.36\" group-title=\"News\",BFM TV (1080p)"],
+    "identifiant": ["BFM TV (1080p)", "BFM TV HD", "BFM TV (576p)", "like Gecko) Chrome/108.0.0.0 Safari/537.36\" group-title=\"News\",BFM TV (1080p)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/bfm-tv-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "BFMTV.fr",
-    "url": "https://ren1-cdn-edge-live01.pfd.sfr.net/bfm-ncdn-live-premium-pal1.pfd.sfr.net/sid=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3ODU2NDc1OTksImlwIjoiMTAyLjE2MC4xMy41NyIsInN1YiI6IkJGTV9UViIsImp0aSI6IjBjc2JkNnU1cWEwOWQ2bzY2ZGswIiwiZXhwIjoxNzg1NjkwNzk5LCJpc3MiOiJjYnY0LWNkbi1zcjAwIn0.Dj7kzWMVLmx8e-APBIs_XwdnmMHZAQGXHrGONSyuxEU/shls/LIVE$BFM_TV/index.m3u8?start=LIVE&end=END"
+    "url": ""
   },
   {
     "nom": "CNews",
-    "identifiant": ["CNEWS", "CNews (1080p) [Geo-blocked]"],
+    "identifiant": ["CNEWS", "CNews (1080p)","CNews (1080p) [Geo-blocked]"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/c-news-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "CNews.fr",
@@ -146,7 +146,7 @@
     "group": "TVFRANCE",
     "tvgId": "CStar.fr",
     "scrapUrl": "",
-    "url": "https://live.eu-north-1a.cf.dmcdn.net/sec2(tUvnwfDIxBHZDlDwsjiRwAwDrOPshox3miKLfsUt_R_uPNujhvmODRQpHgZyuUiaZtVxB2mCHpECq4l3O-5ZosXi1G0DodZBeNHHnM_C6FfVcJ5o5TyqeyTYTWJ8hP5B)/dm/3/x5gv5v0/d/live-1080@60.m3u8"
+    "url": ""
   },
   {
     "nom": "RTL9",
