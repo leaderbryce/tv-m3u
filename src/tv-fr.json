@@ -57,7 +57,7 @@
   },
   {
     "nom": "France 5",
-    "identifiant": ["France5 HD", "France 5 (1080p)", "France 5 HD (720p) [Geo-Blocked]"],
+    "identifiant": ["France5 HD", "France 5 (1080p)", "France 5"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/france-5-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "France5.fr",
