@@ -2,15 +2,12 @@
   {
     "nom": "TF1",
     "identifiant": [
-      "TF1 HD",
-      "TF1 HD (720p)",
-      "TF1 HD (720p) [Geo-Blocked]",
-      "like Gecko) Chrome/149.0.0.0 Safari/537.36\" group-title=\"Entertainment\",TF1 HD (720p)"
+      "TF1 HD (720p)"
     ],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tf1-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TF1.fr",
-    "url": "http://151.80.18.177:86/TF1_HD/index.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -106,13 +103,12 @@
     "nom": "M6",
     "identifiant": [
       "M6 HD",
-      "M6 (1080p)",
-      "like Gecko) Chrome/149.0.0.0 Safari/537.3\" group-title=\"Entertainment\",M6 (1080p)"
+      "M6 (1080p)"
     ],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/m6-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "M6.fr",
-    "url": "http://99.27.51.147:8080/M6/index.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -124,6 +120,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/hd/arte-hd-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "Arte.fr",
+    "scrapUrl": "",
     "url": "http://145.239.5.177/300/index.m3u8",
     "country": "FR"
   },
@@ -132,12 +129,13 @@
     "identifiant": [
       "W9 HD",
       "W9",
-      "W9 (1080p)"
+      "W9 (1080p)",
+      "W9 (720p)"
     ],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/w9-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "W9.fr",
-    "url": "",
+    "url": "http://145.239.5.177/331a/index.m3u8",
     "country": "FR"
   },
   {
@@ -150,19 +148,21 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tmc-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TMC.fr",
-    "url": "http://151.80.18.177:86/TMC/index.m3u8",
+    "scrapUrl": "",
+    "url": "",
     "country": "FR"
   },
   {
     "nom": "TFX",
     "identifiant": [
       "TFX HD",
-      "TFX (1080p) [Geo-Blocked]",
-      "TFX (720p)"
+      "TFX (720p)",
+      "TFX (1080p) [Geo-Blocked]"
     ],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tfx-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TFX.fr",
+    "scrapUrl": "",
     "url": "http://145.239.5.177/315/index.m3u8",
     "country": "FR"
   },
@@ -174,6 +174,7 @@
     "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/1/1f/Ch%C3%A9rie_25_logo.svg/330px-Ch%C3%A9rie_25_logo.svg.png",
     "group": "TVFRANCE",
     "tvgId": "Cherie25.fr",
+    "scrapUrl": "",
     "url": "",
     "country": "FR"
   },
@@ -182,24 +183,26 @@
     "identifiant": [
       "BFM TV (1080p)",
       "BFM TV HD",
+      "BFM TV (576p)",
       "like Gecko) Chrome/108.0.0.0 Safari/537.36\" group-title=\"News\",BFM TV (1080p)"
     ],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/bfm-tv-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "BFMTV.fr",
-    "url": "",
+    "url": "https://live-cdn-stream-euw1.bfmtv.bct.nextradiotv.com/master.m3u8",
     "country": "FR"
   },
   {
     "nom": "CNews",
     "identifiant": [
       "CNEWS",
+      "CNews (1080p)",
       "CNews (1080p) [Geo-blocked]"
     ],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/c-news-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "CNews.fr",
-    "url": "",
+    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/canalplus/cnews-dm.m3u8",
     "country": "FR"
   },
   {
@@ -223,6 +226,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/c-star-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "CStar.fr",
+    "scrapUrl": "",
     "url": "http://145.239.5.177/361/index.m3u8",
     "country": "FR"
   },
@@ -330,7 +334,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/rmc-decouverte-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "RMCDecouverte.fr",
-    "url": "",
+    "url": " https://d1dagx0hs2fkxs.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/pb-2p2o2x977e2oh/RMC_Decouverte_FR.m3u8?ads.ads_cdn=cf&ads.app_domain=%7BAPP_DOMAIN%7D&ads.app_name=%7BAPP_NAME%7D&ads.cdn=cf&ads.consent=%7BTC_STRING%7D&ads.device_did=%7BPSID%7D&ads.device_dnt=%7BTARGETOPT%7D&ads.service_id=FRBD4100008QS&ads.ssai_vendor=SSSLIVE&pb_type=pb-2p2o2x977e2oh_cloudfront",
     "country": "FR"
   },
   {
@@ -364,6 +368,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tv5-monde-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "",
+    "scrapUrl": "",
     "url": "",
     "country": "FR"
   },
@@ -387,7 +392,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/disney-jr-us.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "",
-    "url": "http://151.80.18.177:86/Disney_Junior_HD/index.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
