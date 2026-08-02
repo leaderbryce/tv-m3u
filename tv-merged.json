@@ -2,13 +2,12 @@
   {
     "nom": "TF1",
     "identifiant": [
-      "TF1 HD (720p)",
-      "TF1.fr@HD"
+      "TF1 HD (720p)"
     ],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tf1-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TF1.fr",
-    "url": "",
+    "url": "http://151.80.18.177:86/TF1_HD/index.m3u8",
     "country": "FR"
   },
   {
@@ -109,7 +108,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/m6-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "M6.fr",
-    "url": "",
+    "url": "http://99.27.51.147:8080/M6/index.m3u8",
     "country": "FR"
   },
   {
@@ -121,6 +120,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/hd/arte-hd-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "Arte.fr",
+    "scrapUrl": "",
     "url": "http://145.239.5.177/300/index.m3u8",
     "country": "FR"
   },
@@ -148,6 +148,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tmc-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TMC.fr",
+    "scrapUrl": "",
     "url": "http://151.80.18.177:86/TMC/index.m3u8",
     "country": "FR"
   },
@@ -161,6 +162,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tfx-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TFX.fr",
+    "scrapUrl": "",
     "url": "http://145.239.5.177/315/index.m3u8",
     "country": "FR"
   },
@@ -172,6 +174,7 @@
     "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/1/1f/Ch%C3%A9rie_25_logo.svg/330px-Ch%C3%A9rie_25_logo.svg.png",
     "group": "TVFRANCE",
     "tvgId": "Cherie25.fr",
+    "scrapUrl": "",
     "url": "",
     "country": "FR"
   },
@@ -186,7 +189,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/bfm-tv-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "BFMTV.fr",
-    "url": "https://live-cdn-stream-euw1.bfmtv.bct.nextradiotv.com/master.m3u8",
+    "url": "https://ncdn-live-bfm.pfd.sfr.net/shls/LIVE$BFM_TV/index.m3u8?end=END&start=LIVE",
     "country": "FR"
   },
   {
@@ -223,6 +226,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/c-star-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "CStar.fr",
+    "scrapUrl": "",
     "url": "http://145.239.5.177/361/index.m3u8",
     "country": "FR"
   },
@@ -364,7 +368,8 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tv5-monde-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "",
-    "url": "",
+    "scrapUrl": "",
+    "url": "https://ott.tv5monde.com/Content/HLS/Live/channel(tivi5)/variant.m3u8",
     "country": "FR"
   },
   {
@@ -659,7 +664,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/ion-television-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403718",
-    "url": "https://pb-xhb3ic8b61whm.akamaized.net/Ion_US.m3u8",
+    "url": "",
     "country": "USA"
   },
   {

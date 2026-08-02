@@ -157,7 +157,6 @@ async function fetchRemoteSources(remoteUrls: string[], country: Country): Promi
         remoteUrls.map((url) => fetchRemoteSource(url))
     );
     const merged: RemoteChannel[] = [];
-    const seenUrls = new Set<string>();
     let successfulSources = 0;
 
     results.forEach((result, index) => {
@@ -170,11 +169,13 @@ async function fetchRemoteSources(remoteUrls: string[], country: Country): Promi
         successfulSources++;
         const { channels, format } = result.value;
         console.log(`📥 Source ${country} #${sourceNumber} (${format}) : ${channels.length} flux chargés`);
+
         channels.forEach((channel) => {
-            if (!seenUrls.has(channel.url)) {
-                seenUrls.add(channel.url);
-                merged.push({ ...channel, sourceNumber, sourceFormat: format });
-            }
+            merged.push({
+                ...channel,
+                sourceNumber,
+                sourceFormat: format,
+            });
         });
     });
 

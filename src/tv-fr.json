@@ -1,7 +1,7 @@
 [
   {
     "nom": "TF1",
-    "identifiant": ["TF1 HD (720p)", "TF1.fr@HD"],
+    "identifiant": ["TF1 HD (720p)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tf1-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TF1.fr",
