@@ -29,8 +29,6 @@ http://151.80.18.177:86/LCI_HD/index.m3u8
 http://145.239.5.177/361/index.m3u8
 #EXTINF:-1 tvg-id="RTL9.fr" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/france/rtl9-fr.png" group-title="LIVETV;TVFRANCE",RTL9
 http://145.239.5.177/308/index.m3u8
-#EXTINF:-1 tvg-id="Gulli.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/gulli-fr.png?raw=true" group-title="LIVETV;TVFRANCE",Gulli
-http://99.27.51.147:8080/Gulli/index.m3u8
 #EXTINF:-1 tvg-id="T18.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/t18-fr.png?raw=true" group-title="LIVETV;TVFRANCE",T18
 https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/t18/t18-dm.m3u8
 #EXTINF:-1 tvg-id="6ter.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/6ter-fr.png?raw=true" group-title="LIVETV;TVFRANCE",6ter
@@ -123,6 +121,8 @@ http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/2412
 https://jmp2.uk/plu-5cb0cae7a461406ffe3f5213.m3u8
 #EXTINF:-1 tvg-id="403537" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/paramount-plus-with-showtime-us.png?raw=true" group-title="LIVETV;TVUSA",Paramount+ with Showtime
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3758
+#EXTINF:-1 tvg-id="403788" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/disney-channel-us.png?raw=true" group-title="LIVETV;TVUSA",Disney Channel
+http://190.14.10.19:16000/play/a06z/index.m3u8
 #EXTINF:-1 tvg-id="403837" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/disney-xd-us.png?raw=true" group-title="LIVETV;TVUSA",Disney XD
 http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3720
 #EXTINF:-1 tvg-id="403620" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nickelodeon-us.png?raw=true" group-title="LIVETV;TVUSA",Nickelodeon
