@@ -145,7 +145,7 @@
   },
   {
     "nom": "Food Network",
-    "identifiant": ["Food Network (East)", "Food Network (West)"],
+    "identifiant": ["Food Network (East)", "Food Network (West)", "Food Network (UK)"],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/food-network-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403509",
