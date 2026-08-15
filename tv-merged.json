@@ -91,7 +91,7 @@
     "identifiant": [
       "France5 HD",
       "France 5 (1080p)",
-      "France 5 HD (720p) [Geo-Blocked]"
+      "France 5"
     ],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/france-5-fr.png?raw=true",
     "group": "TVFRANCE",
@@ -120,7 +120,6 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/hd/arte-hd-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "Arte.fr",
-    "scrapUrl": "",
     "url": "http://145.239.5.177/300/index.m3u8",
     "country": "FR"
   },
@@ -148,8 +147,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tmc-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TMC.fr",
-    "scrapUrl": "",
-    "url": "http://151.80.18.177:86/TMC/index.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -162,7 +160,6 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tfx-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TFX.fr",
-    "scrapUrl": "",
     "url": "http://145.239.5.177/315/index.m3u8",
     "country": "FR"
   },
@@ -174,8 +171,18 @@
     "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/1/1f/Ch%C3%A9rie_25_logo.svg/330px-Ch%C3%A9rie_25_logo.svg.png",
     "group": "TVFRANCE",
     "tvgId": "Cherie25.fr",
-    "scrapUrl": "",
     "url": "",
+    "country": "FR"
+  },
+  {
+    "nom": "Teva",
+    "identifiant": [
+      "Teva (1080p)"
+    ],
+    "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/teva-fr.png?raw=true",
+    "group": "TVFRANCE",
+    "tvgId": "Teva.fr",
+    "url": "http://145.239.5.177/356/index.m3u8",
     "country": "FR"
   },
   {
@@ -189,7 +196,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/bfm-tv-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "BFMTV.fr",
-    "url": "https://ncdn-live-bfm.pfd.sfr.net/shls/LIVE$BFM_TV/index.m3u8?end=END&start=LIVE",
+    "url": "https://live-cdn-stream-euw1.bfmtv.bct.nextradiotv.com/master.m3u8",
     "country": "FR"
   },
   {
@@ -214,7 +221,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/lci-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "LCI.fr",
-    "url": "http://151.80.18.177:86/LCI_HD/index.m3u8",
+    "url": "http://145.239.5.177/368/index.m3u8",
     "country": "FR"
   },
   {
@@ -226,7 +233,6 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/c-star-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "CStar.fr",
-    "scrapUrl": "",
     "url": "http://145.239.5.177/361/index.m3u8",
     "country": "FR"
   },
@@ -368,8 +374,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tv5-monde-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "",
-    "scrapUrl": "",
-    "url": "https://ott.tv5monde.com/Content/HLS/Live/channel(tivi5)/variant.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -407,6 +412,17 @@
     "country": "FR"
   },
   {
+    "nom": "Qwest TV",
+    "identifiant": [
+      "Qwest TV Jazz & Beyond (1080p)"
+    ],
+    "logo": "https://i.imgur.com/89yWH5L.png",
+    "group": "TVFRANCE",
+    "tvgId": "",
+    "url": "https://samsungau-qwestjazz-samsungtv-zw2jc.amagi.tv/playlist/samsungau-qwestjazz-samsungtv/playlist.m3u8",
+    "country": "FR"
+  },
+  {
     "nom": "Fuse",
     "identifiant": [
       "Fuse (1080p)",
@@ -429,7 +445,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/hbo-hd-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403926",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3655",
+    "url": "",
     "country": "USA"
   },
   {
@@ -443,7 +459,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/hbo-2-hd-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403522",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3188",
+    "url": "",
     "country": "USA"
   },
   {
@@ -456,7 +472,7 @@
     "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-states/hbo-movies-us.png",
     "group": "TVUSA",
     "tvgId": "480609",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/51552",
+    "url": "",
     "country": "USA"
   },
   {
@@ -482,7 +498,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hbo-comedy-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403650",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/51550",
+    "url": "",
     "country": "USA"
   },
   {
@@ -521,7 +537,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hbo-hits-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "465255",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/648976",
+    "url": "",
     "country": "USA"
   },
   {
@@ -545,7 +561,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/showtime-2-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403651",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3965",
+    "url": "",
     "country": "USA"
   },
   {
@@ -558,7 +574,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/showtime-next-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403520",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/648985",
+    "url": "",
     "country": "USA"
   },
   {
@@ -571,7 +587,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/showtime-extreme-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403681",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3967",
+    "url": "",
     "country": "USA"
   },
   {
@@ -584,7 +600,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/showtime-family-zone-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "8841",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3969",
+    "url": "",
     "country": "USA"
   },
   {
@@ -628,7 +644,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cooking-channel-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403832",
-    "url": "http://206.212.244.63/47/index.m3u8",
+    "url": "",
     "country": "USA"
   },
   {
@@ -640,7 +656,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/food-network-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403509",
-    "url": "http://206.212.244.63/61/index.m3u8",
+    "url": "",
     "country": "USA"
   },
   {
@@ -664,7 +680,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/ion-television-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403718",
-    "url": "",
+    "url": "https://pb-xhb3ic8b61whm.akamaized.net/Ion_US.m3u8",
     "country": "USA"
   },
   {
@@ -688,7 +704,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/bbc-america-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403895",
-    "url": "http://206.212.244.63/13/index.m3u8",
+    "url": "http://23.239.31.26:8989/bbcamerica/index.m3u8",
     "country": "USA"
   },
   {
@@ -736,7 +752,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/tlc-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403827",
-    "url": "http://206.212.244.63/159/index.m3u8",
+    "url": "",
     "country": "USA"
   },
   {
@@ -749,7 +765,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fx-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403815",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3054",
+    "url": "",
     "country": "USA"
   },
   {
@@ -761,7 +777,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fxx-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403518",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3055",
+    "url": "",
     "country": "USA"
   },
   {
@@ -773,7 +789,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fxm-movie-channel-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403717",
-    "url": "http://40.160.24.52/FXM/index.m3u8",
+    "url": "",
     "country": "USA"
   },
   {
@@ -784,7 +800,7 @@
     "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-states/fox-us.png",
     "group": "TVUSA",
     "tvgId": "",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/2504",
+    "url": "",
     "country": "USA"
   },
   {
@@ -795,7 +811,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fox-sports-1-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3645",
+    "url": "",
     "country": "USA"
   },
   {
@@ -820,7 +836,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/vh1-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403653",
-    "url": "http://40.160.24.55/VH1/index.m3u8",
+    "url": "",
     "country": "USA"
   },
   {
@@ -833,7 +849,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cinemax-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403854",
-    "url": "http://40.160.24.52/CINEMAX_EAST/index.m3u8",
+    "url": "",
     "country": "USA"
   },
   {
@@ -917,7 +933,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mgm-plus-hits-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "8730",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3724",
+    "url": "",
     "country": "USA"
   },
   {
@@ -926,7 +942,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mgm-plus-drive-in-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "8426",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/4431",
+    "url": "",
     "country": "USA"
   },
   {
@@ -939,7 +955,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/movie-plex-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "8400",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/93060",
+    "url": "",
     "country": "USA"
   },
   {
@@ -948,7 +964,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/sony-movie-channel-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403665",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/2412",
+    "url": "",
     "country": "USA"
   },
   {
@@ -970,7 +986,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/paramount-plus-with-showtime-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403537",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3758",
+    "url": "",
     "country": "USA"
   },
   {
@@ -981,7 +997,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/disney-channel-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403788",
-    "url": "http://206.212.244.63/650/index.m3u8",
+    "url": "",
     "country": "USA"
   },
   {
@@ -1005,7 +1021,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/disney-xd-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403837",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3720",
+    "url": "",
     "country": "USA"
   },
   {
@@ -1031,7 +1047,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nick-jr-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403655",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/74691",
+    "url": "",
     "country": "USA"
   },
   {
@@ -1044,7 +1060,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cartoon-network-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403461",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3248",
+    "url": "",
     "country": "USA"
   },
   {
@@ -1065,7 +1081,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/boomerang-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403576",
-    "url": "http://206.212.244.63/642/index.m3u8",
+    "url": "",
     "country": "USA"
   },
   {
@@ -1078,7 +1094,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/usa-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403626",
-    "url": "http://206.212.244.63/168/index.m3u8",
+    "url": "",
     "country": "USA"
   },
   {
@@ -1090,7 +1106,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/discovery-science-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403564",
-    "url": "http://206.212.244.63/55/index.m3u8",
+    "url": "",
     "country": "USA"
   },
   {
@@ -1103,7 +1119,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/national-geographic-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403578",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3093",
+    "url": "http://198.58.104.90:8989/natgeo/index.m3u8",
     "country": "USA"
   },
   {
@@ -1115,7 +1131,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/syfy-hd-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403631",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3841",
+    "url": "",
     "country": "USA"
   },
   {
@@ -1128,7 +1144,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mtv-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403921",
-    "url": "http://40.160.24.53/MTV/index.m3u8",
+    "url": "",
     "country": "USA"
   },
   {
@@ -1141,7 +1157,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mtv-2-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403593",
-    "url": "http://206.212.244.63/116/index.m3u8",
+    "url": "",
     "country": "USA"
   },
   {
@@ -1150,7 +1166,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mtv-live-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403621",
-    "url": "http://206.212.244.63/118/index.m3u8",
+    "url": "",
     "country": "USA"
   },
   {
@@ -1163,7 +1179,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/adult-swim-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "409470",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3077",
+    "url": "https://raw.githubusercontent.com/insolencewillow/insolencetvgo/main/streams/aseast.us.m3u8",
     "country": "USA"
   },
   {
@@ -1177,7 +1193,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/msnbc-alt-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403470",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/93125",
+    "url": "",
     "country": "USA"
   },
   {
@@ -1186,7 +1202,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cnbc-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403527",
-    "url": "http://206.212.244.63/42/index.m3u8",
+    "url": "",
     "country": "USA"
   },
   {
@@ -1195,7 +1211,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cnn-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403819",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3257",
+    "url": "",
     "country": "USA"
   },
   {
@@ -1204,7 +1220,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fox-news-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403903",
-    "url": "http://s.rocketdns.info:8080/monstercable/Dq6jjknxCr/3275",
+    "url": "",
     "country": "USA"
   }
 ]
