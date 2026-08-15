@@ -11,8 +11,6 @@ http://99.27.51.147:8080/M6/index.m3u8
 http://145.239.5.177/300/index.m3u8
 #EXTINF:-1 tvg-id="W9.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/w9-fr.png?raw=true" group-title="LIVETV;TVFRANCE",W9
 http://145.239.5.177/331a/index.m3u8
-#EXTINF:-1 tvg-id="TMC.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/tmc-fr.png?raw=true" group-title="LIVETV;TVFRANCE",TMC
-http://151.80.18.177:86/TMC/index.m3u8
 #EXTINF:-1 tvg-id="TFX.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/tfx-fr.png?raw=true" group-title="LIVETV;TVFRANCE",TFX
 http://145.239.5.177/315/index.m3u8
 #EXTINF:-1 tvg-id="Teva.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/teva-fr.png?raw=true" group-title="LIVETV;TVFRANCE",Teva
@@ -71,12 +69,8 @@ http://23.237.104.106:8080/USA_COMEDY_CENTRAL/index.m3u8
 https://dbrb49pjoymg4.cloudfront.net/10001/99951244/hls/master.m3u8?includeAssetTags=true&ads.xumo_channelId=99951244
 #EXTINF:-1 tvg-id="403733" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/e-entertainment-us.png?raw=true" group-title="LIVETV;TVUSA",E!
 http://23.237.104.106:8080/USA_E/index.m3u8
-#EXTINF:-1 tvg-id="403653" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/vh1-us.png?raw=true" group-title="LIVETV;TVUSA",VH1
-http://40.160.24.55/VH1/index.m3u8
 #EXTINF:-1 tvg-id="405735" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/paramount-network-hd-us.png?raw=true" group-title="LIVETV;TVUSA",Paramount Movie Channel
 https://jmp2.uk/plu-5cb0cae7a461406ffe3f5213.m3u8
-#EXTINF:-1 tvg-id="403788" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/disney-channel-us.png?raw=true" group-title="LIVETV;TVUSA",Disney Channel
-http://190.14.10.19:16000/play/a06z/index.m3u8
 #EXTINF:-1 tvg-id="403620" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nickelodeon-us.png?raw=true" group-title="LIVETV;TVUSA",Nickelodeon
 http://23.237.104.106:8080/USA_NICKELODEON/index.m3u8
 #EXTINF:-1 tvg-id="403469" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/pbs-kids-dash-icon-us.png?raw=true" group-title="LIVETV;TVUSA",PBS Kids
