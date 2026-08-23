@@ -120,7 +120,8 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/hd/arte-hd-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "Arte.fr",
-    "url": "http://145.239.5.177/300/index.m3u8",
+    "scrapUrl": "",
+    "url": "",
     "country": "FR"
   },
   {
@@ -134,7 +135,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/w9-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "W9.fr",
-    "url": "http://145.239.5.177/331a/index.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -147,6 +148,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tmc-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TMC.fr",
+    "scrapUrl": "",
     "url": "http://151.80.18.177:86/TMC/index.m3u8",
     "country": "FR"
   },
@@ -160,7 +162,8 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tfx-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TFX.fr",
-    "url": "http://145.239.5.177/315/index.m3u8",
+    "scrapUrl": "",
+    "url": "",
     "country": "FR"
   },
   {
@@ -171,6 +174,7 @@
     "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/1/1f/Ch%C3%A9rie_25_logo.svg/330px-Ch%C3%A9rie_25_logo.svg.png",
     "group": "TVFRANCE",
     "tvgId": "Cherie25.fr",
+    "scrapUrl": "",
     "url": "",
     "country": "FR"
   },
@@ -182,7 +186,8 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/teva-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "Teva.fr",
-    "url": "http://145.239.5.177/356/index.m3u8",
+    "scrapUrl": "",
+    "url": "",
     "country": "FR"
   },
   {
@@ -221,7 +226,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/lci-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "LCI.fr",
-    "url": "http://145.239.5.177/368/index.m3u8",
+    "url": "http://151.80.18.177:86/LCI_HD/index.m3u8",
     "country": "FR"
   },
   {
@@ -233,7 +238,8 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/c-star-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "CStar.fr",
-    "url": "http://145.239.5.177/361/index.m3u8",
+    "scrapUrl": "",
+    "url": "",
     "country": "FR"
   },
   {
@@ -245,7 +251,7 @@
     "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/france/rtl9-fr.png",
     "group": "TVFRANCE",
     "tvgId": "RTL9.fr",
-    "url": "http://145.239.5.177/308/index.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -295,7 +301,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/6ter-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "6ter.fr",
-    "url": "http://145.239.5.177/314/index.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -306,7 +312,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/m6-music-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "M6Music.fr",
-    "url": "http://145.239.5.177/320/index.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -317,7 +323,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/ab1-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "AB1.fr",
-    "url": "http://145.239.5.177/332/index.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -351,7 +357,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/rmc-life-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "RMCLife.fr",
-    "url": "http://145.239.5.177/333/index.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -374,6 +380,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tv5-monde-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "",
+    "scrapUrl": "",
     "url": "",
     "country": "FR"
   },
