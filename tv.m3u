@@ -33,10 +33,10 @@ https://samsungau-qwestjazz-samsungtv-zw2jc.amagi.tv/playlist/samsungau-qwestjaz
 http://23.237.104.106:8080/USA_FUSE/index.m3u8
 #EXTINF:-1 tvg-id="403783" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hbo-family-us.png?raw=true" group-title="LIVETV;TVUSA",HBO Family
 https://cdnbarinas.tvzamora.com/hbofamily/index.m3u8
+#EXTINF:-1 tvg-id="403838" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/amc-hd-us.png?raw=true" group-title="LIVETV;TVUSA",AMC
+http://23.239.31.26:8989/amc/index.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/amc-hd-us.png?raw=true" group-title="LIVETV;TVUSA",AMC Thriller
 https://18f2fbf906cb473e8adbe37026e7e27f.mediatailor.us-east-1.amazonaws.com/v1/master/44f73ba4d03e9607dcd9bebdcb8494d86964f1d8/Vizio_RushByAMC/playlist.m3u8
-#EXTINF:-1 tvg-id="403718" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/ion-television-us.png?raw=true" group-title="LIVETV;TVUSA",Ion TV
-https://pb-xhb3ic8b61whm.akamaized.net/Ion_US.m3u8
 #EXTINF:-1 tvg-id="399929" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/ion-plus-us.png?raw=true" group-title="LIVETV;TVUSA",Ion Plus
 https://wurlewscripps.global.transmit.live/hls/6994c4740198ca4590f9e0c0/v1/ion_ion_plus_1/lg_us/latest/main/hls/playlist.m3u8?wurl_channel=378
 #EXTINF:-1 tvg-id="403895" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/bbc-america-us.png?raw=true" group-title="LIVETV;TVUSA",BBC America
@@ -57,7 +57,5 @@ https://2-fss-2.streamhoster.com/pl_140/amlst:200914-1298290/playlist.m3u8
 http://198.58.104.90:8989/natgeo/index.m3u8
 #EXTINF:-1 tvg-id="403631" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/syfy-hd-us.png?raw=true" group-title="LIVETV;TVUSA",Syfy
 http://23.237.104.106:8080/USA_SYFY/index.m3u8
-#EXTINF:-1 tvg-id="403921" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mtv-us.png?raw=true" group-title="LIVETV;TVUSA",MTV
-http://198.58.104.90:8989/mtv/index.m3u8
 #EXTINF:-1 tvg-id="409470" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/adult-swim-us.png?raw=true" group-title="LIVETV;TVUSA",Adult Swim
 https://raw.githubusercontent.com/insolencewillow/insolencetvgo/main/streams/aseast.us.m3u8
