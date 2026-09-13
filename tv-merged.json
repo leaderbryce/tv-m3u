@@ -120,7 +120,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/hd/arte-hd-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "Arte.fr",
-    "url": "http://145.239.5.177/300/index.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -134,7 +134,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/w9-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "W9.fr",
-    "url": "http://145.239.5.177/331a/index.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -147,7 +147,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tmc-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TMC.fr",
-    "url": "",
+    "url": "http://151.80.18.177:86/TMC/index.m3u8",
     "country": "FR"
   },
   {
@@ -160,7 +160,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tfx-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TFX.fr",
-    "url": "http://145.239.5.177/315/index.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -182,7 +182,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/teva-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "Teva.fr",
-    "url": "http://145.239.5.177/356/index.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -221,7 +221,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/lci-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "LCI.fr",
-    "url": "http://145.239.5.177/368/index.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -233,7 +233,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/c-star-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "CStar.fr",
-    "url": "http://145.239.5.177/361/index.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -245,7 +245,7 @@
     "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/france/rtl9-fr.png",
     "group": "TVFRANCE",
     "tvgId": "RTL9.fr",
-    "url": "http://145.239.5.177/308/index.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -295,7 +295,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/6ter-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "6ter.fr",
-    "url": "http://145.239.5.177/314/index.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -306,7 +306,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/m6-music-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "M6Music.fr",
-    "url": "http://145.239.5.177/320/index.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -317,7 +317,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/ab1-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "AB1.fr",
-    "url": "http://145.239.5.177/332/index.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -351,7 +351,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/rmc-life-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "RMCLife.fr",
-    "url": "http://145.239.5.177/333/index.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -548,7 +548,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/showtime-hd-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403537",
-    "url": "",
+    "url": "http://4.30.180.36:8420/showtime/mono.m3u8?token=test",
     "country": "USA"
   },
   {
@@ -651,7 +651,8 @@
     "nom": "Food Network",
     "identifiant": [
       "Food Network (East)",
-      "Food Network (West)"
+      "Food Network (West)",
+      "Food Network (UK)"
     ],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/food-network-us.png?raw=true",
     "group": "TVUSA",
@@ -680,7 +681,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/ion-television-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403718",
-    "url": "https://pb-xhb3ic8b61whm.akamaized.net/Ion_US.m3u8",
+    "url": "",
     "country": "USA"
   },
   {
@@ -730,7 +731,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/comedy-central-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403666",
-    "url": "http://23.237.104.106:8080/USA_COMEDY_CENTRAL/index.m3u8",
+    "url": "",
     "country": "USA"
   },
   {
@@ -836,7 +837,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/vh1-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403653",
-    "url": "",
+    "url": "http://4.30.180.36:8420/vh1/index.m3u8?token=test",
     "country": "USA"
   },
   {
@@ -1034,7 +1035,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nickelodeon-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403620",
-    "url": "http://23.237.104.106:8080/USA_NICKELODEON/index.m3u8",
+    "url": "",
     "country": "USA"
   },
   {
@@ -1131,7 +1132,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/syfy-hd-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403631",
-    "url": "",
+    "url": "http://23.237.104.106:8080/USA_SYFY/index.m3u8",
     "country": "USA"
   },
   {
