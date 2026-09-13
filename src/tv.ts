@@ -49,6 +49,7 @@ const SOURCES = {
         remoteUrls: [
             'https://raw.githubusercontent.com/bugsfreeweb/LiveTVCollector/refs/heads/main/LiveTV/France/LiveTV.json',
             'https://raw.githubusercontent.com/iptv-org/iptv/refs/heads/master/streams/fr.m3u',
+            'https://raw.githubusercontent.com/Paradise-91/ParaTV/refs/heads/main/playlists/paratv/main/paratv-highest.m3u'
         ],
     },
     usa: {
