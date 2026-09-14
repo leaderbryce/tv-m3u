@@ -21,7 +21,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/france-2-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "France2.fr",
-    "url": "",
+    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/francetv/backup/res/france2-highest.m3u8",
     "country": "FR"
   },
   {
@@ -48,7 +48,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/canal-plus-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "CanalPlus.fr",
-    "url": "",
+    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/canalplus/res/canalplusclair-hd-highest.m3u8",
     "country": "FR"
   },
   {
@@ -70,7 +70,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/canal-plus-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "CanalPlus.fr",
-    "url": "",
+    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/canalplus/res/canalplusclair-hd-highest.m3u8",
     "country": "FR"
   },
   {
@@ -83,7 +83,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/france-4-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "France4.fr",
-    "url": "",
+    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/francetv/res/france-4-highest.m3u8",
     "country": "FR"
   },
   {
@@ -96,7 +96,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/france-5-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "France5.fr",
-    "url": "",
+    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/francetv/backup/res/france5-highest.m3u8",
     "country": "FR"
   },
   {
@@ -120,7 +120,8 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/hd/arte-hd-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "Arte.fr",
-    "url": "",
+    "scrapUrl": "",
+    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/arte/res/arte-highest.m3u8",
     "country": "FR"
   },
   {
@@ -147,6 +148,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tmc-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TMC.fr",
+    "scrapUrl": "",
     "url": "http://151.80.18.177:86/TMC/index.m3u8",
     "country": "FR"
   },
@@ -160,6 +162,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tfx-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TFX.fr",
+    "scrapUrl": "",
     "url": "",
     "country": "FR"
   },
@@ -171,6 +174,7 @@
     "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/1/1f/Ch%C3%A9rie_25_logo.svg/330px-Ch%C3%A9rie_25_logo.svg.png",
     "group": "TVFRANCE",
     "tvgId": "Cherie25.fr",
+    "scrapUrl": "",
     "url": "",
     "country": "FR"
   },
@@ -182,6 +186,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/teva-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "Teva.fr",
+    "scrapUrl": "",
     "url": "",
     "country": "FR"
   },
@@ -221,19 +226,21 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/lci-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "LCI.fr",
-    "url": "",
+    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/ZM5LPb60VWPz/res/rpVFPW1lur0Lom9F-highest.m3u8",
     "country": "FR"
   },
   {
     "nom": "CStar",
     "identifiant": [
       "CSTAR",
-      "C Star (1080p)"
+      "C Star (1080p)",
+      "17. CStar [1080p-dailymotion.com]"
     ],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/c-star-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "CStar.fr",
-    "url": "",
+    "scrapUrl": "",
+    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/canalplus/res/cstar-dm-highest.m3u8",
     "country": "FR"
   },
   {
@@ -283,7 +290,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/novo19-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "NOVO19.fr",
-    "url": "",
+    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/ZM5LPb60VWPz/res/sGiWxl0Z6NN7DiY-highest.m3u8",
     "country": "FR"
   },
   {
@@ -362,7 +369,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/franceinfo-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "FranceInfo.fr",
-    "url": "",
+    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/francetv/res/franceinfo-highest.m3u8",
     "country": "FR"
   },
   {
@@ -374,6 +381,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tv5-monde-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "",
+    "scrapUrl": "",
     "url": "",
     "country": "FR"
   },
@@ -644,7 +652,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cooking-channel-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403832",
-    "url": "",
+    "url": "http://23.237.104.106:8080/USA_COOKING/index.m3u8?takodachi",
     "country": "USA"
   },
   {
@@ -657,7 +665,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/food-network-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403509",
-    "url": "",
+    "url": "http://23.237.104.106:8080/USA_FOOD_NETWORK/index.m3u8",
     "country": "USA"
   },
   {
