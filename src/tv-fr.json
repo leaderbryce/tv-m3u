@@ -287,6 +287,14 @@
     "url": ""
   },
   {
+    "nom": "Caillou",
+    "identifiant": ["Caillou"],
+    "logo": "https://upload.wikimedia.org/wikipedia/en/8/86/Caillou_new_logo.png",
+    "group": "TVFRANCE",
+    "tvgId": "",
+    "url": ""
+  },
+  {
   "nom": "Qwest TV",
   "identifiant": ["Qwest TV Jazz & Beyond (1080p)"],
   "logo": "https://i.imgur.com/89yWH5L.png",
