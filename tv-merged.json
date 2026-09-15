@@ -120,6 +120,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/hd/arte-hd-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "Arte.fr",
+    "scrapUrl": "",
     "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/arte/res/arte-highest.m3u8",
     "country": "FR"
   },
@@ -147,6 +148,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tmc-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TMC.fr",
+    "scrapUrl": "",
     "url": "http://151.80.18.177:86/TMC/index.m3u8",
     "country": "FR"
   },
@@ -160,6 +162,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tfx-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TFX.fr",
+    "scrapUrl": "",
     "url": "",
     "country": "FR"
   },
@@ -171,6 +174,7 @@
     "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/1/1f/Ch%C3%A9rie_25_logo.svg/330px-Ch%C3%A9rie_25_logo.svg.png",
     "group": "TVFRANCE",
     "tvgId": "Cherie25.fr",
+    "scrapUrl": "",
     "url": "",
     "country": "FR"
   },
@@ -182,6 +186,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/teva-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "Teva.fr",
+    "scrapUrl": "",
     "url": "",
     "country": "FR"
   },
@@ -221,7 +226,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/lci-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "LCI.fr",
-    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/p2ap0go14Vgr/res/GnjaVySIKgS3sjBT-highest.m3u8",
+    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/scsYhSQjcYS9/res/o0PNVDwU3M5fE8W-highest.m3u8",
     "country": "FR"
   },
   {
@@ -234,6 +239,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/c-star-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "CStar.fr",
+    "scrapUrl": "",
     "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/canalplus/cstar-dm.m3u8",
     "country": "FR"
   },
@@ -284,7 +290,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/novo19-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "NOVO19.fr",
-    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/p2ap0go14Vgr/res/oTOOE1c4EHtp08mE-highest.m3u8",
+    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/scsYhSQjcYS9/res/ecCz3Ggihrh00Ru-highest.m3u8",
     "country": "FR"
   },
   {
@@ -297,6 +303,17 @@
     "group": "TVFRANCE",
     "tvgId": "6ter.fr",
     "url": "",
+    "country": "FR"
+  },
+  {
+    "nom": "Kaamelott",
+    "identifiant": [
+      ""
+    ],
+    "logo": "https://upload.wikimedia.org/wikipedia/fr/c/cd/Kaamelott_Logo.png",
+    "group": "TVFRANCE",
+    "tvgId": "Kaamelott",
+    "url": "https://elleestoulapoulette.com/hls/live.m3u8",
     "country": "FR"
   },
   {
@@ -375,6 +392,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tv5-monde-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "",
+    "scrapUrl": "",
     "url": "",
     "country": "FR"
   },
