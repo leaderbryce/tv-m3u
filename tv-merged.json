@@ -7,7 +7,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tf1-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TF1.fr",
-    "url": "http://151.80.18.177:86/TF1_HD/index.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -21,7 +21,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/france-2-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "France2.fr",
-    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/francetv/backup/res/france2-highest.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -48,7 +48,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/canal-plus-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "CanalPlus.fr",
-    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/canalplus/res/canalplusclair-hd-highest.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -59,7 +59,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/canal-plus-cinemas-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "CanalPlus.fr",
-    "url": "http://151.80.18.177:86/Canal+_cinema_HD/index.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -70,7 +70,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/canal-plus-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "CanalPlus.fr",
-    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/canalplus/res/canalplusclair-hd-highest.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -83,7 +83,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/france-4-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "France4.fr",
-    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/francetv/res/france-4-highest.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -96,7 +96,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/france-5-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "France5.fr",
-    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/francetv/backup/res/france5-highest.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -120,8 +120,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/hd/arte-hd-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "Arte.fr",
-    "scrapUrl": "",
-    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/arte/res/arte-highest.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -148,8 +147,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tmc-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TMC.fr",
-    "scrapUrl": "",
-    "url": "http://151.80.18.177:86/TMC/index.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -162,7 +160,6 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tfx-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TFX.fr",
-    "scrapUrl": "",
     "url": "",
     "country": "FR"
   },
@@ -174,7 +171,6 @@
     "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/1/1f/Ch%C3%A9rie_25_logo.svg/330px-Ch%C3%A9rie_25_logo.svg.png",
     "group": "TVFRANCE",
     "tvgId": "Cherie25.fr",
-    "scrapUrl": "",
     "url": "",
     "country": "FR"
   },
@@ -186,7 +182,6 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/teva-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "Teva.fr",
-    "scrapUrl": "",
     "url": "",
     "country": "FR"
   },
@@ -226,7 +221,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/lci-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "LCI.fr",
-    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/scsYhSQjcYS9/res/o0PNVDwU3M5fE8W-highest.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -239,8 +234,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/c-star-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "CStar.fr",
-    "scrapUrl": "",
-    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/canalplus/cstar-dm.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -290,7 +284,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/novo19-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "NOVO19.fr",
-    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/scsYhSQjcYS9/res/ecCz3Ggihrh00Ru-highest.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -310,7 +304,7 @@
     "identifiant": [
       ""
     ],
-    "logo": "https://upload.wikimedia.org/wikipedia/fr/c/cd/Kaamelott_Logo.png",
+    "logo": "https://i.pinimg.com/474x/10/29/33/102933830345f5d03ac3f4b024b5e6c7.jpg",
     "group": "TVFRANCE",
     "tvgId": "Kaamelott",
     "url": "https://elleestoulapoulette.com/hls/live.m3u8",
@@ -369,7 +363,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/rmc-life-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "RMCLife.fr",
-    "url": "",
+    "url": "https://d3dcdjv6dx07iz.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-eaaww2dyp3iih/RMC_Life_FR.m3u8",
     "country": "FR"
   },
   {
@@ -380,7 +374,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/franceinfo-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "FranceInfo.fr",
-    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/francetv/res/franceinfo-highest.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -392,7 +386,6 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tv5-monde-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "",
-    "scrapUrl": "",
     "url": "",
     "country": "FR"
   },
@@ -416,7 +409,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/disney-jr-us.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "",
-    "url": "http://151.80.18.177:86/Disney_Junior_HD/index.m3u8",
+    "url": "",
     "country": "FR"
   },
   {
@@ -427,7 +420,18 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nick-jr-us.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "",
-    "url": "http://151.80.18.177:86/Nickelodeon_Junior/index.m3u8",
+    "url": "",
+    "country": "FR"
+  },
+  {
+    "nom": "Caillou",
+    "identifiant": [
+      "Caillou"
+    ],
+    "logo": "https://upload.wikimedia.org/wikipedia/en/8/86/Caillou_new_logo.png",
+    "group": "TVFRANCE",
+    "tvgId": "",
+    "url": "https://do7nccdsswstc.cloudfront.net/v1/manifest/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-1aso0bc668saa/a5233c83-f772-4a81-959a-45ec7877ef61/5.m3u8",
     "country": "FR"
   },
   {
@@ -567,7 +571,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/showtime-hd-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403537",
-    "url": "http://4.30.180.36:8420/showtime/mono.m3u8?token=test",
+    "url": "",
     "country": "USA"
   },
   {
@@ -633,7 +637,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/amc-hd-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403838",
-    "url": "http://23.239.31.26:8989/amc/index.m3u8",
+    "url": "",
     "country": "USA"
   },
   {
@@ -843,7 +847,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/e-entertainment-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403733",
-    "url": "http://23.237.104.106:8080/USA_E/index.m3u8",
+    "url": "",
     "country": "USA"
   },
   {
@@ -856,7 +860,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/vh1-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403653",
-    "url": "http://4.30.180.36:8420/vh1/index.m3u8?token=test",
+    "url": "",
     "country": "USA"
   },
   {
@@ -1139,7 +1143,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/national-geographic-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403578",
-    "url": "http://198.58.104.90:8989/natgeo/index.m3u8",
+    "url": "",
     "country": "USA"
   },
   {
