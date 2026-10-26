@@ -2,12 +2,13 @@
   {
     "nom": "TF1",
     "identifiant": [
-      "TF1 HD (720p)"
+      "TF1 HD (720p)",
+      "TF1"
     ],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tf1-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TF1.fr",
-    "url": "",
+    "url": "http://149.62.177.107:9999/TF1/index.m3u8",
     "country": "FR"
   },
   {
@@ -120,6 +121,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/hd/arte-hd-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "Arte.fr",
+    "scrapUrl": "",
     "url": "https://c9851ec-rbm-hilv-fsly.cdn.redbee.live/L5/3264727f/d0a3cb71.isml/.m3u8",
     "country": "FR"
   },
@@ -142,13 +144,15 @@
     "nom": "TMC",
     "identifiant": [
       "TMC",
-      "TMC HD (1080p) [Geo-Blocked]",
+      "TMC HD",
+      "TMC HD (1080p)",
       "like Gecko) Chrome/149.0.0.0 Safari/537.36\" group-title=\"General\",TMC (1080p)"
     ],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tmc-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TMC.fr",
-    "url": "",
+    "scrapUrl": "",
+    "url": "http://149.62.177.107:9999/TMC/index.m3u8",
     "country": "FR"
   },
   {
@@ -156,12 +160,13 @@
     "identifiant": [
       "TFX HD",
       "TFX (720p)",
-      "TFX (1080p) [Geo-Blocked]"
+      "TFX"
     ],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tfx-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "TFX.fr",
-    "url": "",
+    "scrapUrl": "",
+    "url": "http://149.62.177.107:9999/TFX/index.m3u8",
     "country": "FR"
   },
   {
@@ -172,6 +177,7 @@
     "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/1/1f/Ch%C3%A9rie_25_logo.svg/330px-Ch%C3%A9rie_25_logo.svg.png",
     "group": "TVFRANCE",
     "tvgId": "Cherie25.fr",
+    "scrapUrl": "",
     "url": "",
     "country": "FR"
   },
@@ -183,6 +189,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/teva-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "Teva.fr",
+    "scrapUrl": "",
     "url": "",
     "country": "FR"
   },
@@ -217,12 +224,13 @@
     "nom": "LCI",
     "identifiant": [
       "LCI HD",
-      "LCI HD (1080p)"
+      "LCI HD (1080p)",
+      "LCI"
     ],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/lci-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "LCI.fr",
-    "url": "",
+    "url": "http://149.62.177.107:9999/LCI/index.m3u8",
     "country": "FR"
   },
   {
@@ -236,6 +244,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/c-star-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "CStar.fr",
+    "scrapUrl": "",
     "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/refs/heads/main/streams/canalplus/cstar-dm.m3u8",
     "country": "FR"
   },
@@ -293,12 +302,13 @@
     "nom": "6ter",
     "identifiant": [
       "6ter HD",
-      "6ter (1080p)"
+      "6ter (1080p)",
+      "6ter"
     ],
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/6ter-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "6ter.fr",
-    "url": "",
+    "url": "http://149.62.177.107:9999/6ter/index.m3u8",
     "country": "FR"
   },
   {
@@ -388,6 +398,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/france/tv5-monde-fr.png?raw=true",
     "group": "TVFRANCE",
     "tvgId": "",
+    "scrapUrl": "",
     "url": "",
     "country": "FR"
   },
@@ -639,7 +650,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hd/amc-hd-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403838",
-    "url": "",
+    "url": "http://23.239.31.26:8989/amc/index.m3u8",
     "country": "USA"
   },
   {
@@ -849,7 +860,7 @@
     "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/e-entertainment-us.png?raw=true",
     "group": "TVUSA",
     "tvgId": "403733",
-    "url": "",
+    "url": "http://23.237.104.106:8080/USA_E/index.m3u8",
     "country": "USA"
   },
   {
