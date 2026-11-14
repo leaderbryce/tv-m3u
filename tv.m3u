@@ -17,8 +17,6 @@ https://d15aro46bnpfm8.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68
 https://d1dagx0hs2fkxs.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/pb-2p2o2x977e2oh/RMC_Decouverte_FR.m3u8?ads.ads_cdn=cf&ads.app_domain=%7BAPP_DOMAIN%7D&ads.app_name=%7BAPP_NAME%7D&ads.cdn=cf&ads.consent=%7BTC_STRING%7D&ads.device_did=%7BPSID%7D&ads.device_dnt=%7BTARGETOPT%7D&ads.service_id=FRBD4100008QS&ads.ssai_vendor=SSSLIVE&pb_type=pb-2p2o2x977e2oh_cloudfront
 #EXTINF:-1 tvg-id="RMCLife.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/rmc-life-fr.png?raw=true" group-title="LIVETV;TVFRANCE",RMC Life
 https://d3dcdjv6dx07iz.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-eaaww2dyp3iih/RMC_Life_FR.m3u8
-#EXTINF:-1 tvg-id="France24.fr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/france/france-24-fr.png?raw=true" group-title="LIVETV;TVFRANCE",France 24
-https://live.france24.com/hls/live/2037179-b/F24_FR_HI_HLS/master_5000.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="https://upload.wikimedia.org/wikipedia/en/8/86/Caillou_new_logo.png" group-title="LIVETV;TVFRANCE",Caillou
 https://do7nccdsswstc.cloudfront.net/v1/manifest/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-1aso0bc668saa/a5233c83-f772-4a81-959a-45ec7877ef61/5.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/89yWH5L.png" group-title="LIVETV;TVFRANCE",Qwest TV
